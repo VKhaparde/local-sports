@@ -1,7 +1,7 @@
 {
   "name": "lamp-react-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "A web app for athletes who want to find local sports leagues",
   "private": true,
   "main": "webpack.config.js",
   "scripts": {
