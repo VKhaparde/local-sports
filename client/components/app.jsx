@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Homepage from './homepage';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -19,8 +20,11 @@ export default class App extends React.Component {
   }
 
   render() {
-    return this.state.isTesting
-      ? <h1>Testing connections...</h1>
-      : <h1>{this.state.message}</h1>;
+    return (
+      <Homepage />
+    );
+    // return this.state.isTesting
+    //   ? <Homepage />
+    //   : <h1>{this.state.message}</h1>;
   }
 }
