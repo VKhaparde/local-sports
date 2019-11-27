@@ -1,4 +1,3 @@
-
 <?php
 require_once '../api/_lifecycle.php';
 switch ($request['path']) {
