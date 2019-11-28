@@ -2,7 +2,7 @@
 
 if ($request['method'] === 'GET') {
   $link = get_db_link();
-  $sql = 'SELECT name
+  $sql = 'SELECT name, lat, lng
           FROM `location-sports`
           JOIN `location`
           ON `location-sports`.`location-id`=location.id
