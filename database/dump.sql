@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.27, for Linux (x86_64)
 --
--- Host: localhost    Database: localSports
+-- Host: localhost    Database: local-sports
 -- ------------------------------------------------------
 -- Server version	5.7.27-0ubuntu0.18.04.1
 
@@ -23,16 +23,14 @@ DROP TABLE IF EXISTS `events`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `events` (
-  `eventId` smallint(255) unsigned NOT NULL,
-  `sportId` smallint(10) unsigned NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `location-id` int(11) NOT NULL,
+  `organizer-id` int(11) NOT NULL,
+  `sport-id` int(11) NOT NULL,
   `date` date NOT NULL,
-  `locationId` smallint(11) unsigned NOT NULL,
-  `leagueId` smallint(255) unsigned NOT NULL,
-  `organizerId` smallint(255) unsigned NOT NULL,
-  `reviewId` smallint(255) unsigned NOT NULL,
-  `price` varchar(5) NOT NULL,
-  PRIMARY KEY (`eventId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `event-description` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,137 +39,86 @@ CREATE TABLE `events` (
 
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
-INSERT INTO `events` VALUES (1,1,'2019-11-12',1,1,1,1,'3'),(2,1,'2019-11-12',1,2,1,2,'3');
+INSERT INTO `events` VALUES (1,1,1,1,'2019-11-30','Come play soccer with me, Jocelyne Tubbles this weekend at 6 pm!'),(2,1,1,1,'2019-11-30','Come play soccer with me, Jocelyne Tubbles this weekend at 6 pm!');
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `favoriteSports`
+-- Table structure for table `location`
 --
 
-DROP TABLE IF EXISTS `favoriteSports`;
+DROP TABLE IF EXISTS `location`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `favoriteSports` (
-  `favoriteSportId` int(11) NOT NULL AUTO_INCREMENT,
-  `userId` int(11) NOT NULL,
-  `sportId` int(11) NOT NULL,
-  PRIMARY KEY (`favoriteSportId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `location` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lat` float(10,6) NOT NULL,
+  `lng` float(10,6) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `favoriteSports`
+-- Dumping data for table `location`
 --
 
-LOCK TABLES `favoriteSports` WRITE;
-/*!40000 ALTER TABLE `favoriteSports` DISABLE KEYS */;
-/*!40000 ALTER TABLE `favoriteSports` ENABLE KEYS */;
+LOCK TABLES `location` WRITE;
+/*!40000 ALTER TABLE `location` DISABLE KEYS */;
+INSERT INTO `location` VALUES (3,'William R Mason Regional Park','18712 University Dr, Irvine, CA 92612',33.657001,117.831596),(4,'Irvine Great Park','Great Park Blvd Irvine, CA 92618',33.796299,117.752602),(5,'Orange County Great Park','8000 Great Park Boulevard, Irvine, CA 92618',33.673401,117.745796),(6,'Parasol Park','375 Magnet, Irvine, CA 92618',33.680302,117.735199),(7,'Los Olivos Community Park','101 Alfonso Dr, Irvine, CA 92618',33.635899,117.745796),(8,'Quail Hill Community Park','35 Shady Canyon Dr, Irvine, CA 92603',33.652802,117.782204),(9,'Bill Barber Memorial Park','4 Civic Center Plaza, Irvine, CA 92606',33.688301,117.822800),(10,'Heritage Park Community Center','14301 Yale Ave &, Walnut Ave, Irvine, CA 92604',33.700802,117.777100),(11,'Beacon Park','501 Benchmark, Irvine, CA 92618',33.688900,117.733398),(12,'Oak Creek Park','15616 Valley Oak Dr, Irvine, CA 92618',33.667198,117.771301),(13,'Sweet Shade Park','15 Sweet Shade, Irvine, CA 92606',33.714058,117.768120);
+/*!40000 ALTER TABLE `location` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `leagues`
+-- Table structure for table `location-sports`
 --
 
-DROP TABLE IF EXISTS `leagues`;
+DROP TABLE IF EXISTS `location-sports`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `leagues` (
-  `leagueId` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `leagueName` varchar(100) DEFAULT NULL,
-  `leagueType` text,
-  PRIMARY KEY (`leagueId`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+CREATE TABLE `location-sports` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sports-id` int(11) NOT NULL,
+  `location-id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `leagues`
+-- Dumping data for table `location-sports`
 --
 
-LOCK TABLES `leagues` WRITE;
-/*!40000 ALTER TABLE `leagues` DISABLE KEYS */;
-INSERT INTO `leagues` VALUES (1,'Bronze Intermediate','Vivian O. Hoffman'),(2,'Et Libero Proin LLP','Cruz U. Atkinson'),(3,'Dolor Nulla Semper Associates','Melissa P. Buck'),(4,'Lobortis Inc.','Sopoline R. Bryan'),(5,'Feugiat Placerat Velit Associates','Zeph J. Gilliam');
-/*!40000 ALTER TABLE `leagues` ENABLE KEYS */;
+LOCK TABLES `location-sports` WRITE;
+/*!40000 ALTER TABLE `location-sports` DISABLE KEYS */;
+INSERT INTO `location-sports` VALUES (1,3,3),(2,2,3),(3,5,3),(4,9,3),(5,1,4),(6,1,5),(7,9,5),(8,10,5),(9,3,6),(10,4,6),(11,8,7),(12,9,8),(13,4,8),(14,1,8),(15,6,8),(16,4,9),(17,5,10),(18,8,10),(19,1,10),(20,2,11),(21,5,12),(22,9,12),(23,8,12),(24,6,12),(25,10,13),(26,7,13),(27,4,13);
+/*!40000 ALTER TABLE `location-sports` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `locations`
+-- Table structure for table `organizer-info`
 --
 
-DROP TABLE IF EXISTS `locations`;
+DROP TABLE IF EXISTS `organizer-info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `locations` (
-  `locationID` int(11) NOT NULL AUTO_INCREMENT,
-  `locationName` varchar(100) NOT NULL,
-  `lat` int(15) NOT NULL,
-  `lon` int(15) NOT NULL,
-  PRIMARY KEY (`locationID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+CREATE TABLE `organizer-info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `organizer-name` varchar(60) NOT NULL,
+  `phone` varchar(10) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `locations`
+-- Dumping data for table `organizer-info`
 --
 
-LOCK TABLES `locations` WRITE;
-/*!40000 ALTER TABLE `locations` DISABLE KEYS */;
-INSERT INTO `locations` VALUES (1,'Irvine Great Park',-77,136),(2,'Veeh Ranch Park',-24,-39),(3,'Mountain Ranch Park',-24,-150),(4,'Ultricies Ornare Limited',63,23),(5,'Mauris Ut Quam Incorporated',-36,174),(6,'Vivamus Nibh Dolor Ltd',36,-153),(7,'Vitae Inc.',82,-47),(8,'A Scelerisque Sed Consulting',28,-142),(9,'Varius Ultrices Consulting',-34,-150),(10,'Parturient Montes Industries',49,-28);
-/*!40000 ALTER TABLE `locations` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `organizer`
---
-
-DROP TABLE IF EXISTS `organizer`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `organizer` (
-  `organizerId` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `firstName` varchar(255) DEFAULT NULL,
-  `lastName` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `phone` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`organizerId`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `organizer`
---
-
-LOCK TABLES `organizer` WRITE;
-/*!40000 ALTER TABLE `organizer` DISABLE KEYS */;
-INSERT INTO `organizer` VALUES (1,'TaShya','Morse','malesuada.malesuada@Crasconvallisconvallis.net','(401) 661-0553'),(2,'Dillon','Ward','Aliquam@arcuMorbisit.net','(557) 297-3072'),(3,'Martena','Baldwin','et.magna.Praesent@elementum.com','(969) 613-2930'),(4,'Shellie','Miller','Morbi.metus.Vivamus@Sednullaante.edu','(615) 500-8859'),(5,'Hedy','England','sed.hendrerit@ultricesVivamus.edu','(875) 287-8481'),(6,'Cyrus','Fulton','mi@Quisqueporttitor.com','(168) 895-4644'),(7,'Kalia','Buchanan','aliquet@nequevenenatis.co.uk','(777) 418-8113'),(8,'Imani','Carpenter','at.lacus@fringillaeuismod.edu','(983) 772-3724'),(9,'Acton','Owen','sagittis@dictumultricies.com','(395) 366-1535'),(10,'Fallon','Middleton','est.ac@Integeraliquamadipiscing.edu','(989) 855-5893');
-/*!40000 ALTER TABLE `organizer` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `reviews`
---
-
-DROP TABLE IF EXISTS `reviews`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `reviews` (
-  `reviewId` int(11) NOT NULL AUTO_INCREMENT,
-  `eventId` int(11) NOT NULL,
-  `userId` int(11) NOT NULL,
-  `review` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `rating` int(5) NOT NULL,
-  PRIMARY KEY (`reviewId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `reviews`
---
-
-LOCK TABLES `reviews` WRITE;
-/*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
-/*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
+LOCK TABLES `organizer-info` WRITE;
+/*!40000 ALTER TABLE `organizer-info` DISABLE KEYS */;
+INSERT INTO `organizer-info` VALUES (1,'Jocelyne Tubbles','7423432800','jtubbles0@weibo.com'),(3,'Donavon Austins','5235300566','daustins1@imdb.com'),(4,'Adrienne Proger','1911770350','aproger2@hexun.com'),(5,'Matthieu Duckers','4528258739','mduckers3@about.me'),(6,'Elinor Bowick','8334609734','ebowick4@virginia.edu'),(7,'Janetta Koppeck','6039854256','jkoppeck5@parallels.com'),(8,'Berti McNish','7397148019','bmcnish6@phpbb.com'),(9,'Keri Czajkowski','8232500354','kczajkowski7@godaddy.com'),(10,'Caron Semper','1882096588','csemper8@jiathis.com'),(11,'Thomasin Lindholm','4078981257','tlindholm9@mayoclinic.com');
+/*!40000 ALTER TABLE `organizer-info` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -182,10 +129,11 @@ DROP TABLE IF EXISTS `sports`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sports` (
-  `sportId` int(11) NOT NULL AUTO_INCREMENT,
-  `sportType` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`sportId`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sport-type` varchar(60) NOT NULL,
+  `event-length` int(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -194,38 +142,8 @@ CREATE TABLE `sports` (
 
 LOCK TABLES `sports` WRITE;
 /*!40000 ALTER TABLE `sports` DISABLE KEYS */;
-INSERT INTO `sports` VALUES (1,'Hockey'),(2,'Flag Football'),(3,'Baseball'),(4,'Football'),(5,'Bowling'),(6,'Curling'),(7,'Tennis'),(8,'Indoor Basketball'),(9,'Outdoor Basketball'),(10,'Outdoor Soccer'),(11,'Indoor Soccer'),(12,'Outdoor Beach Volleyball'),(13,'Indoor Volleyball'),(14,'Golf'),(15,'Kickball'),(16,'Pickleball'),(17,'Bocce ball'),(18,'Spikeball'),(19,'Ultimate Frisbee'),(20,'Disc Golf'),(21,'Racquetball'),(22,'Dodgeball'),(23,'Futsol'),(24,'Cornhole'),(25,'Sport'),(26,'Sport'),(27,'Sport'),(28,'Sport'),(29,'Sport'),(30,'Sport'),(31,'Sport'),(32,'Sport'),(33,'Sport'),(34,'Sport'),(35,'Sport'),(36,'Sport'),(37,'Sport'),(38,'Sport'),(39,'Sport'),(40,'Sport'),(41,'Sport'),(42,'Sport'),(43,'Sport'),(44,'Sport'),(45,'Sport'),(46,'Sport'),(47,'Sport'),(48,'Sport'),(49,'Sport'),(50,'Sport'),(51,'Sport'),(52,'Sport'),(53,'Sport'),(54,'Sport'),(55,'Sport'),(56,'Sport'),(57,'Sport'),(58,'Sport'),(59,'Sport'),(60,'Sport'),(61,'Sport'),(62,'Sport'),(63,'Sport'),(64,'Sport'),(65,'Sport'),(66,'Sport'),(67,'Sport'),(68,'Sport'),(69,'Sport'),(70,'Sport'),(71,'Sport'),(72,'Sport'),(73,'Sport'),(74,'Sport'),(75,'Sport'),(76,'Sport'),(77,'Sport'),(78,'Sport'),(79,'Sport'),(80,'Sport'),(81,'Sport'),(82,'Sport'),(83,'Sport'),(84,'Sport'),(85,'Sport'),(86,'Sport'),(87,'Sport'),(88,'Sport'),(89,'Sport'),(90,'Sport'),(91,'Sport'),(92,'Sport'),(93,'Sport'),(94,'Sport'),(95,'Sport'),(96,'Sport'),(97,'Sport'),(98,'Sport'),(99,'Sport'),(100,'Sport');
+INSERT INTO `sports` VALUES (1,'Soccer',90),(2,'Volleyball',60),(3,'Baseball',90),(4,'Football',90),(5,'Hockey',60),(6,'Ultimate Frisbee',75),(7,'Softball',90),(8,'Basketball',60),(9,'Tennis',60),(10,'Bowling',90);
 /*!40000 ALTER TABLE `sports` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `users`
---
-
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
-  `userId` int(11) NOT NULL AUTO_INCREMENT,
-  `firstName` varchar(30) NOT NULL,
-  `lastName` varchar(30) NOT NULL,
-  `profileImage` varchar(255) NOT NULL,
-  `age` int(11) NOT NULL,
-  `location` varchar(50) NOT NULL,
-  `lat` int(11) NOT NULL,
-  `lon` int(11) NOT NULL,
-  PRIMARY KEY (`userId`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users`
---
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'firstAnastasia','Bishop','',30,'Ap #954-9308 Nec Road',8,-119),(2,'firstTalon','Sharpe','',70,'P.O. Box 177, 1701 Arcu. Road',87,86),(3,'firstMaia','Oneill','',54,'P.O. Box 512, 5258 Ut, Avenue',58,167),(4,'firstMargaret','Burch','',84,'P.O. Box 582, 8765 Nibh. Avenue',-66,-113),(5,'firstGrant','Ewing','',67,'Ap #810-5034 Non, Av.',-59,28);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -237,4 +155,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-26 19:45:26
+-- Dump completed on 2019-11-28  0:33:12
