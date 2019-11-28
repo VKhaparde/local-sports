@@ -1,5 +1,8 @@
 
 import React from 'react';
+import Header from './header';
+import Footer from './footer';
+import Dynamic from './dynamic';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -11,16 +14,23 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/api/health-check')
-      .then(res => res.json())
-      .then(data => this.setState({ message: data.message || data.error }))
-      .catch(err => this.setState({ message: err.message }))
-      .finally(() => this.setState({ isTesting: false }));
+    // fetch('/api/health-check')
+    //   .then(res => res.json())
+    //   .then(data => this.setState({ message: data.message || data.error }))
+    //   .catch(err => this.setState({ message: err.message }))
+    //   .finally(() => this.setState({ isTesting: false }));
   }
 
   render() {
-    return this.state.isTesting
-      ? <h1>Testing connections...</h1>
-      : <h1>{this.state.message}</h1>;
+    return (
+      <div className="">
+        <Header />
+        <Dynamic />
+        <Footer />
+      </div>
+    );
+    // return this.state.isTesting
+    //   ? <Homepage />
+    //   : <h1>{this.state.message}</h1>;
   }
 }
