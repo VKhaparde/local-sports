@@ -4,8 +4,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className= "header col-12 p-3"> Local Sports
-      </div>
+      <div className= "header col-12 pt-4 sticky-top"> Local Sports </div>
     );
   }
 }

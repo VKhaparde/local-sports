@@ -2,35 +2,45 @@
 import React from 'react';
 import Header from './header';
 import Footer from './footer';
-import Dynamic from './dynamic';
+import GoogleMaps from './google-maps';
+// import Favorites from './favorites';
+import FavoritesDisplay from './favorites-display';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: null,
-      isTesting: true
+      events: []
     };
   }
 
   componentDidMount() {
-    // fetch('/api/health-check')
-    //   .then(res => res.json())
-    //   .then(data => this.setState({ message: data.message || data.error }))
-    //   .catch(err => this.setState({ message: err.message }))
-    //   .finally(() => this.setState({ isTesting: false }));
+    const test = 'soccer';
+    this.userSearch(test);
+  }
+
+  userSearch(test) {
+    fetch('/api/search')
+      .then(json => json.json())
+      .then(data => this.setState({
+        events: data
+      }))
+      .catch(error => console.error('Error', error));
   }
 
   render() {
     return (
-      <div className="">
-        <Header />
-        <Dynamic />
-        <Footer />
-      </div>
+      <Router>
+        <div className="app">
+          <Header />
+          <Switch />
+          <Route path='/search' exact
+            component={() => <GoogleMaps props={this.state.search}/>}/>
+          <FavoritesDisplay />
+          <Footer events={this.state}/>
+        </div>
+      </Router>
     );
-    // return this.state.isTesting
-    //   ? <Homepage />
-    //   : <h1>{this.state.message}</h1>;
   }
 }
