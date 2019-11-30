@@ -6,10 +6,7 @@ class Favorites extends React.Component {
     super(props);
     this.state = {
       view: 'hidden',
-      favorites: [
-        { sport: 'soccer', image: 'fas fa-futbol' },
-        { sport: 'basketball', image: 'fas fa-basketball-ball' }
-      ]
+      favorites: ['basketball', 'soccer', 'football']
     };
 
     this.toggleShow = this.toggleShow.bind(this);
@@ -40,16 +37,19 @@ class Favorites extends React.Component {
 
     if (this.state.view === 'show') {
       return (
-        <div className="favorites-show">
-          <div className='row'>
-            <div className="col">
+        <div className="favorites-show rounded col-3 p-2">
+          <div className='row text-center'>
+            <div className="justify-content-center">
               <i className="fas fa-chevron-down fa-2x m-2"
                 onClick={() => this.toggleHidden()}></i>
               {this.state.favorites.map(sport =>
                 <FavoritesDisplay
-                  key={sport.sport}
+                  key={sport}
                   props={sport} />
               )}
+              <button className="favorites-icons m-1">
+                <i className="fas fa-list fa-2x m-2"/>
+              </button>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import Header from './header';
 import Footer from './footer';
 import GoogleMaps from './google-maps';
 // import Favorites from './favorites';
-import FavoritesDisplay from './favorites-display';
+import Favorites from './favorites';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 export default class App extends React.Component {
@@ -37,7 +37,7 @@ export default class App extends React.Component {
           <Switch />
           <Route path='/search' exact
             component={() => <GoogleMaps props={this.state.search}/>}/>
-          <FavoritesDisplay />
+          <Favorites />
           <Footer events={this.state}/>
         </div>
       </Router>
