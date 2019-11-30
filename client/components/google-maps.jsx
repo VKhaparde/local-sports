@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-// import Favorites from './favorites';
 
 // Variables
 const GOOGLE_MAP_API_KEY = 'AIzaSyD3QCxuw-dLr9u23x2dU7BJXmU4PLso5vY';
@@ -32,10 +31,6 @@ function GoogleMaps(props) {
   //       map: googleMap.current
   //     }));
 
-  // const Marker = props => {
-  //   return <i className="SuperAwesomePin"></i>
-  // }
-
   const createMarker = () =>
     new window.google.maps.Marker({
       position: { lat: myLocation.lat, lng: myLocation.lng },
@@ -55,10 +50,12 @@ function GoogleMaps(props) {
   });
 
   return (
-    <div
-      id="google-map"
-      className='main col-12 p-0'
-      ref={googleMapRef} />
+    <div>
+      <div id="google-map"
+        className='main col-12 p-0'
+        ref={googleMapRef}>
+      </div>
+    </div>
   );
 
 }

@@ -13,15 +13,15 @@
 }
 
 .main{
-height:70vh;
+  height:70vh;
 }
 
 .footer{
-height: 15vh;
-background-color:white;
-padding:15px;
-position: absolute;
-bottom: 0;
+  height: 15vh;
+  background-color:white;
+  padding:15px;
+  position: absolute;
+  bottom: 0;
 }
 
 .favorites-hidden {

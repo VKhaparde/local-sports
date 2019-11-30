@@ -1,7 +1,8 @@
 import React from 'react';
-import GoogleMaps from './search';
+import GoogleMaps from './google-maps';
+import Favorites from './favorites';
 
-class Main extends React.Component {
+class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,14 +30,14 @@ class Main extends React.Component {
   }
 
   render() {
-    // console.log(this.state);
     return (
-      <div className="main col-12 p-0">
-        <GoogleMaps events={this.state.events}/>
+      <div className="main">
+        <GoogleMaps events={this.state}/>
+        <Favorites events={this.state} />
       </div>
     );
 
   }
 }
 
-export default Main;
+export default Search;
