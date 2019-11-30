@@ -1,24 +1,62 @@
 import React from 'react';
 
 class SearchTab extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isClicked: false
+    };
+    this.handleClick = this.handleClick.bind(this);
+    this.displayMenu = this.displayMenu.bind(this);
+    // console.log('this.state before click', this.state);
+  }
 
-  handleClick(event) {
-    return (
-      <div></div>
-    );
+  handleClick() {
+    this.displayMenu();
+    // console.log('Menu icon is clicked');
+  }
+
+  displayMenu() {
+    this.setState({ isClicked: !this.state.isClicked });
+    // console.log('this.state:', this.state);
   }
 
   render() {
-    return (
-      <div className="searchArea col-12">
-        <div className="searchBar fa-2x m-2 d-flex justify-content-between">
-          <div className="" onClick={this.handleClick} >
-            <i className="fas fa-search m-2"></i>Soccer
+    if (this.state.isClicked) {
+      return (
+        <div className="outerSearchDiv col-12">
+          <div className="searchArea">
+            <div className="searchBar fa-2x m-2 d-flex justify-content-between">
+              <div className="" >
+                <i className="fas fa-search m-2"></i>Soccer
+              </div>
+              <div onClick={this.handleClick}>
+                <i className="fas fa-bars m-2"></i>
+              </div>
+            </div>
           </div>
-          <i className="fas fa-bars m-2"></i>
+          <div className="menuDropDown bg-white text-dark">
+            <div className="settings">Settings</div>
+            <div className="signOut">Sign Out</div>
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="outerSearchDiv col-12">
+          <div className="searchArea">
+            <div className="searchBar fa-2x m-2 d-flex justify-content-between">
+              <div>
+                <i className="fas fa-search m-2"></i>Soccer
+              </div>
+              <div onClick={this.handleClick}>
+                <i className="fas fa-bars m-2"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
   }
 }
 

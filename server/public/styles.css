@@ -14,7 +14,7 @@
 
 .dynamic{
 height:60vh;
-background-color: grey;
+background: rgba(100, 97, 97, 0.25);
 }
 
 .footer{
@@ -41,10 +41,12 @@ button:active{
 button:focus{
   border:4px solid teal;
 }
-
+.outerSearchDiv{
+height:10vh;
+background-color: white;
+}
 .searchArea{
   background-color: white;
-  height:10vh;
 }
 .searchBar{
   height:90%;
@@ -53,3 +55,13 @@ button:focus{
   box-sizing: border-box;
   box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
 }
+.menuDropDown{
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1.5rem;
+  /* background-color:white; */
+}
+.settings .signOut{
+background-color: white;
+}
+
