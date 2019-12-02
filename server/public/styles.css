@@ -1,13 +1,22 @@
+/*
+HEADERS FONT :
+font-family: 'Ubuntu Condensed', sans-serif;
+BLOCK-TEXT FONT:
+font-family: 'Oswald', sans-serif;
+*/
+
+
 /* .container{
   height:100vh;
   width:100vw;
 } */
 
 .header{
+  font-family: 'Ubuntu Condensed', sans-serif;
   background-color: #2a9d8f;
   height:15vh;
   text-align: center;
-  font-size: 3rem;
+  font-size: 10rem;
   color:white;
   line-height: 200%;
 }
@@ -33,7 +42,7 @@ button{
   font-size: 0.5rem;
   background-color: transparent;
   border:4px solid white;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 5px 4px 5px rgba(0, 0, 0, 0.25); 
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 5px 4px 5px rgba(0, 0, 0, 0.25);
 }
 button:active{
   border:4px solid teal;
