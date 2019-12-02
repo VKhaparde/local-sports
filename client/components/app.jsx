@@ -5,8 +5,6 @@ import Footer from './footer';
 import Search from './search';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LikedEvents from './LikedEvents';
-import Main from './main';
-import SearchTab from './search-tab';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -41,9 +39,9 @@ export default class App extends React.Component {
             <Route path='/search' exact
               component={() => <Search props={this.state.search} />}/>
 
-                    <LikedEvents />
-        <SearchTab />
-        <Main />
+            <Route path='/likedEvents' exact
+              component={() => <LikedEvents />} />
+
             {/* <Route path={'/eventid:eventId'} exact
               component={() => <EventInfo props={this.state} />} /> */}
 

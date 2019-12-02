@@ -1,6 +1,8 @@
 import React from 'react';
 import GoogleMaps from './google-maps';
 import Favorites from './favorites';
+import SearchTab from './search-tab';
+import EventDetails from './event-details';
 
 class Search extends React.Component {
   constructor(props) {
@@ -32,7 +34,9 @@ class Search extends React.Component {
   render() {
     return (
       <div className="main">
+        <SearchTab />
         <GoogleMaps events={this.state}/>
+        <EventDetails />
         <Favorites events={this.state} />
       </div>
     );

@@ -15,7 +15,7 @@ font-family: 'Oswald', sans-serif;
   background-color: #2a9d8f;
   height:15vh;
   text-align: center;
-  font-size: 10rem;
+  font-size: 4rem;
   color:white;
   text-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -80,9 +80,11 @@ height:10vh;
 background-color: white;
 text-align:center;
 }
+
 .searchArea{
   background-color: white;
 }
+
 .searchBar{
   height:90%;
   border: 2px solid #36453B;
@@ -90,6 +92,7 @@ text-align:center;
   box-sizing: border-box;
   box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
 }
+
 .menuDropDown{
   height:50%;
   width:100%;
@@ -97,25 +100,29 @@ text-align:center;
   text-align: center;
   font-size: 1.5rem;
   background-color:white;
-
+  position: absolute;
+  z-index: 1;
 }
+
 .settings{
   background-color: rgba(234, 234, 234, 0.92);
   height:75px;
 }
+
 .signOut{
 background-color:white;
 height:75px;
 }
 
 .eventDetails{
-  height:50%;
-  width:100%;
+  position: absolute;
+  height: 250px;
+  width:95%;
+  bottom: 16%;
   background-color: white;
   box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   box-sizing: border-box;
-  margin-bottom: 0.5rem;
   text-align: center;
 }
 

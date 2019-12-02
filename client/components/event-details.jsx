@@ -1,7 +1,7 @@
 import React from 'react';
 function EventDetails(props) {
   return (
-    <div className="eventDetails d-flex flex-column">
+    <div className="eventDetails d-flex flex-column m-2">
       <div className="eventInfo d-flex flex-column overflow-hidden p-2">
         <div className="d-flex justify-content-between font-weight-bold">Soccer Co-Ed
           <i className="far fa-heart fa-2x"></i>
