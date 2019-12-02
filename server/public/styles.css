@@ -1,3 +1,7 @@
+.app{
+  height: 100%;
+  width: 100%;
+}
 /*
 HEADERS FONT :
 font-family: 'Ubuntu Condensed', sans-serif;
@@ -6,11 +10,6 @@ font-family: 'Oswald', sans-serif;
 */
 
 
-/* .container{
-  height:100vh;
-  width:100vw;
-} */
-
 .header{
   font-family: 'Ubuntu Condensed', sans-serif;
   background-color: #2a9d8f;
@@ -18,7 +17,7 @@ font-family: 'Oswald', sans-serif;
   text-align: center;
   font-size: 10rem;
   color:white;
-  line-height: 200%;
+  text-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .main{
@@ -27,28 +26,54 @@ background: rgba(100, 97, 97, 0.25);
 }
 
 .footer{
-height: 15vh;
-background-color:white;
-display:flex;
-justify-content:space-around;
-align-items:space-around;
-padding:15px;
+  height: 15vh;
+  background-color:white;
+  padding:15px;
+  position: absolute;
+  bottom: 0;
 }
 
-button{
+.favorites-hidden {
+  position: absolute;
+  right: 5%;
+  bottom: 16%;
+  border-radius: 10%;
+  background: rgba(255, 255, 255, 0.49);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.favorites-show {
+  position: absolute;
+  right: 5%;
+  bottom: 16%;
+  background: rgba(255, 255, 255, 0.49);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.favorites-icons{
+  border-radius: 20%;
+  background-color: transparent;
+  border:4px solid white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 5px 4px 5px rgba(0, 0, 0, 0.25);
+}
+
+.navigation{
   height:90%;
   width:30%;
-  border-radius: 20px;
+  border-radius: 20%;
   font-size: 0.5rem;
   background-color: transparent;
   border:4px solid white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 5px 4px 5px rgba(0, 0, 0, 0.25);
 }
+
 button:active{
   border:4px solid teal;
 }
+
 button:focus{
   border:4px solid teal;
+  outline: none;
 }
 .outerSearchDiv{
 height:10vh;
