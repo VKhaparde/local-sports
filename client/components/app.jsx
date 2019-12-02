@@ -2,7 +2,8 @@
 import React from 'react';
 import Header from './header';
 import Footer from './footer';
-import Dynamic from './dynamic';
+import Main from './main';
+import SearchTab from './search-tab';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -25,7 +26,8 @@ export default class App extends React.Component {
     return (
       <div className="">
         <Header />
-        <Dynamic />
+        <SearchTab />
+        <Main />
         <Footer />
       </div>
     );
