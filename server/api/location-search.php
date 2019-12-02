@@ -12,7 +12,7 @@ if ($request['method'] === 'GET') {
           ON events.`organizer-id` = `organizer-info`.id
 
 
-          WHERE location.id =11';
+          WHERE location.id =6';
 
   $query = $link->query($sql);
   $result = (mysqli_fetch_all($query, MYSQLI_ASSOC));

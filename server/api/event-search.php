@@ -10,7 +10,7 @@ if ($request['method'] === 'GET') {
           ON events.`sport-id`=sports.id
           JOIN `organizer-info`
           ON events.`organizer-id` = `organizer-info`.id
-          WHERE sports.id=4';
+          WHERE location.id=4';
 
 
   $query = $link->query($sql);

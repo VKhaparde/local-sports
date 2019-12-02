@@ -2,7 +2,7 @@
 
 if ($request['method'] === 'GET') {
   $link = get_db_link();
-  $sql = 'SELECT name, lat, lng
+  $sql = 'SELECT name, lat, lng, `sport-type`
           FROM `location-sports`
           JOIN `location`
           ON `location-sports`.`location-id`=location.id
@@ -10,7 +10,7 @@ if ($request['method'] === 'GET') {
           ON `location-sports`.`sports-id`=sports.id
 
 
-          WHERE sports.id=4';
+          WHERE `sport-type`="Baseball"';
 
   $query = $link->query($sql);
   $result = (mysqli_fetch_all($query, MYSQLI_ASSOC));
