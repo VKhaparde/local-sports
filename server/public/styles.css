@@ -1,13 +1,22 @@
+/*
+HEADERS FONT :
+font-family: 'Ubuntu Condensed', sans-serif;
+BLOCK-TEXT FONT:
+font-family: 'Oswald', sans-serif;
+*/
+
+
 /* .container{
   height:100vh;
   width:100vw;
 } */
 
 .header{
+  font-family: 'Ubuntu Condensed', sans-serif;
   background-color: #2a9d8f;
   height:15vh;
   text-align: center;
-  font-size: 3rem;
+  font-size: 10rem;
   color:white;
   line-height: 200%;
 }
