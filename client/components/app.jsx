@@ -40,7 +40,6 @@ export default class App extends React.Component {
 
             {/* <Route path={'/eventid:eventId'} exact
               component={() => <EventInfo props={this.state} />} /> */}
-            {/* <Favorites events={this.state} /> */}
 
           </Switch>
 
