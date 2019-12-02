@@ -24,7 +24,7 @@ class SearchTab extends React.Component {
   render() {
     if (this.state.isClicked) {
       return (
-        <div className="outerSearchDiv col-12">
+        <div className="outerSearchDiv p-0 col-12">
           <div className="searchArea">
             <div className="searchBar fa-2x m-2 d-flex justify-content-between">
               <div className="" >
@@ -35,15 +35,15 @@ class SearchTab extends React.Component {
               </div>
             </div>
           </div>
-          <div className="menuDropDown bg-white text-dark">
-            <div className="settings">Settings</div>
-            <div className="signOut">Sign Out</div>
+          <div className="menuDropDown">
+            <div className="settings p-2">Settings</div>
+            <div className="signOut p-2">Sign Out</div>
           </div>
         </div>
       );
     } else {
       return (
-        <div className="outerSearchDiv col-12">
+        <div className="outerSearchDiv p-0 col-12">
           <div className="searchArea">
             <div className="searchBar fa-2x m-2 d-flex justify-content-between">
               <div>

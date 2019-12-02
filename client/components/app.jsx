@@ -2,7 +2,7 @@
 import React from 'react';
 import Header from './header';
 import Footer from './footer';
-import Dynamic from './dynamic';
+import Main from './main';
 import SearchTab from './search-tab';
 
 export default class App extends React.Component {
@@ -27,7 +27,7 @@ export default class App extends React.Component {
       <div className="">
         <Header />
         <SearchTab />
-        <Dynamic />
+        <Main />
         <Footer />
       </div>
     );
