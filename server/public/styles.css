@@ -21,9 +21,9 @@ font-family: 'Oswald', sans-serif;
   line-height: 200%;
 }
 
-.dynamic{
-height:70vh;
-background-color: grey;
+.main{
+height:60vh;
+background: rgba(100, 97, 97, 0.25);
 }
 
 .footer{
@@ -49,4 +49,63 @@ button:active{
 }
 button:focus{
   border:4px solid teal;
+}
+.outerSearchDiv{
+height:10vh;
+background-color: white;
+text-align:center;
+}
+.searchArea{
+  background-color: white;
+}
+.searchBar{
+  height:90%;
+  border: 2px solid #36453B;
+  border-radius:20px;
+  box-sizing: border-box;
+  box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+}
+.menuDropDown{
+  height:50%;
+  width:100%;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color:white;
+
+}
+.settings{
+  background-color: rgba(234, 234, 234, 0.92);
+  height:75px;
+}
+.signOut{
+background-color:white;
+height:75px;
+}
+
+.eventDetails{
+  height:50%;
+  width:100%;
+  background-color: white;
+  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.eventInfo{
+  height:60%;
+  width:100%;
+ box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
+ padding:0;
+
+}
+.details, .reviews{
+  height:20%;
+  width:100%;
+  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  padding:10px;
 }
