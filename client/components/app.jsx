@@ -5,6 +5,7 @@ import Footer from './footer';
 import Search from './search';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LikedEvents from './LikedEvents';
+import EventList from './event-list';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ export default class App extends React.Component {
   }
 
   userSearch(test) {
-    fetch('/api/search')
+    fetch('/api/sport-search')
       .then(json => json.json())
       .then(data => this.setState({
         events: data
@@ -37,10 +38,13 @@ export default class App extends React.Component {
           <Switch>
 
             <Route path='/search' exact
-              component={() => <Search props={this.state.search} />}/>
+              render={() => <Search props={this.state.search} />}/>
 
             <Route path='/likedEvents' exact
-              component={() => <LikedEvents />} />
+              render={() => <LikedEvents />} />
+
+            <Route path='/eventList' exact
+              render={() => <EventList events={this.state.events}/>} />
 
             {/* <Route path={'/eventid:eventId'} exact
               component={() => <EventInfo props={this.state} />} /> */}
