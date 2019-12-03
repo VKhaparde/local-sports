@@ -1,8 +1,9 @@
 import React from 'react';
-import GoogleMaps from './google-maps';
+// import GoogleMaps from './google-maps';
 import Favorites from './favorites';
 import SearchTab from './search-tab';
 import EventDetails from './event-details';
+// import EventList from './event-details';
 
 class Search extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class Search extends React.Component {
     //   body: JSON.stringify(search)
     // };
 
-    fetch('/api/search')
+    fetch('/api/sport-search')
       .then(response => response.json())
       .then(data => this.setState({
         events: data
@@ -35,7 +36,8 @@ class Search extends React.Component {
     return (
       <div className="main">
         <SearchTab />
-        <GoogleMaps events={this.state}/>
+        {/* <GoogleMaps events={this.state}/> */}
+        {/* <EventList events= {this.state.events}/> */}
         <EventDetails />
         <Favorites events={this.state} />
       </div>
