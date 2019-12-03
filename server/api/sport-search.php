@@ -11,10 +11,8 @@ if ($request['method'] === 'GET') {
           ON `location-sports`.`sports-id`=sports.id
           JOIN events
           ON `location-sports`.`location-id`=events.`location-id`
-
-
           WHERE `sport-type`='$sportType'";
-  if(!isset($sportType)){
+  if (!isset($sportType)) {
     throw new ApiError('need a correct sport type entered');
   }
 
