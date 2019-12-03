@@ -28,9 +28,14 @@ class Favorites extends React.Component {
   render() {
     if (this.state.view === 'hidden') {
       return (
-        <div className="favorites-hidden drop-up"
-          onClick={() => this.toggleShow()}>
-          <i className="fas fa-chevron-up fa-2x m-2"></i>
+        <div className="favorites-hidden p-2">
+          <div className="drop-up text-center"
+            onClick={() => this.toggleShow()}>
+            <i className="fas fa-chevron-up fa-2x m-2"></i>
+          </div>
+          <button className="favorites-icons m-1">
+            <i className="fas fa-list fa-2x m-2" />
+          </button>
         </div>
       );
     }
@@ -48,7 +53,7 @@ class Favorites extends React.Component {
                   props={sport} />
               )}
               <button className="favorites-icons m-1">
-                <i className="fas fa-list fa-2x m-2"/>
+                <i className="fas fa-list fa-2x m-2" />
               </button>
             </div>
           </div>
