@@ -16,59 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Reviews`
---
-
-DROP TABLE IF EXISTS `Reviews`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Reviews` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user-id` int(11) NOT NULL,
-  `location-id` int(11) NOT NULL,
-  `review-description` varchar(300) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Reviews`
---
-
-LOCK TABLES `Reviews` WRITE;
-/*!40000 ALTER TABLE `Reviews` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Reviews` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Users`
---
-
-DROP TABLE IF EXISTS `Users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `username` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Users`
---
-
-LOCK TABLES `Users` WRITE;
-/*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Users` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `events`
 --
 
@@ -80,9 +27,9 @@ CREATE TABLE `events` (
   `location-id` int(11) NOT NULL,
   `organizer-id` int(11) NOT NULL,
   `sport-id` int(11) NOT NULL,
-  `date` date NOT NULL,
   `event-description` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `event-name` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `event-day` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -93,7 +40,7 @@ CREATE TABLE `events` (
 
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
-INSERT INTO `events` VALUES (1,11,1,2,'2019-11-30','Come play basketball with me, Jocelyne Tubbles this weekend at 6 pm!','Basketball for fun!'),(4,13,6,2,'2019-12-11','come play basketball with us!','random basketball shennannigans'),(5,3,3,3,'2020-02-12','Come play baseball at the park! We\'ll be meeting at 630 pm','Park Baseball'),(6,4,4,1,'2020-01-09','Come play an intense soccer match with us at 8 am!','Kicking the soccer ball '),(7,5,5,3,'2019-12-25','Come play baseball on christmas because you hate yourself and this sport sucks','Christmas time baseball'),(8,6,6,3,'2019-12-20','come punch each other with bats at our christmas themed baseball game!','buh buh buh baseball!'),(9,7,7,2,'2019-12-31','come throw a ball in a hoop this year for new years! ','throw a ball in a hoop'),(10,8,8,1,'2019-12-17','low key soccer for beginners','beginner soccer'),(11,9,9,2,'2020-01-16','come shoot some baskethewps with us!','baskethewps at 8 pm '),(12,10,10,1,'2020-01-13','kick some balls at the park!','Soccer time for cool kids '),(13,12,11,3,'2020-01-16','come smack some balls with a bat!','smacking balls with a bat at the park');
+INSERT INTO `events` VALUES (1,11,1,2,'Come play basketball with me, Jocelyne Tubbles this weekend at 6 pm!','Basketball for fun!','Monday'),(4,13,6,2,'come play basketball with us!','random basketball shennannigans','Monday'),(5,3,3,3,'Come play baseball at the park! We\'ll be meeting at 630 pm','Park Baseball','Tuesday'),(6,4,4,1,'Come play an intense soccer match with us at 8 am!','Kicking the soccer ball ','Wednesday'),(7,5,5,3,'Come play baseball on christmas because you hate yourself and this sport sucks','Christmas time baseball','Thursday'),(8,6,6,3,'come punch each other with bats at our christmas themed baseball game!','buh buh buh baseball!','Friday'),(9,7,7,2,'come throw a ball in a hoop this year for new years! ','throw a ball in a hoop','Saturday'),(10,8,8,1,'low key soccer for beginners','beginner soccer','Saturday'),(11,9,9,2,'come shoot some baskethewps with us!','baskethewps at 8 pm ','Sunday'),(12,10,10,1,'kick some balls at the park!','Soccer time for cool kids ','Sunday'),(13,12,11,3,'come smack some balls with a bat!','smacking balls with a bat at the park','Friday');
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,6 +123,31 @@ INSERT INTO `organizer-info` VALUES (1,'Jocelyne Tubbles','7423432800','jtubbles
 UNLOCK TABLES;
 
 --
+-- Table structure for table `reviews`
+--
+
+DROP TABLE IF EXISTS `reviews`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reviews` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user-id` int(11) NOT NULL,
+  `location-id` int(11) NOT NULL,
+  `review-description` varchar(300) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `reviews`
+--
+
+LOCK TABLES `reviews` WRITE;
+/*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
+/*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `sports`
 --
 
@@ -199,6 +171,34 @@ LOCK TABLES `sports` WRITE;
 INSERT INTO `sports` VALUES (1,'Soccer',90),(2,'Basketball',60),(3,'Baseball',90);
 /*!40000 ALTER TABLE `sports` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -209,4 +209,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-03 17:56:07
+-- Dump completed on 2019-12-03 20:02:59
