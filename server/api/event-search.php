@@ -1,7 +1,7 @@
 <?php
 
 if ($request['method'] === 'GET') {
-  $locationId = $request['body']['id'];
+  $locationId = $request['query']['id'];
   $link = get_db_link();
   $sql = "SELECT name, address, `organizer-name`, phone, email, `event-description`, `event-name`, `event-day`
           FROM events

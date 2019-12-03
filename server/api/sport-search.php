@@ -1,7 +1,7 @@
 <?php
 
 if ($request['method'] === 'GET') {
-  $sportType = $request['body']['sport'];
+  $sportType = $request['query']['sport'];
   $link = get_db_link();
   $sql = "SELECT name, lat, lng, `sport-type`, `event-name`
           FROM `location-sports`
