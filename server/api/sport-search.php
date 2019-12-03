@@ -12,7 +12,7 @@ if ($request['method'] === 'GET') {
           ON `location-sports`.`location-id`=events.`location-id`
 
 
-          WHERE `sport-type`="Baseball"';
+          WHERE `sport-type`="Basketball"';
 
   $query = $link->query($sql);
   $result = (mysqli_fetch_all($query, MYSQLI_ASSOC));
