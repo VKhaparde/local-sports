@@ -15,6 +15,7 @@ if ($request['method'] === 'GET') {
   if (!isset($sportType)) {
     throw new ApiError('need a correct sport type entered');
   }
+
   $query = $link->query($sql);
   $result = (mysqli_fetch_all($query, MYSQLI_ASSOC));
   $response['body'] = $result;

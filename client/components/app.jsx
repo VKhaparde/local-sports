@@ -45,6 +45,7 @@ export default class App extends React.Component {
             <Route path='/settings' exact
               render={() => <EventDetails />} />
 
+
             {/* <Route path={'/eventid:eventId'} exact
               component={() => <EventInfo props={this.state} />} /> */}
 

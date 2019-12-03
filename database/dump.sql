@@ -27,10 +27,11 @@ CREATE TABLE `events` (
   `location-id` int(11) NOT NULL,
   `organizer-id` int(11) NOT NULL,
   `sport-id` int(11) NOT NULL,
-  `date` date NOT NULL,
   `event-description` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `event-name` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `event-day` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +40,7 @@ CREATE TABLE `events` (
 
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
-INSERT INTO `events` VALUES (1,1,1,1,'2019-11-30','Come play soccer with me, Jocelyne Tubbles this weekend at 6 pm!'),(2,1,1,1,'2019-11-30','Come play soccer with me, Jocelyne Tubbles this weekend at 6 pm!');
+INSERT INTO `events` VALUES (1,11,1,2,'Come play basketball with me, Jocelyne Tubbles this weekend at 6 pm!','Basketball for fun!','Monday'),(4,13,6,2,'come play basketball with us!','random basketball shennannigans','Monday'),(5,3,3,3,'Come play baseball at the park! We\'ll be meeting at 630 pm','Park Baseball','Tuesday'),(6,4,4,1,'Come play an intense soccer match with us at 8 am!','Kicking the soccer ball ','Wednesday'),(7,5,5,3,'Come play baseball on christmas because you hate yourself and this sport sucks','Christmas time baseball','Thursday'),(8,6,6,3,'come punch each other with bats at our christmas themed baseball game!','buh buh buh baseball!','Friday'),(9,7,7,2,'come throw a ball in a hoop this year for new years! ','throw a ball in a hoop','Saturday'),(10,8,8,1,'low key soccer for beginners','beginner soccer','Saturday'),(11,9,9,2,'come shoot some baskethewps with us!','baskethewps at 8 pm ','Sunday'),(12,10,10,1,'kick some balls at the park!','Soccer time for cool kids ','Sunday'),(13,12,11,3,'come smack some balls with a bat!','smacking balls with a bat at the park','Friday');
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,7 +83,7 @@ CREATE TABLE `location-sports` (
   `sports-id` int(11) NOT NULL,
   `location-id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +92,7 @@ CREATE TABLE `location-sports` (
 
 LOCK TABLES `location-sports` WRITE;
 /*!40000 ALTER TABLE `location-sports` DISABLE KEYS */;
-INSERT INTO `location-sports` VALUES (1,3,3),(2,2,3),(3,5,3),(4,9,3),(5,1,4),(6,1,5),(7,9,5),(8,10,5),(9,3,6),(10,4,6),(11,8,7),(12,9,8),(13,4,8),(14,1,8),(15,6,8),(16,4,9),(17,5,10),(18,8,10),(19,1,10),(20,2,11),(21,5,12),(22,9,12),(23,8,12),(24,6,12),(25,10,13),(26,7,13),(27,4,13);
+INSERT INTO `location-sports` VALUES (1,3,3),(5,1,4),(6,3,5),(9,3,6),(14,1,8),(19,1,10),(20,2,11),(28,2,7),(29,2,9),(30,3,12),(31,2,13);
 /*!40000 ALTER TABLE `location-sports` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,6 +123,31 @@ INSERT INTO `organizer-info` VALUES (1,'Jocelyne Tubbles','7423432800','jtubbles
 UNLOCK TABLES;
 
 --
+-- Table structure for table `reviews`
+--
+
+DROP TABLE IF EXISTS `reviews`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reviews` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user-id` int(11) NOT NULL,
+  `location-id` int(11) NOT NULL,
+  `review-description` varchar(300) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `reviews`
+--
+
+LOCK TABLES `reviews` WRITE;
+/*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
+/*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `sports`
 --
 
@@ -142,8 +168,36 @@ CREATE TABLE `sports` (
 
 LOCK TABLES `sports` WRITE;
 /*!40000 ALTER TABLE `sports` DISABLE KEYS */;
-INSERT INTO `sports` VALUES (1,'Soccer',90),(2,'Volleyball',60),(3,'Baseball',90),(4,'Football',90),(5,'Hockey',60),(6,'Ultimate Frisbee',75),(7,'Softball',90),(8,'Basketball',60),(9,'Tennis',60),(10,'Bowling',90);
+INSERT INTO `sports` VALUES (1,'Soccer',90),(2,'Basketball',60),(3,'Baseball',90);
 /*!40000 ALTER TABLE `sports` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -155,4 +209,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-28  0:33:12
+-- Dump completed on 2019-12-03 20:02:59

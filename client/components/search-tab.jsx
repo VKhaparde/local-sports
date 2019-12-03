@@ -8,17 +8,14 @@ class SearchTab extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.displayMenu = this.displayMenu.bind(this);
-    // console.log('this.state before click', this.state);
   }
 
   handleClick() {
     this.displayMenu();
-    // console.log('Menu icon is clicked');
   }
 
   displayMenu() {
     this.setState({ isClicked: !this.state.isClicked });
-    // console.log('this.state:', this.state);
   }
 
   render() {
