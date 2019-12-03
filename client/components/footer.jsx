@@ -22,7 +22,9 @@ class Footer extends React.Component {
           </Link>
         </button>
         <button className="navigation">
-          <i className="fas fa-user fa-7x"></i>
+          <Link to='/settings' style={navStyle}>
+            <i className="fas fa-cog fa-7x"></i>
+          </Link>
         </button>
       </footer>
 
