@@ -1,8 +1,9 @@
 <?php
 
 if ($request['method'] === 'GET') {
+  $sportType = $request['body']['sport'];
   $link = get_db_link();
-  $sql = 'SELECT name, lat, lng, `sport-type`, `event-name`
+  $sql = "SELECT name, lat, lng, `sport-type`, `event-name`
           FROM `location-sports`
           JOIN `location`
           ON `location-sports`.`location-id`=location.id
@@ -12,7 +13,10 @@ if ($request['method'] === 'GET') {
           ON `location-sports`.`location-id`=events.`location-id`
 
 
-          WHERE `sport-type`="Basketball"';
+          WHERE `sport-type`='$sportType'";
+  if(!isset($sportType)){
+    throw new ApiError('need a correct sport type entered');
+  }
 
   $query = $link->query($sql);
   $result = (mysqli_fetch_all($query, MYSQLI_ASSOC));
