@@ -16,18 +16,18 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    const test = 'soccer';
-    this.userSearch(test);
+    // const test = 'soccer';
+    // this.userSearch(test);
   }
 
-  userSearch(test) {
-    fetch('/api/sport-search')
-      .then(json => json.json())
-      .then(data => this.setState({
-        events: data
-      }))
-      .catch(error => console.error('Error', error));
-  }
+  // userSearch(test) {
+  //   fetch('/api/sport-search')
+  //     .then(json => json.json())
+  //     .then(data => this.setState({
+  //       events: data
+  //     }))
+  //     .catch(error => console.error('Error', error));
+  // }
 
   render() {
     return (

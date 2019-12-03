@@ -1,8 +1,6 @@
 import React from 'react';
-import GoogleMaps from './google-maps';
+import GoogleMap from './google-map';
 import Favorites from './favorites';
-import SearchTab from './search-tab';
-import EventDetails from './event-details';
 
 class Search extends React.Component {
   constructor(props) {
@@ -10,20 +8,16 @@ class Search extends React.Component {
     this.state = {
       events: []
     };
+
+    this.sportSearch = this.sportSearch.bind(this);
   }
 
   componentDidMount() {
-    this.sportSearch();
+
   }
 
-  sportSearch() {
-    // const req = {
-    //   method: 'GET',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(search)
-    // };
-
-    fetch('/api/search')
+  sportSearch(sport) {
+    fetch(`/api/sport-search? sport=${sport}`)
       .then(response => response.json())
       .then(data => this.setState({
         events: data
@@ -34,10 +28,10 @@ class Search extends React.Component {
   render() {
     return (
       <div className="main">
-        <SearchTab />
-        <GoogleMaps events={this.state}/>
-        <EventDetails />
-        <Favorites events={this.state} />
+        <GoogleMap events={this.state}/>
+        {/* <EventDetails /> */}
+        <Favorites events={this.state}
+          callback={sport => this.sportSearch(sport)} />
       </div>
     );
 

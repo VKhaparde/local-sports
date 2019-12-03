@@ -54,7 +54,7 @@ class GoogleMap extends React.Component {
     });
     marker.addListener('click', () => {
       this.googleMap.setCenter(marker.getPosition());
-      this.props.callback('soccer');
+      this.props.callback('Baseball');
       // add click handler to lift state id through callback
       // unbind createMarker method
     });
