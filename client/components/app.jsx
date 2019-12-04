@@ -1,12 +1,10 @@
-
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
 import Search from './search';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import LikedEvents from './LikedEvents';
-import Main from './main';
-import SearchTab from './search-tab';
+import LikedEventsList from './liked-events-list';
+import EventDetails from './event-details';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -18,18 +16,18 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    const test = 'soccer';
-    this.userSearch(test);
+    // const test = 'soccer';
+    // this.userSearch(test);
   }
 
-  userSearch(test) {
-    fetch('/api/search')
-      .then(json => json.json())
-      .then(data => this.setState({
-        events: data
-      }))
-      .catch(error => console.error('Error', error));
-  }
+  // userSearch(test) {
+  //   fetch('/api/sport-search')
+  //     .then(json => json.json())
+  //     .then(data => this.setState({
+  //       events: data
+  //     }))
+  //     .catch(error => console.error('Error', error));
+  // }
 
   render() {
     return (
@@ -39,11 +37,15 @@ export default class App extends React.Component {
           <Switch>
 
             <Route path='/search' exact
-              component={() => <Search props={this.state.search} />}/>
+              render={() => <Search props={this.state.search} />} />
 
-                    <LikedEvents />
-        <SearchTab />
-        <Main />
+            <Route path='/likedEvents' exact
+              render={() => <LikedEventsList {...this.state.liked}/>} />
+
+            <Route path='/settings' exact
+              render={() => <EventDetails />} />
+
+
             {/* <Route path={'/eventid:eventId'} exact
               component={() => <EventInfo props={this.state} />} /> */}
 

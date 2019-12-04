@@ -3,6 +3,7 @@
 if ($request['method'] === 'GET') {
   $sportType = $request['query']['sport'];
   $link = get_db_link();
+
   $sql = "SELECT name, lat, lng, `sport-type`, `event-name`, location.id, `event-day`, `review-average`
           FROM `location-sports`
           JOIN `location`
@@ -11,7 +12,6 @@ if ($request['method'] === 'GET') {
           ON `location-sports`.`sports-id`=sports.id
           JOIN events
           ON `location-sports`.`location-id`=events.`location-id`
-
 
           WHERE `sport-type`=?";
   if(!isset($sportType)){

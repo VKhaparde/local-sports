@@ -1,41 +1,54 @@
 import React from 'react';
-import GoogleMaps from './google-maps';
-import Favorites from './favorites';
+import GoogleMap from './google-map';
+import EventDetails from './event-details';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: []
+      events: [],
+      eventInfo: null,
+      eventInfoDisplay: 'none'
     };
+
+    this.detailSearch = this.detailSearch.bind(this);
   }
 
   componentDidMount() {
-    this.sportSearch();
+
   }
 
-  sportSearch() {
-    // const req = {
-    //   method: 'GET',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(search)
-    // };
-
-    fetch('/api/search')
+  detailSearch(id) {
+    fetch(`/api/event-search? id=${id}`)
       .then(response => response.json())
       .then(data => this.setState({
-        events: data
+        eventInfo: data,
+        eventInfoDisplay: 'active'
       }))
       .catch(error => console.error('Error', error));
   }
 
   render() {
-    return (
-      <div className="main">
-        <GoogleMaps events={this.state}/>
-        <Favorites events={this.state} />
-      </div>
-    );
+
+    if (this.state.eventInfoDisplay === 'active') {
+
+      return (
+        <div className="main">
+          <GoogleMap events={this.state}
+            callback={sport => this.detailSearch(sport)} />
+          <EventDetails eventInfo={this.state.eventInfo}/>
+
+        </div>
+      );
+    } else {
+
+      return (
+        <div className="main">
+          <GoogleMap events={this.state}
+            callback={sport => this.detailSearch(sport)} />
+        </div>
+      );
+    }
 
   }
 }
