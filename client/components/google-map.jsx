@@ -1,8 +1,12 @@
 import React from 'react';
+import Favorites from './favorites';
 
 class GoogleMap extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      events: []
+    };
     this.googleMapRef = React.createRef();
     this.GOOGLE_MAP_API_KEY = 'AIzaSyD3QCxuw - dLr9u23x2dU7BJXmU4PLso5vY';
 
@@ -15,6 +19,7 @@ class GoogleMap extends React.Component {
       googleMapScript.setAttribute('id', 'map');
       googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${this.GOOGLE_MAP_API_KEY}&libraries=places`;
       window.document.body.appendChild(googleMapScript);
+
       googleMapScript.addEventListener('load', () => {
         this.googleMap = this.createGoogleMap();
         this.createMarker();
@@ -23,51 +28,56 @@ class GoogleMap extends React.Component {
       this.googleMap = this.createGoogleMap();
       this.createMarker();
     }
+
   }
 
   createGoogleMap() {
     return new window.google.maps.Map(this.googleMapRef.current, {
-      zoom: 10,
+      zoom: 11,
       center: {
-        lat: 33.642567,
-        lng: -117.387054
+        lat: 33.657567,
+        lng: -117.83154
       },
       disableDefaultUI: true
     });
   }
 
+  sportSearch(sport) {
+    fetch(`/api/sport-search? sport=${sport}`)
+      .then(response => response.json())
+      .then(data => this.setState({
+        events: data
+      }))
+      .catch(error => console.error('Error', error));
+
+    this.createMarker();
+  }
+
   createMarker() {
-    // map through state or prop obj to render markers for each event
-    // const marker3 = new window.google.maps.Marker({
-    //   position: { lat: 33.552567, lng: -117.347054 },
-    //   map: this.googleMap
-    // });
-
-    // const marker2 = new window.google.maps.Marker({
-    //   position: { lat: 33.542567, lng: -117.387054 },
-    //   map: this.googleMap
-    // });
-
-    const marker = new window.google.maps.Marker({
-      position: { lat: 33.642567, lng: -117.387054 },
-      map: this.googleMap
-    });
-    marker.addListener('click', () => {
-      this.googleMap.setCenter(marker.getPosition());
-      this.props.callback('Baseball');
-      // add click handler to lift state id through callback
-      // unbind createMarker method
+    this.state.events.map(event => {
+      const marker = new window.google.maps.Marker({
+        position: { lat: event.lat, lng: -event.lng },
+        map: this.googleMap,
+        id: event.id
+      });
+      marker.addListener('click', () => {
+        this.googleMap.setCenter(marker.getPosition());
+        this.props.callback(marker.id);
+      });
     });
   }
 
   render() {
-
     return (
-      <div
-        ref={this.googleMapRef}
-        style={{ height: '100%' }}
-        id="google-map"
-        className="card-panel white map-holder">
+      <div className="main">
+        <div
+          ref={this.googleMapRef}
+          style={{ height: '100%' }}
+          id="google-map"
+          className="card-panel white map-holder">
+        </div>
+        <Favorites events={this.state}
+          callback={sport => this.sportSearch(sport)} />
       </div>
     );
   }
