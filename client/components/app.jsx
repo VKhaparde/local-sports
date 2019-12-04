@@ -11,9 +11,15 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       events: [],
-      liked: [],
+      liked: [5],
       schedule: []
     };
+  }
+
+  updateLikedEvents(id) {
+    this.setState({
+      liked: this.state.push(id)
+    });
   }
 
   componentDidMount() {
@@ -38,7 +44,10 @@ export default class App extends React.Component {
           <Switch>
 
             <Route path='/search' exact
-              render={() => <Search props={this.state.search} />} />
+              render={() =>
+                <Search
+                  props={this.state.search}
+                  likedEventsCallback={id => this.updateLikedEvents(id)}/>} />
 
             <Route path='/likedEvents' exact
               render={() => <LikedEventsList {...this.state.liked}/>} />

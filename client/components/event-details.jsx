@@ -4,7 +4,8 @@ function EventDetails(props) {
     <div className="eventDetails d-flex flex-column m-2">
       <div className="eventInfo d-flex flex-column overflow-hidden p-2">
         <div className="d-flex justify-content-between font-weight-bold">Soccer Co-Ed
-          <i className="far fa-heart fa-2x"></i>
+          <i className="far fa-heart fa-2x"
+            onClick={id => props.callback(props.id)}></i>
         </div>
         <div className="d-flex justify-content-between">
           <div>Distance:</div>
