@@ -3,20 +3,19 @@
   width: 100%;
 }
 
-/*
-HEADERS FONT :
-font-family: 'Ubuntu Condensed', sans-serif;
-BLOCK-TEXT FONT:
-font-family: 'Oswald', sans-serif;
-*/
+.headers-font-ubuntu {
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
 
+.block-text-font-oswald {
+  font-family: 'Oswald', sans-serif;
+}
 
 .header{
-  font-family: 'Ubuntu Condensed', sans-serif;
   background-color: #2a9d8f;
   height:15vh;
   text-align: center;
-  font-size: 3rem;
+  font-size: 4rem;
   color:white;
   text-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -81,6 +80,11 @@ button:focus{
 height:10vh;
 background-color: white;
 text-align:center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
 }
 
 .searchArea{
@@ -181,4 +185,38 @@ height:75px;
   border: 2px solid #000000;
   box-sizing: border-box;
   border-radius: 20px;
+}
+
+/* LIKED EVENTS */
+
+.liked-event-border {
+  z-index: 1;
+  height: 40%;
+  width:95%;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 2px solid #2a9d8f;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: .5em auto;
+}
+
+.liked-event-heart {
+  color: #2a9d8f;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  border: 1px solid #2a9d8f;
+  border-radius: 10px;
+  padding: 0.25em;
+}
+
+.liked-event-title {
+  font-size: 1.5rem;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.liked-event-location {
+  font-size: 1.25rem;
+  text-align: left;
+  margin-left: 1rem;
 }

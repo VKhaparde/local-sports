@@ -17,9 +17,8 @@ class EventList extends React.Component {
       <div>
         <div className="eventList m-2 p-2 d-flex flex-column">
           <div>
-            <i className="fas fa-caret-square-left"></i>Back
+            <i className="far fa-heart fa-7x"></i>
           </div>
-
           <h3 className="text-center">{sportType}</h3>
           <div className="d-flex flex-column overflow-hidden m-2 p-0">
             {
