@@ -26,6 +26,23 @@ class Favorites extends React.Component {
   }
 
   render() {
+
+    // console.log(this.props.props)
+    // if(this.props.props){
+    //   return (
+    //     <div className="favorites-hidden p-2">
+    //       <div className="drop-up text-center"
+    //         onClick={() => this.toggleShow()}>
+    //         <i className="fas fa-chevron-up fa-2x m-2"></i>
+    //       </div>
+    //       <button className="favorites-icons m-1">
+    //         <i className="fas fa-map-marker-alt fa-2x m-2"
+    //           onClick={() => this.props.listCallback()} />
+    //       </button>
+    //     </div>
+    //   );
+    // }
+
     if (this.state.view === 'hidden') {
       return (
         <div className="favorites-hidden p-2">
@@ -35,7 +52,7 @@ class Favorites extends React.Component {
           </div>
           <button className="favorites-icons m-1">
             <i className="fas fa-list fa-2x m-2"
-              onClick={() => this.props.callback('Basketball')} />
+              onClick={() => this.props.listCallback()} />
           </button>
         </div>
       );
@@ -56,7 +73,7 @@ class Favorites extends React.Component {
               )}
               <button className="favorites-icons m-1">
                 <i className="fas fa-list fa-2x m-2"
-                  onClick={() => this.props.callback('Soccer')}
+                  onClick={() => this.props.listCallback()}
                 />
               </button>
             </div>

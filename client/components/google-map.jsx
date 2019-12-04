@@ -1,11 +1,13 @@
 import React from 'react';
 import Favorites from './favorites';
+import EventList from './event-list';
 
 class GoogleMap extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: []
+      events: [],
+      view: 'map'
     };
     this.googleMapRef = React.createRef();
     this.GOOGLE_MAP_API_KEY = 'AIzaSyD3QCxuw - dLr9u23x2dU7BJXmU4PLso5vY';
@@ -28,12 +30,11 @@ class GoogleMap extends React.Component {
       this.googleMap = this.createGoogleMap();
       this.createMarker();
     }
-
   }
 
   createGoogleMap() {
     return new window.google.maps.Map(this.googleMapRef.current, {
-      zoom: 11,
+      zoom: 12,
       center: {
         lat: 33.657567,
         lng: -117.83154
@@ -47,10 +48,8 @@ class GoogleMap extends React.Component {
       .then(response => response.json())
       .then(data => this.setState({
         events: data
-      }))
+      }, this.createMarker()))
       .catch(error => console.error('Error', error));
-
-    this.createMarker();
   }
 
   createMarker() {
@@ -67,19 +66,48 @@ class GoogleMap extends React.Component {
     });
   }
 
+  toggleList() {
+    this.setState({
+      view: 'list'
+    });
+  }
+
+  toggleMap() {
+    this.setState({
+      view: 'map'
+    });
+  }
+
   render() {
-    return (
-      <div className="main">
-        <div
-          ref={this.googleMapRef}
-          style={{ height: '100%' }}
-          id="google-map"
-          className="card-panel white map-holder">
+    if (this.state.view === 'map') {
+      // console.log('test');
+      return (
+        <div className="main">
+          <div
+            ref={this.googleMapRef}
+            style={{ height: '100%' }}
+            id="google-map"
+            className="card-panel white map-holder">
+          </div>
+          <Favorites
+            events={this.state}
+            callback={sport => this.sportSearch(sport)}
+            listCallback={() => this.toggleList()} />
         </div>
-        <Favorites events={this.state}
-          callback={sport => this.sportSearch(sport)} />
-      </div>
-    );
+      );
+    }
+
+    if (this.state.view === 'list') {
+      return (
+        <div className="main">
+          <EventList events={this.state} />
+          <Favorites
+            props={this.state}
+            callback={sport => this.sportSearch(sport)}
+            listCallback={() => this.toggleMap()} />
+        </div>
+      );
+    }
   }
 }
 

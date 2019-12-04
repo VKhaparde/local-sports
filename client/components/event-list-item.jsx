@@ -1,16 +1,19 @@
 import React from 'react';
 
-class EventListItem extends React.Component {
-  render() {
-    return (
-      <div className="card border border-success m-1 p-1">
-        <h5 className="card-title">{this.props.eventName}</h5>
-        <p className="card-text">{this.props.eventName}</p>
-        <p className="card-text">Tuesday</p>
-      </div>
-    );
-  }
+function EventListItem(props) {
+  return (
 
+    <div className="eventListItem rounded m-2">
+      <div className="ml-2">
+        <h4 className="title">{props.name}</h4>
+        <div className="">{props.date}</div>
+        <div className="d-flex">
+          <p className="">{props.locationName}</p>
+        </div>
+      </div>
+    </div>
+
+  );
 }
 
 export default EventListItem;

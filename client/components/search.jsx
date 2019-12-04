@@ -33,7 +33,7 @@ class Search extends React.Component {
     if (this.state.eventInfoDisplay === 'active') {
 
       return (
-        <div className="main">
+        <div className="">
           <GoogleMap events={this.state}
             callback={sport => this.detailSearch(sport)} />
           <EventDetails eventInfo={this.state.eventInfo}/>
@@ -43,7 +43,7 @@ class Search extends React.Component {
     } else {
 
       return (
-        <div className="main">
+        <div className="">
           <GoogleMap events={this.state}
             callback={sport => this.detailSearch(sport)} />
         </div>

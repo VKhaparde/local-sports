@@ -4,14 +4,15 @@ import Header from './header';
 import Footer from './footer';
 import Search from './search';
 import LikedEventsList from './liked-events-list';
-import EventDetails from './event-details';
+// import EventDetails from './event-details';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       events: [],
-      liked: []
+      liked: [],
+      schedule: []
     };
   }
 
@@ -42,9 +43,8 @@ export default class App extends React.Component {
             <Route path='/likedEvents' exact
               render={() => <LikedEventsList {...this.state.liked}/>} />
 
-            <Route path='/settings' exact
-              render={() => <EventDetails />} />
-
+            {/* <Route path='/settings' exact
+              render={() => } /> */}
 
             {/* <Route path={'/eventid:eventId'} exact
               component={() => <EventInfo props={this.state} />} /> */}
