@@ -2,7 +2,7 @@
 
 if ($request['method'] === 'GET') {
   $link = get_db_link();
-  $sql = 'SELECT name, address, `organizer-name`, phone, email, `event-description`, `event-name`
+  $sql = 'SELECT name, address, `organizer-name`, phone, email, `event-description`, `event-name`, username, `review-description`, `review-rating`
           FROM location
           JOIN `location-sports`
           ON `location-sports`.`location-id` = location.id
@@ -10,6 +10,10 @@ if ($request['method'] === 'GET') {
           ON events.`location-id` = location.id
           JOIN `organizer-info`
           ON events.`organizer-id` = `organizer-info`.id
+          JOIN `reviews`
+          ON reviews.`location-id` = location.id
+          JOIN `users`
+          ON users.id = reviews.`user-id`
 
 
           WHERE location.id =6';

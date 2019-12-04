@@ -6,6 +6,8 @@ switch ($request['path']) {
   case '/api/sport-search':
   case '/api/event-search':
   case '/api/location-search':
+  case '/api/review-search':
+
     require_once "..${request['path']}.php";
   default:
     throw new ApiError("Cannot ${request['method']} ${request['path']}", 404);

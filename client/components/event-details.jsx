@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class EventDetails extends React.Component {
   constructor(props) {
     super(props);
@@ -70,6 +71,7 @@ class EventDetails extends React.Component {
       <div className="eventDetails d-flex flex-column m-2">
         <EventInfo info={this.props} />
         <div className="details font-weight-bold" onClick={this.handleClickDetails}>Details
+
         </div>
         <div className="reviews font-weight-bold" onClick={this.handleClickReviews}>Reviews
         </div>

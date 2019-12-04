@@ -3,14 +3,16 @@
 if ($request['method'] === 'GET') {
   $locationId = $request['query']['id'];
   $link = get_db_link();
-  $sql = "SELECT name, address, `organizer-name`, phone, email, `event-description`, `event-name`, `event-day`, `event-id`
-          FROM events
-          JOIN `location`
-          ON events.`location-id`=location.id
-          JOIN sports
-          ON events.`sport-id`=sports.id
-          JOIN `organizer-info`
-          ON events.`organizer-id` = `organizer-info`.id
+  $sql = "SELECT  `review-description`, `review-rating`, username, `review-average`
+          FROM `reviews`
+          JOIN location
+          ON reviews.`location-id` = location.id
+          JOIN users
+          ON  reviews.`user-id` = users.id
+
+
+
+
           WHERE location.id=?";
   if (!isset($locationId)) {
     throw new ApiError('location ID is required');
@@ -32,3 +34,11 @@ function check_connection($link)
     'message' => 'Successfully connected to MySQL!'
   ];
 }
+
+
+// , username, `review-description`, `review-rating`
+
+// JOIN `reviews`
+//           ON reviews.`location-id` = location.id
+//           JOIN `users`
+//           ON users.id = reviews.`user-id`
