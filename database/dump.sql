@@ -57,6 +57,8 @@ CREATE TABLE `location` (
   `address` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `lat` float(10,6) NOT NULL,
   `lng` float(10,6) NOT NULL,
+  `review-id` int(11) NOT NULL,
+  `review-average` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -67,7 +69,7 @@ CREATE TABLE `location` (
 
 LOCK TABLES `location` WRITE;
 /*!40000 ALTER TABLE `location` DISABLE KEYS */;
-INSERT INTO `location` VALUES (3,'William R Mason Regional Park','18712 University Dr, Irvine, CA 92612',33.657001,117.831596),(4,'Irvine Great Park','Great Park Blvd Irvine, CA 92618',33.796299,117.752602),(5,'Orange County Great Park','8000 Great Park Boulevard, Irvine, CA 92618',33.673401,117.745796),(6,'Parasol Park','375 Magnet, Irvine, CA 92618',33.680302,117.735199),(7,'Los Olivos Community Park','101 Alfonso Dr, Irvine, CA 92618',33.635899,117.745796),(8,'Quail Hill Community Park','35 Shady Canyon Dr, Irvine, CA 92603',33.652802,117.782204),(9,'Bill Barber Memorial Park','4 Civic Center Plaza, Irvine, CA 92606',33.688301,117.822800),(10,'Heritage Park Community Center','14301 Yale Ave &, Walnut Ave, Irvine, CA 92604',33.700802,117.777100),(11,'Beacon Park','501 Benchmark, Irvine, CA 92618',33.688900,117.733398),(12,'Oak Creek Park','15616 Valley Oak Dr, Irvine, CA 92618',33.667198,117.771301),(13,'Sweet Shade Park','15 Sweet Shade, Irvine, CA 92606',33.714058,117.768120);
+INSERT INTO `location` VALUES (3,'William R Mason Regional Park','18712 University Dr, Irvine, CA 92612',33.657001,117.831596,1,4.50),(4,'Irvine Great Park','Great Park Blvd Irvine, CA 92618',33.796299,117.752602,2,3.50),(5,'Orange County Great Park','8000 Great Park Boulevard, Irvine, CA 92618',33.673401,117.745796,3,5.00),(6,'Parasol Park','375 Magnet, Irvine, CA 92618',33.680302,117.735199,4,2.50),(7,'Los Olivos Community Park','101 Alfonso Dr, Irvine, CA 92618',33.635899,117.745796,5,4.50),(8,'Quail Hill Community Park','35 Shady Canyon Dr, Irvine, CA 92603',33.652802,117.782204,6,3.50),(9,'Bill Barber Memorial Park','4 Civic Center Plaza, Irvine, CA 92606',33.688301,117.822800,7,4.00),(10,'Heritage Park Community Center','14301 Yale Ave &, Walnut Ave, Irvine, CA 92604',33.700802,117.777100,8,3.50),(11,'Beacon Park','501 Benchmark, Irvine, CA 92618',33.688900,117.733398,9,3.00),(12,'Oak Creek Park','15616 Valley Oak Dr, Irvine, CA 92618',33.667198,117.771301,10,4.50),(13,'Sweet Shade Park','15 Sweet Shade, Irvine, CA 92606',33.714058,117.768120,11,5.00);
 /*!40000 ALTER TABLE `location` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -209,4 +211,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-03 20:02:59
+-- Dump completed on 2019-12-04  1:22:46

@@ -20,8 +20,12 @@ function EventDetails(props) {
           <div></div>
         </div>
       </div>
-      <div className="details">Details</div>
-      <div className="reviews">Reviews</div>
+      <details>
+        <summary className="details">Details</summary>
+      </details>
+      <details>
+        <summary className="reviews">Summary</summary>
+      </details>
     </div>
   );
 
