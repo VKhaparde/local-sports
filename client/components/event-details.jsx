@@ -1,5 +1,6 @@
 import React from 'react';
 function EventDetails(props) {
+  // console.log('eventdetail', props);
   return (
     <div className="eventDetails d-flex flex-column m-2">
       <div className="eventInfo d-flex flex-column overflow-hidden p-2">
@@ -19,8 +20,12 @@ function EventDetails(props) {
           <div></div>
         </div>
       </div>
-      <div className="details">Details</div>
-      <div className="reviews">Reviews</div>
+      <details>
+        <summary className="details">Details</summary>
+      </details>
+      <details>
+        <summary className="reviews">Summary</summary>
+      </details>
     </div>
   );
 

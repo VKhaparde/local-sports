@@ -6,7 +6,7 @@ class Favorites extends React.Component {
     super(props);
     this.state = {
       view: 'hidden',
-      favorites: ['basketball', 'soccer', 'football']
+      favorites: ['basketball', 'baseball', 'futbol']
     };
 
     this.toggleShow = this.toggleShow.bind(this);
@@ -28,9 +28,15 @@ class Favorites extends React.Component {
   render() {
     if (this.state.view === 'hidden') {
       return (
-        <div className="favorites-hidden drop-up"
-          onClick={() => this.toggleShow()}>
-          <i className="fas fa-chevron-up fa-2x m-2"></i>
+        <div className="favorites-hidden p-2">
+          <div className="drop-up text-center"
+            onClick={() => this.toggleShow()}>
+            <i className="fas fa-chevron-up fa-2x m-2"></i>
+          </div>
+          <button className="favorites-icons m-1">
+            <i className="fas fa-list fa-2x m-2"
+              onClick={() => this.props.callback('Basketball')} />
+          </button>
         </div>
       );
     }
@@ -44,11 +50,14 @@ class Favorites extends React.Component {
                 onClick={() => this.toggleHidden()}></i>
               {this.state.favorites.map(sport =>
                 <FavoritesDisplay
+                  callback={sport => this.props.callback(sport)}
                   key={sport}
                   props={sport} />
               )}
               <button className="favorites-icons m-1">
-                <i className="fas fa-list fa-2x m-2"/>
+                <i className="fas fa-list fa-2x m-2"
+                  onClick={() => this.props.callback('Soccer')}
+                />
               </button>
             </div>
           </div>
