@@ -10,8 +10,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: [],
-      liked: [5],
+      liked: [],
       schedule: []
     };
   }
@@ -46,7 +45,6 @@ export default class App extends React.Component {
             <Route path='/search' exact
               render={() =>
                 <Search
-                  props={this.state.search}
                   likedEventsCallback={id => this.updateLikedEvents(id)}/>} />
 
             <Route path='/likedEvents' exact
