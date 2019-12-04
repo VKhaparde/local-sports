@@ -4,7 +4,8 @@ if ($request['method'] === 'GET') {
   $sportType = $request['query']['sport'];
   $link = get_db_link();
 
-  $sql = "SELECT name, lat, lng, `sport-type`, `event-name`, location.id, `event-day`
+  $sql = "SELECT location.name, lat, lng, `sport-type`, `event-name`, location.id
+
           FROM `location-sports`
           JOIN `location`
           ON `location-sports`.`location-id`=location.id

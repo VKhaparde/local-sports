@@ -121,9 +121,12 @@ height:75px;
   position: absolute;
   top: 15%;
   z-index: 1;
-  height: 200px;
+
+  top:15%;
+  /* height: 250px; */
+
   width:95%;
-  bottom: 16%;
+  /* bottom: 16%; */
   background-color: white;
   box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -145,6 +148,13 @@ height:75px;
   border-radius: 3px;
   transform: matrix(1, 0, 0, 1, 0, 0);
   padding:10px;
+}
+
+.detailsInfo{
+  /* height: 300px; */
+}
+.reviewsInfo{
+  /* height:300px; */
 }
 
 .eventList{
