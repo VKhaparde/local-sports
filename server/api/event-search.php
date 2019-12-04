@@ -11,13 +11,15 @@ if ($request['method'] === 'GET') {
           ON events.`sport-id`=sports.id
           JOIN `organizer-info`
           ON events.`organizer-id` = `organizer-info`.id
-          WHERE location.id=$locationId";
+          WHERE location.id=?";
   if(!isset($locationId)){
     throw new ApiError('location ID is required');
   }
-
-  $query = $link->query($sql);
-  $result = (mysqli_fetch_all($query, MYSQLI_ASSOC));
+  $preparedStatement = mysqli_prepare($link, $sql);
+  mysqli_stmt_bind_param($preparedStatement, 'i', $locationId);
+  mysqli_stmt_execute($preparedStatement);
+  $preparedResult = mysqli_stmt_get_result($preparedStatement);
+  $result = (mysqli_fetch_all($preparedResult, MYSQLI_ASSOC));
   $response['body'] = $result;
   send($response);
 }
