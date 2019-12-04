@@ -4,7 +4,7 @@ import Header from './header';
 import Footer from './footer';
 import Search from './search';
 import LikedEventsList from './liked-events-list';
-// import EventDetails from './event-details';
+import EventDetails from './event-details';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ export default class App extends React.Component {
 
   updateLikedEvents(id) {
     this.setState({
-      liked: this.state.push(id)
+      liked: this.state.liked.push(id)
     });
   }
 
@@ -42,10 +42,9 @@ export default class App extends React.Component {
           <Header />
           <Switch>
 
-            <Route path='/search' exact
-              render={() =>
-                <Search
-                  likedEventsCallback={id => this.updateLikedEvents(id)}/>} />
+            <Route path='/search' exact render={() =>
+              <Search
+                likedEventsCallback={id => this.updateLikedEvents(id)}/>} />
 
             <Route path='/likedEvents' exact
               render={() => <LikedEventsList {...this.state.liked}/>} />
@@ -53,12 +52,10 @@ export default class App extends React.Component {
             <Route path='/settings' exact
               render={() => <EventDetails />} />
 
-
             {/* <Route path={'/eventid:eventId'} exact
               component={() => <EventInfo props={this.state} />} /> */}
 
           </Switch>
-
           <Footer />
         </div>
       </Router>
