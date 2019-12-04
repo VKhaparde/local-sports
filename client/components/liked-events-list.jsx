@@ -8,11 +8,10 @@ const eventInfo = [
 ];
 
 class LikedEventsList extends React.Component {
-  // constructor(props) {
-  //   // super(props);
-  //   // console.log(props);
-  //   // this console should show an array of liked events instead of eventInfo
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
   // componentDidMount() {
   // fetch event data

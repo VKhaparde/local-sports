@@ -1,13 +1,14 @@
 import React from 'react';
-import Favorites from './favorites';
 
 class GoogleMap extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: []
+      events: [],
+      view: 'map'
     };
     this.googleMapRef = React.createRef();
+    this.markers = [];
     this.GOOGLE_MAP_API_KEY = 'AIzaSyD3QCxuw - dLr9u23x2dU7BJXmU4PLso5vY';
 
     this.createMarker = this.createMarker.bind(this);
@@ -28,12 +29,11 @@ class GoogleMap extends React.Component {
       this.googleMap = this.createGoogleMap();
       this.createMarker();
     }
-
   }
 
   createGoogleMap() {
     return new window.google.maps.Map(this.googleMapRef.current, {
-      zoom: 11,
+      zoom: 12,
       center: {
         lat: 33.657567,
         lng: -117.83154
@@ -42,24 +42,20 @@ class GoogleMap extends React.Component {
     });
   }
 
-  sportSearch(sport) {
-    fetch(`/api/sport-search? sport=${sport}`)
-      .then(response => response.json())
-      .then(data => this.setState({
-        events: data
-      }))
-      .catch(error => console.error('Error', error));
-
+  componentDidUpdate() {
+    this.markers.map(marker => marker.setMap(null));
+    this.markers.length = 0;
     this.createMarker();
   }
 
   createMarker() {
-    this.state.events.map(event => {
+    this.props.events.events.map(event => {
       const marker = new window.google.maps.Marker({
         position: { lat: event.lat, lng: -event.lng },
         map: this.googleMap,
         id: event.id
       });
+      this.markers.push(marker);
       marker.addListener('click', () => {
         this.googleMap.setCenter(marker.getPosition());
         this.props.callback(marker.id);
@@ -74,10 +70,7 @@ class GoogleMap extends React.Component {
           ref={this.googleMapRef}
           style={{ height: '100%' }}
           id="google-map"
-          className="card-panel white map-holder">
-        </div>
-        <Favorites events={this.state}
-          callback={sport => this.sportSearch(sport)} />
+          className="card-panel white map-holder" />
       </div>
     );
   }
