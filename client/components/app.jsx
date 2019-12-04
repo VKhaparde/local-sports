@@ -3,6 +3,7 @@ import React from 'react';
 import Header from './header';
 import Footer from './footer';
 import Search from './search';
+import CurrentSettings from './settings';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LikedEvents from './LikedEvents';
 
@@ -37,10 +38,13 @@ export default class App extends React.Component {
           <Switch>
 
             <Route path='/search' exact
-              component={() => <Search props={this.state.search} />}/>
+              component={() => <Search props={this.state.search} />} />
 
             <Route path='/likedEvents' exact
               component={() => <LikedEvents />} />
+
+            <Route path='/currentSettings' exact
+              component={() => <CurrentSettings />} />
 
             {/* <Route path={'/eventid:eventId'} exact
               component={() => <EventInfo props={this.state} />} /> */}

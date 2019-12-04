@@ -75,7 +75,7 @@ button:focus{
   border:4px solid teal;
   outline: none;
 }
-.outerSearchDiv{
+.outerSearchDiv .outerSettingsDiv{
 height:10vh;
 background-color: white;
 text-align:center;
@@ -114,7 +114,7 @@ background-color:white;
 height:75px;
 }
 
-.eventDetails{
+.eventDetails {
   position: absolute;
   height: 250px;
   width:95%;
@@ -131,9 +131,36 @@ height:75px;
   width:100%;
  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
  padding:0;
-
 }
 .details, .reviews{
+  height:20%;
+  width:100%;
+  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  padding:10px;
+}
+
+.twoThirdsScreenSectionContainer {
+  position: absolute;
+  height: 250px;
+  width:95%;
+  bottom: 16%;
+  background-color: white;
+  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.twoThirdsScreenTopBanner {
+  height:60%;
+  width:100%;
+  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
+  padding:0;
+}
+
+.twoThirdsScreenBottomBanner {
   height:20%;
   width:100%;
   box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
