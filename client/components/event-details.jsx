@@ -53,7 +53,8 @@ class EventDetails extends React.Component {
     if (this.state.isDetailsClicked) {
       return (
         <div className="eventDetails d-flex flex-column m-2">
-          <EventInfo info={this.props}/>
+          <EventInfo info={this.props}
+            toggleView={() => this.props.toggleView()}/>
           <div className="details" onClick={this.handleClickDetails}>Details
             <div className="detailsInfo font-weight-normal">
               <div className="d-flex justify-content-between">
@@ -80,7 +81,8 @@ class EventDetails extends React.Component {
     } else if (this.state.isReviewsClicked) {
       return (
         <div className="eventDetails d-flex flex-column m-2">
-          <EventInfo info={this.props}/>
+          <EventInfo info={this.props}
+            toggleView={() => this.props.toggleView()}/>
           <div className="details" onClick={this.handleClickDetails}>Details
           </div>
           <div className="reviews" onClick={this.handleClickReviews}>Reviews
@@ -111,7 +113,7 @@ function EventInfo(props) {
       </div>
       <div className="d-flex justify-content-between mt-1 h4">
         <div>{props.info.events[0]['event-day']}</div>
-        <div className='rating'>Rating</div>
+        <div className='rating'></div>
       </div>
       <div className="d-flex justify-content-between mt-1">
         <div>{props.info.events[0].name}</div>
