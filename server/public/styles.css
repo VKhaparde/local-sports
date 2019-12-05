@@ -156,10 +156,10 @@ height:75px;
 }
 
 .detailsInfo{
-
+/* font-family: 'Oswald', sans-serif; */
 }
 .reviewsInfo{
-
+/* font-family: 'Oswald', sans-serif; */
 }
 
 .eventList{
@@ -203,4 +203,12 @@ height:75px;
 
 .eventLocation{
   bottom: 0;
+}
+.rating{
+  height: 30px;
+  width: 90px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-bottom: 3vh;
+  background-image: url("./images/5stars.png");
 }

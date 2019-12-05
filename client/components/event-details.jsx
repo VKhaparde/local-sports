@@ -25,6 +25,29 @@ class EventDetails extends React.Component {
     });
   }
 
+  displayRating(ratingNum) {
+    const rating = parseFloat(ratingNum);
+    let backgroundImageUrl;
+    switch (rating) {
+      case 5:
+        backgroundImageUrl = '';
+        break;
+      case 4.5:
+        backgroundImageUrl = 'local-sports-leagues/assets/4.5stars.png';
+        break;
+      case 4:
+        backgroundImageUrl = 'local-sports-leagues/assets/4stars.png';
+        break;
+      case 3.5:
+        backgroundImageUrl = 'local-sports-leagues/assets/3.5stars.png';
+        break;
+      case 3:
+        backgroundImageUrl = 'local-sports-leagues/assets/3stars.png';
+        break;
+    }
+    return backgroundImageUrl;
+  }
+
   render() {
     if (this.state.isDetailsClicked) {
       return (
@@ -94,8 +117,14 @@ function EventInfo(props) {
       </div>
       <div className="d-flex justify-content-between">
         <div>Rating:</div>
-        <div></div>
+        <div className="rating"></div>
       </div>
     </div>
   );
 }
+
+// function Rating(props) {
+//   return (
+//     <div></div>
+//   );
+// }
