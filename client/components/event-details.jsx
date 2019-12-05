@@ -89,10 +89,10 @@ class EventDetails extends React.Component {
         </div >
       );
     }
-
     return (
       <div className="eventDetails d-flex flex-column m-2">
-        <EventInfo info={this.props} />
+        <EventInfo info={this.props}
+          toggleView = {() => this.props.toggleView()} />
         <div className="details" onClick={this.handleClickDetails}>Details
         </div>
         <div className="reviews" onClick={this.handleClickReviews}>Reviews
@@ -116,17 +116,10 @@ function EventInfo(props) {
       <div className="d-flex justify-content-between mt-1">
         <div>{props.info.events[0].name}</div>
         <button className="backButton"
-          onClick={() => props.callback()}>
+          onClick={() => props.toggleView()}>
           <i className="fas fa-arrow-left fa-3x"></i>
         </button>
-      </div>
       </div>
     </div>
   );
 }
-
-// function Rating(props) {
-//   return (
-//     <div></div>
-//   );
-// }

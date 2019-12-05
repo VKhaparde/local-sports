@@ -17,13 +17,12 @@ class LikedEventsList extends React.Component {
   // componentDidMount() {
   // fetch event data
   // }
-
   render() {
     return (
       <div>
         <div className="eventList d-flex flex-column m-3">
           <div className="section-title headers-font-ubuntu">Liked Events</div>
-          <div className="LikedEvents">
+          <div className="likedEvents">
             {
               eventInfo.map(event => {
                 return (
@@ -42,5 +41,4 @@ class LikedEventsList extends React.Component {
     );
   }
 }
-
 export default LikedEventsList;
