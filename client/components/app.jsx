@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
+import Welcome from './welcome';
 import Search from './search';
 import LikedEventsList from './liked-events-list';
 import EventDetails from './event-details';
@@ -41,6 +42,9 @@ export default class App extends React.Component {
         <div className="app">
           <Header />
           <Switch>
+
+            <Route path='/' exact
+              render={() => <Welcome />} />
 
             <Route path='/search' exact
               render={() =>
