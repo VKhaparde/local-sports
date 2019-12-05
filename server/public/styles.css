@@ -155,7 +155,6 @@ height:75px;
   padding:10px;
 }
 
-<<<<<<< HEAD
 .twoThirdsScreenSectionContainer {
   position: absolute;
   height: 250px;
@@ -182,13 +181,13 @@ height:75px;
   border-radius: 3px;
   transform: matrix(1, 0, 0, 1, 0, 0);
   padding:10px;
-=======
+}
+
 .detailsInfo{
   /* height: 300px; */
 }
 .reviewsInfo{
   /* height:300px; */
->>>>>>> 18d658a43f9785e2bade7862f9ef14f629aaf64d
 }
 
 .eventList{
