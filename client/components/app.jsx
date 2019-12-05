@@ -4,10 +4,8 @@ import Header from './header';
 import Footer from './footer';
 import Welcome from './welcome';
 import Search from './search';
-import CurrentSettings from './settings';
-// import LikedEvents from './LikedEvents';
+import Settings from './settings';
 import LikedEventsList from './liked-events-list';
-import EventDetails from './event-details';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -57,13 +55,7 @@ export default class App extends React.Component {
               render={() => <LikedEventsList {...this.state.liked} />} />
 
             <Route path='/settings' exact
-              render={() => <EventDetails />} />
-
-            <Route path='/currentSettings' exact
-              render={() => <CurrentSettings />} />
-
-            {/* <Route path={'/eventid:eventId'} exact
-              component={() => <EventInfo props={this.state} />} /> */}
+              render={() => <Settings />} />
 
           </Switch>
           <Footer />

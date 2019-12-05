@@ -1,9 +1,29 @@
 import React from 'react';
-// import Header from './header';
-// import Footer from './footer';
 
-function CurrentSettings(props) {
+function Settings(props) {
   return (
+    <div className="eventList mt-3 container">
+      <div className="eventListItem rounded m-2">
+        <div className="eventListTitle text-center m-2 sticky-top">
+          <h2>Schedule</h2>
+        </div>
+        <div className="ml-2">
+          <h4>Monday</h4>
+          <h4>Tuesday</h4>
+          <h4>Wednesday</h4>
+          <h4>Thursday</h4>
+          <h4>Friday</h4>
+          <h4>Saturday</h4>
+          <h4>Sunday</h4>
+        </div>
+        <div className="eventListTitle text-center m-2 sticky-top">
+          <h2>Location</h2>
+        </div>
+      </div>
+      <i className="fas fa-caret-square-left"></i>Back
+    </div>
+  );
+
   // <div className="twoThirdsScreenSectionContainer p-0 col-12">
   //   <div className="d-flex justify-content-center font-weight-bold"><h2>Settings</h2></div>
   // <div className="twoThirdsScreenBottomBanner">Schedule</div>
@@ -48,27 +68,6 @@ function CurrentSettings(props) {
   //   </div >
   // </div >
 
-    <div className="eventList mt-3 container">
-      <div className="eventListItem rounded m-2">
-        <div className="eventListTitle text-center m-2 sticky-top">
-          <h2>Schedule</h2>
-        </div>
-        <div className="ml-2">
-          <h4>Monday</h4>
-          <h4>Tuesday</h4>
-          <h4>Wednesday</h4>
-          <h4>Thursday</h4>
-          <h4>Friday</h4>
-          <h4>Saturday</h4>
-          <h4>Sunday</h4>
-        </div>
-        <div className="eventListTitle text-center m-2 sticky-top">
-          <h2>Location</h2>
-        </div>
-      </div>
-      <i className="fas fa-caret-square-left"></i>Back
-    </div>
-  );
 }
 
-export default CurrentSettings;
+export default Settings;
