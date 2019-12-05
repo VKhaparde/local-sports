@@ -3,7 +3,7 @@
 if ($request['method'] === 'GET') {
   $locationId = $request['query']['id'];
   $link = get_db_link();
-  $sql = "SELECT name, address, `organizer-name`, phone, email, `event-description`, `event-name`, `event-day`, `event-id`
+  $sql = "SELECT location.name, address, `organizer-name`, phone, email, `event-description`, `event-name`, `event-day`, `event-id`
           FROM events
           JOIN `location`
           ON events.`location-id`=location.id

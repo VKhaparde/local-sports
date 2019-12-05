@@ -19,7 +19,7 @@ export default class App extends React.Component {
 
   updateLikedEvents(id) {
     this.setState({
-      liked: this.state.push(id)
+      liked: this.state.liked.push(id)
     });
   }
 
@@ -62,10 +62,9 @@ export default class App extends React.Component {
               component={() => <EventInfo props={this.state} />} /> */}
 
           </Switch>
-
           <Footer />
         </div>
-      </Router>
+      </Router >
     );
   }
 }

@@ -1,33 +1,101 @@
 import React from 'react';
-function EventDetails(props) {
-  return (
-    <div className="eventDetails d-flex flex-column m-2">
-      <div className="eventInfo d-flex flex-column overflow-hidden p-2">
-        <div className="d-flex justify-content-between font-weight-bold">Soccer Co-Ed
-          <i className="far fa-heart fa-2x"
-            onClick={id => props.callback(props.id)}></i>
-        </div>
-        <div className="d-flex justify-content-between">
-          <div>Distance:</div>
-          <div>.3 miles away</div>
-        </div>
-        <div className="d-flex justify-content-between">
-          <div>Type:</div>
-          <div>Open Pick Up</div>
-        </div>
-        <div className="d-flex justify-content-between">
-          <div>Rating:</div>
-          <div></div>
-        </div>
-      </div>
-      <details>
-        <summary className="details">Details</summary>
-      </details>
-      <details>
-        <summary className="reviews">Summary</summary>
-      </details>
-    </div>
-  );
 
+class EventDetails extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isDetailsClicked: false,
+      isReviewsClicked: false
+    };
+    this.handleClickDetails = this.handleClickDetails.bind(this);
+    this.handleClickReviews = this.handleClickReviews.bind(this);
+  }
+
+  handleClickDetails(event) {
+    this.setState({
+      isDetailsClicked: !this.state.isDetailsClicked,
+      isReviewsClicked: false
+    });
+  }
+
+  handleClickReviews(event) {
+    this.setState({
+      isReviewsClicked: !this.state.isReviewsClicked,
+      isDetailsClicked: false
+    });
+  }
+
+  render() {
+    if (this.state.isDetailsClicked) {
+      return (
+        <div className="eventDetails d-flex flex-column m-2">
+          <EventInfo info={this.props}/>
+          <div className="details font-weight-bold" onClick={this.handleClickDetails}>Details
+            <div className="detailsInfo font-weight-normal">
+              <div className="d-flex justify-content-between">
+                <div>Organizer:</div>
+                <div>{this.props.events[0]['organizer-name']}</div>
+              </div>
+              <div className="d-flex justify-content-between">
+                <div>Email:</div>
+                <div>{this.props.events[0].email}</div>
+              </div>
+              <div className="d-flex justify-content-between">
+                <div>Phone:</div>
+                <div>{this.props.events[0].phone}</div>
+              </div>
+              <div className="d-flex justify-content-between">
+                <div>{this.props.events[0]['event-description']}</div>
+              </div>
+            </div>
+          </div>
+          <div className="reviews font-weight-bold" onClick={this.handleClickReviews}>Reviews
+          </div>
+        </div >
+      );
+    } else if (this.state.isReviewsClicked) {
+      return (
+        <div className="eventDetails d-flex flex-column m-2">
+          <EventInfo info={this.props}/>
+          <div className="details font-weight-bold" onClick={this.handleClickDetails}>Details
+          </div>
+          <div className="reviews font-weight-bold" onClick={this.handleClickReviews}>Reviews
+            <div className="reviewsInfo font-weight-normal">reviews about the event</div>
+          </div>
+        </div >
+      );
+    }
+
+    return (
+      <div className="eventDetails d-flex flex-column m-2">
+        <EventInfo info={this.props} />
+        <div className="details font-weight-bold" onClick={this.handleClickDetails}>Details
+
+        </div>
+        <div className="reviews font-weight-bold" onClick={this.handleClickReviews}>Reviews
+        </div>
+      </div >
+    );
+  }
 }
 export default EventDetails;
+
+function EventInfo(props) {
+  return (
+    <div className="eventInfo d-flex flex-column overflow-hidden p-2">
+      <div className="d-flex justify-content-between font-weight-bold">{props.info.events[0]['event-name']}
+        <i className="far fa-heart fa-2x"></i>
+      </div>
+      <div className="d-flex justify-content-between">
+        <div>{props.info.events[0].name}</div>
+      </div>
+      <div className="d-flex justify-content-between">
+        <div>{props.info.events[0]['event-day']}</div>
+      </div>
+      <div className="d-flex justify-content-between">
+        <div>Rating:</div>
+        <div></div>
+      </div>
+    </div>
+  );
+}
