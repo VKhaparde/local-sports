@@ -55,12 +55,19 @@ class GoogleMap extends React.Component {
         map: this.googleMap,
         id: event.id
       });
+
       this.markers.push(marker);
+
       marker.addListener('click', () => {
+        this.googleMap.setZoom(17);
         this.googleMap.setCenter(marker.getPosition());
         this.props.callback(marker.id);
       });
     });
+  }
+
+  handleResetZoom() {
+    // this.googleMap.setZoom(12);
   }
 
   render() {

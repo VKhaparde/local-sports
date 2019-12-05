@@ -18,8 +18,7 @@ class Search extends React.Component {
     this.detailSearch = this.detailSearch.bind(this);
   }
 
-  componentDidMount() {
-
+  componentDidUpdate() {
   }
 
   sportSearch(sport) {
@@ -27,7 +26,7 @@ class Search extends React.Component {
       .then(response => response.json())
       .then(data => this.setState({
         events: data
-      })) // this.createMarker needs to get passed down for GoogleMap
+      }))
       .catch(error => console.error('Error', error));
   }
 
