@@ -17,7 +17,6 @@ class EventList extends React.Component {
         </div>
       );
     } else {
-
       if (this.props.events.events[0]) {
         var sportType = this.props.events.events[0]['sport-type'];
         return (

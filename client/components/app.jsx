@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
 import Search from './search';
+import CurrentSettings from './settings';
+// import LikedEvents from './LikedEvents';
 import LikedEventsList from './liked-events-list';
 import EventDetails from './event-details';
 
@@ -53,13 +55,16 @@ export default class App extends React.Component {
             <Route path='/settings' exact
               render={() => <EventDetails />} />
 
+            <Route path='/currentSettings' exact
+              render={() => <CurrentSettings />} />
+
             {/* <Route path={'/eventid:eventId'} exact
               component={() => <EventInfo props={this.state} />} /> */}
 
           </Switch>
           <Footer />
         </div>
-      </Router>
+      </Router >
     );
   }
 }
