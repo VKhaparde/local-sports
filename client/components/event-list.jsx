@@ -20,27 +20,27 @@ class EventList extends React.Component {
 
       if (this.props.events.events[0]) {
         var sportType = this.props.events.events[0]['sport-type'];
-      }
-      return (
-        <div className="eventList mt-3">
-          <h1 className="eventListTitle shadow-lg text-center pt-4 sticky-top bg-white">{sportType}</h1>
-          <div className="d-flex flex-column overflow-hidden m-2">
-            {
-              this.props.events.events.map((currentVal, index) => {
-                return (
-                  <EventListItem
-                    key={index}
-                    date={currentVal['event-day']}
-                    name={currentVal['event-name']}
-                    locationName={currentVal.name}
-                    id = {currentVal.id}
-                    callback={id => this.props.onClick(id)} />
-                );
-              })
-            }
+        return (
+          <div className="eventList mt-3">
+            <h1 className="eventListTitle shadow-lg text-center pt-4 sticky-top bg-white">{sportType}</h1>
+            <div className="d-flex flex-column overflow-hidden m-2">
+              {
+                this.props.events.events.map((currentVal, index) => {
+                  return (
+                    <EventListItem
+                      key={index}
+                      date={currentVal['event-day']}
+                      name={currentVal['event-name']}
+                      locationName={currentVal.name}
+                      id={currentVal.id}
+                      callback={id => this.props.onClick(id)} />
+                  );
+                })
+              }
+            </div>
           </div>
-        </div>
-      );
+        );
+      }
     }
   }
 }

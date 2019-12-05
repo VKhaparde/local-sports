@@ -42,12 +42,13 @@ export default class App extends React.Component {
           <Header />
           <Switch>
 
-            <Route path='/search' exact render={() =>
-              <Search
-                likedEventsCallback={id => this.updateLikedEvents(id)}/>} />
+            <Route path='/search' exact
+              render={() =>
+                <Search
+                  likedEventsCallback={id => this.updateLikedEvents(id)} />} />
 
             <Route path='/likedEvents' exact
-              render={() => <LikedEventsList {...this.state.liked}/>} />
+              render={() => <LikedEventsList {...this.state.liked} />} />
 
             <Route path='/settings' exact
               render={() => <EventDetails />} />
