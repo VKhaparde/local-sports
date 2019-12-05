@@ -54,11 +54,9 @@ class Search extends React.Component {
   }
 
   toggleDetailView() {
-    // will be passed as a prop to EventDetails component to have a back button
-    // console.log('clicked')
-    // this.setState({
-    //   eventInfoDisplay: !this.state.eventInfoDisplay
-    // })
+    this.setState({
+      eventInfoDisplay: !this.state.eventInfoDisplay
+    });
   }
 
   render() {
@@ -68,7 +66,8 @@ class Search extends React.Component {
           <GoogleMap events={this.state}
             callback={sport => this.detailSearch(sport)} />
           <EventDetails events={this.state.eventInfo}
-            callback={id => this.props.likedEventsCallback(id)}/>
+            callback={id => this.props.likedEventsCallback(id)}
+            toggleView={() => this.toggleDetailView()}/>
           <Favorites
             events={this.state}
             callback={sport => this.sportSearch(sport)}
