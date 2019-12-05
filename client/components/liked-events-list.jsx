@@ -4,7 +4,8 @@ import LikedEvent from './liked-event';
 const eventInfo = [
   { id: 1, title: 'Soccer Co-Ed', location: 'Irvine Great Park', rating: 5, distance: 0.3 },
   { id: 2, title: 'Basketball 5-on-5', location: 'Los Olivos Community Park', rating: 8, distance: 1.3 },
-  { id: 3, title: 'Baseball Intermediate', location: 'Sweet Shade Park', rating: 7, distance: 0.3 }
+  { id: 3, title: 'Baseball Intermediate', location: 'Sweet Shade Park', rating: 7, distance: 0.3 },
+  { id: 4, title: 'Basketball Intermediate', location: 'Los Olivos Community Park', rating: 7, distance: 0.3 }
 ];
 
 class LikedEventsList extends React.Component {
@@ -20,7 +21,7 @@ class LikedEventsList extends React.Component {
   render() {
     return (
       <div>
-        <div className="eventList m-2 p-2 d-flex flex-column mx-auto">
+        <div className="eventList d-flex flex-column m-3">
           <div className="section-title headers-font-ubuntu">Liked Events</div>
           <div className="LikedEvents">
             {
