@@ -30,7 +30,7 @@ class EventDetails extends React.Component {
       return (
         <div className="eventDetails d-flex flex-column m-2">
           <EventInfo info={this.props}/>
-          <div className="details font-weight-bold" onClick={this.handleClickDetails}>Details
+          <div className="details" onClick={this.handleClickDetails}>Details
             <div className="detailsInfo font-weight-normal">
               <div className="d-flex justify-content-between">
                 <div>Organizer:</div>
@@ -49,7 +49,7 @@ class EventDetails extends React.Component {
               </div>
             </div>
           </div>
-          <div className="reviews font-weight-bold" onClick={this.handleClickReviews}>Reviews
+          <div className="reviews" onClick={this.handleClickReviews}>Reviews
           </div>
         </div >
       );
@@ -57,9 +57,9 @@ class EventDetails extends React.Component {
       return (
         <div className="eventDetails d-flex flex-column m-2">
           <EventInfo info={this.props}/>
-          <div className="details font-weight-bold" onClick={this.handleClickDetails}>Details
+          <div className="details" onClick={this.handleClickDetails}>Details
           </div>
-          <div className="reviews font-weight-bold" onClick={this.handleClickReviews}>Reviews
+          <div className="reviews" onClick={this.handleClickReviews}>Reviews
             <div className="reviewsInfo font-weight-normal">reviews about the event</div>
           </div>
         </div >
@@ -69,10 +69,10 @@ class EventDetails extends React.Component {
     return (
       <div className="eventDetails d-flex flex-column m-2">
         <EventInfo info={this.props} />
-        <div className="details font-weight-bold" onClick={this.handleClickDetails}>Details
+        <div className="details" onClick={this.handleClickDetails}>Details
 
         </div>
-        <div className="reviews font-weight-bold" onClick={this.handleClickReviews}>Reviews
+        <div className="reviews" onClick={this.handleClickReviews}>Reviews
         </div>
       </div >
     );
