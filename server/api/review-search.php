@@ -3,7 +3,7 @@
 if ($request['method'] === 'GET') {
   $locationId = $request['query']['id'];
   $link = get_db_link();
-  $sql = "SELECT  `review-description`, `review-rating`, username, `review-average`
+  $sql = "SELECT  `review-description`, `review-rating`, username, `review-average`, reviews.id
           FROM `reviews`
           JOIN location
           ON reviews.`location-id` = location.id
