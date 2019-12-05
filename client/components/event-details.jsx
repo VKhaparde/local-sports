@@ -7,6 +7,7 @@ class EventDetails extends React.Component {
       isDetailsClicked: false,
       isReviewsClicked: false
     };
+
     this.handleClickDetails = this.handleClickDetails.bind(this);
     this.handleClickReviews = this.handleClickReviews.bind(this);
   }
@@ -93,7 +94,6 @@ class EventDetails extends React.Component {
       <div className="eventDetails d-flex flex-column m-2">
         <EventInfo info={this.props} />
         <div className="details" onClick={this.handleClickDetails}>Details
-
         </div>
         <div className="reviews" onClick={this.handleClickReviews}>Reviews
         </div>
@@ -106,18 +106,20 @@ export default EventDetails;
 function EventInfo(props) {
   return (
     <div className="eventInfo d-flex flex-column overflow-hidden p-2">
-      <div className="d-flex justify-content-between font-weight-bold">{props.info.events[0]['event-name']}
+      <div className="d-flex justify-content-between font-weight-bold h2 m-0">{props.info.events[0]['event-name']}
         <i className="far fa-heart fa-2x"></i>
       </div>
-      <div className="d-flex justify-content-between">
-        <div>{props.info.events[0].name}</div>
-      </div>
-      <div className="d-flex justify-content-between">
+      <div className="d-flex justify-content-between mt-1 h4">
         <div>{props.info.events[0]['event-day']}</div>
+        <div className='rating'>Rating</div>
       </div>
-      <div className="d-flex justify-content-between">
-        <div>Rating:</div>
-        <div className="rating"></div>
+      <div className="d-flex justify-content-between mt-1">
+        <div>{props.info.events[0].name}</div>
+        <button className="backButton"
+          onClick={() => props.callback()}>
+          <i className="fas fa-arrow-left fa-3x"></i>
+        </button>
+      </div>
       </div>
     </div>
   );
