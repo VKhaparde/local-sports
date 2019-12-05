@@ -17,6 +17,7 @@ class LikedEventsList extends React.Component {
   // componentDidMount() {
   // fetch event data
   // }
+
   render() {
     return (
       <div>
