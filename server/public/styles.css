@@ -1,3 +1,7 @@
+body{
+  font-family: 'Oswald', sans-serif;
+}
+
 .app{
   height: 100%;
   width: 100%;
@@ -15,7 +19,7 @@
   background-color: #2a9d8f;
   height:15vh;
   text-align: center;
-  font-size: 4rem;
+  font-size: 3rem;
   color:white;
   text-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -152,6 +156,7 @@ height:75px;
 }
 
 .details, .reviews{
+  /* font-family:'Ubuntu Condensed', sans-serif; */
   height:20%;
   width:100%;
   box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
@@ -186,6 +191,13 @@ height:75px;
   border-radius: 3px;
   transform: matrix(1, 0, 0, 1, 0, 0);
   padding:10px;
+}
+
+.detailsInfo{
+/* font-family: 'Oswald', sans-serif; */
+}
+.reviewsInfo{
+/* font-family: 'Oswald', sans-serif; */
 }
 
 .eventList{
@@ -231,6 +243,13 @@ height:75px;
 .eventLocation{
   bottom: 0;
 }
+.rating{
+  height: 30px;
+  width: 90px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-bottom: 3vh;
+  background-image: url("./images/5stars.png");
 
 /* LIKED EVENTS */
 
