@@ -23,7 +23,7 @@ class Search extends React.Component {
   }
 
   sportSearch(sport) {
-    fetch(`/api/sport-search? sport=${sport}`)
+    fetch(`/api/sport-search?sport=${sport}`)
       .then(response => response.json())
       .then(data => this.setState({
         events: data
@@ -32,7 +32,7 @@ class Search extends React.Component {
   }
 
   detailSearch(id) {
-    fetch(`/api/event-search? id=${id}`)
+    fetch(`/api/event-search?id=${id}`)
       .then(response => response.json())
       .then(data => this.setState({
         eventInfo: data,

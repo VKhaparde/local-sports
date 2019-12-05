@@ -4,7 +4,7 @@ import Header from './header';
 import Footer from './footer';
 import Search from './search';
 import LikedEventsList from './liked-events-list';
-// import EventDetails from './event-details';
+import EventDetails from './event-details';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -52,7 +52,6 @@ export default class App extends React.Component {
 
             <Route path='/settings' exact
               render={() => <EventDetails />} />
-
 
             {/* <Route path={'/eventid:eventId'} exact
               component={() => <EventInfo props={this.state} />} /> */}

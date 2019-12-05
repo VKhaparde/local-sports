@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class EventDetails extends React.Component {
   constructor(props) {
     super(props);
@@ -35,18 +34,18 @@ class EventDetails extends React.Component {
             <div className="detailsInfo font-weight-normal">
               <div className="d-flex justify-content-between">
                 <div>Organizer:</div>
-                <div>{this.props.eventInfo[0]['organizer-name']}</div>
+                <div>{this.props.events[0]['organizer-name']}</div>
               </div>
               <div className="d-flex justify-content-between">
                 <div>Email:</div>
-                <div>{this.props.eventInfo[0].email}</div>
+                <div>{this.props.events[0].email}</div>
               </div>
               <div className="d-flex justify-content-between">
                 <div>Phone:</div>
-                <div>{this.props.eventInfo[0].phone}</div>
+                <div>{this.props.events[0].phone}</div>
               </div>
               <div className="d-flex justify-content-between">
-                <div>{this.props.eventInfo[0]['event-description']}</div>
+                <div>{this.props.events[0]['event-description']}</div>
               </div>
             </div>
           </div>
@@ -84,14 +83,14 @@ export default EventDetails;
 function EventInfo(props) {
   return (
     <div className="eventInfo d-flex flex-column overflow-hidden p-2">
-      <div className="d-flex justify-content-between font-weight-bold">{props.info.eventInfo[0]['event-name']}
+      <div className="d-flex justify-content-between font-weight-bold">{props.info.events[0]['event-name']}
         <i className="far fa-heart fa-2x"></i>
       </div>
       <div className="d-flex justify-content-between">
-        <div>{props.info.eventInfo[0].name}</div>
+        <div>{props.info.events[0].name}</div>
       </div>
       <div className="d-flex justify-content-between">
-        <div>{props.info.eventInfo[0]['event-day']}</div>
+        <div>{props.info.events[0]['event-day']}</div>
       </div>
       <div className="d-flex justify-content-between">
         <div>Rating:</div>
