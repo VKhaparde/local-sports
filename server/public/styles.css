@@ -249,7 +249,7 @@ height:75px;
   background-size: contain;
   padding-bottom: 3vh;
   background-image: url("./images/5stars.png");
-
+}
 /* LIKED EVENTS */
 
 .liked-event-border {
@@ -288,4 +288,12 @@ height:75px;
   text-align: left;
   margin-left: 1rem;
     line-height: 1.5rem;
+}
+
+.reviewListItem{
+  border: 4px solid teal;
+  height: 125px;
+  overflow: scroll;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
