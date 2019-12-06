@@ -25,14 +25,14 @@ body{
 }
 
 .main{
-height:78vh;
+height:80vh;
 }
 
 .footer{
   height: 10vh;
   background-color:white;
   position: absolute;
-  bottom: 2%;
+  bottom: 0;
   border-top: 1.5px solid #cccccc;
 }
 
