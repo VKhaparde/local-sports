@@ -303,3 +303,10 @@ height:75px;
   background-color: #2a9d8f;
   color: white;
 }
+
+.settingsTitle {
+  border-bottom: 2px solid black;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2rem;
+}
