@@ -74,8 +74,6 @@ class EventDetails extends React.Component {
               </div>
             </div>
           </div>
-          {/* <div className="reviews" onClick={this.handleClickReviews}>Reviews
-          </div> */}
           <ReviewList onReviewsClick={this.handleClickReviews} eventId={this.props.events[0]['event-id']}
             isReviewsClicked = {this.state.isReviewsClicked} />
         </div >
@@ -87,9 +85,6 @@ class EventDetails extends React.Component {
             toggleView={() => this.props.toggleView()} />
           <div className="details" onClick={this.handleClickDetails}>Details
           </div>
-          {/* <div className="reviews" onClick={this.handleClickReviews}>Reviews
-            <div className="reviewsInfo font-weight-normal">reviews about the event</div>
-          </div> */}
           <ReviewList onReviewsClick = {this.handleClickReviews} eventId = {this.props.events[0]['event-id']}
             isReviewsClicked={this.state.isReviewsClicked}/>
         </div >
@@ -101,8 +96,6 @@ class EventDetails extends React.Component {
           toggleView={() => this.props.toggleView()} />
         <div className="details" onClick={this.handleClickDetails}>Details
         </div>
-        {/* <div className="reviews" onClick={this.handleClickReviews}>Reviews
-        </div> */}
         <ReviewList onReviewsClick={this.handleClickReviews} eventId={this.props.events[0]['event-id']}
           isReviewsClicked={this.state.isReviewsClicked} />
       </div >
@@ -124,7 +117,7 @@ function EventInfo(props) {
       <div className="d-flex justify-content-between mt-1">
         <div>{props.info.events[0].name}</div>
         <button className="backButton"
-          onClick={() => props.callback()}>
+          onClick={() => props.toggleView()}>
           <i className="fas fa-arrow-left fa-1.5x"></i>
         </button>
       </div>

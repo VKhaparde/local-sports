@@ -19,7 +19,7 @@ body{
   background-color: #2a9d8f;
   height:10vh;
   text-align: center;
-  font-size: 4rem;
+  font-size: 3rem;
   color:white;
   text-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -307,11 +307,18 @@ height:75px;
   font-size: 2rem;
 }
 
+.reviewList{
+  border: 4px solid black;
+  overflow:scroll;
+  /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25); */
+  border-radius: 20px;
+}
+
 .reviewListItem{
   border: 4px solid teal;
   height: 125px;
   overflow: scroll;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25); */
   border-radius: 10px;
 }
 
