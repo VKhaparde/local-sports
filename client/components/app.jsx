@@ -38,6 +38,10 @@ export default class App extends React.Component {
   searchLikedEvent(id) {
   }
 
+  updateSchedule(id) {
+    // console.log('clicked');
+  }
+
   render() {
     return (
       <Router>
@@ -61,7 +65,8 @@ export default class App extends React.Component {
                   searchLike={id => this.searchLikedEvent(id)} />} />
 
             <Route path='/settings' exact
-              render={() => <Settings />} />
+              render={() => <Settings
+                schedule={() => this.updateSchedule()}/>} />
 
           </Switch>
           <Footer />
