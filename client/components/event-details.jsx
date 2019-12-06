@@ -26,12 +26,36 @@ class EventDetails extends React.Component {
     });
   }
 
+  displayRating(ratingNum) {
+    const rating = parseFloat(ratingNum);
+    let backgroundImageUrl;
+    switch (rating) {
+      case 5:
+        backgroundImageUrl = '';
+        break;
+      case 4.5:
+        backgroundImageUrl = 'local-sports-leagues/assets/4.5stars.png';
+        break;
+      case 4:
+        backgroundImageUrl = 'local-sports-leagues/assets/4stars.png';
+        break;
+      case 3.5:
+        backgroundImageUrl = 'local-sports-leagues/assets/3.5stars.png';
+        break;
+      case 3:
+        backgroundImageUrl = 'local-sports-leagues/assets/3stars.png';
+        break;
+    }
+    return backgroundImageUrl;
+  }
+
   render() {
     if (this.state.isDetailsClicked) {
       return (
         <div className="eventDetails d-flex flex-column m-2">
-          <EventInfo info={this.props} />
-          <div className="details font-weight-bold" onClick={this.handleClickDetails}>Details
+          <EventInfo info={this.props}
+            toggleView={() => this.props.toggleView()} />
+          <div className="details" onClick={this.handleClickDetails}>Details
             <div className="detailsInfo font-weight-normal">
               <div className="d-flex justify-content-between">
                 <div>Organizer:</div>
@@ -50,31 +74,30 @@ class EventDetails extends React.Component {
               </div>
             </div>
           </div>
-          <div className="reviews font-weight-bold" onClick={this.handleClickReviews}>Reviews
+          <div className="reviews" onClick={this.handleClickReviews}>Reviews
           </div>
         </div >
       );
     } else if (this.state.isReviewsClicked) {
       return (
         <div className="eventDetails d-flex flex-column m-2">
-          <EventInfo info={this.props} />
-          <div className="details font-weight-bold" onClick={this.handleClickDetails}>Details
+          <EventInfo info={this.props}
+            toggleView={() => this.props.toggleView()} />
+          <div className="details" onClick={this.handleClickDetails}>Details
           </div>
-          <div className="reviews font-weight-bold" onClick={this.handleClickReviews}>Reviews
+          <div className="reviews" onClick={this.handleClickReviews}>Reviews
             <div className="reviewsInfo font-weight-normal">reviews about the event</div>
           </div>
         </div >
       );
     }
-
     return (
       <div className="eventDetails d-flex flex-column m-2">
         <EventInfo info={this.props}
-          callback={() => this.props.toggleView()}/>
-        <div className="details font-weight-bold" onClick={this.handleClickDetails}>Details
-
+          toggleView={() => this.props.toggleView()} />
+        <div className="details" onClick={this.handleClickDetails}>Details
         </div>
-        <div className="reviews font-weight-bold" onClick={this.handleClickReviews}>Reviews
+        <div className="reviews" onClick={this.handleClickReviews}>Reviews
         </div>
       </div >
     );
@@ -90,16 +113,14 @@ function EventInfo(props) {
       </div>
       <div className="d-flex justify-content-between mt-1 h4">
         <div>{props.info.events[0]['event-day']}</div>
-        <div>5 Star</div>
+        <div className='rating'></div>
       </div>
       <div className="d-flex justify-content-between mt-1">
         <div>{props.info.events[0].name}</div>
         <button className="backButton"
-          onClick={() => props.callback()}>
+          onClick={() => props.toggleView()}>
           <i className="fas fa-arrow-left fa-3x"></i>
         </button>
-      </div>
-      <div className="d-flex justify-content-end">
       </div>
     </div>
   );
