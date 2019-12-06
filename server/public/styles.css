@@ -117,7 +117,7 @@ height:75px;
 
 .eventDetails {
   position: absolute;
-  top: 15%;
+  top: 10%;
   z-index: 1;
 
   top:15%;
@@ -318,4 +318,14 @@ height:75px;
   overflow: scroll;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+}
+
+.not-active-day{
+  z-index: 1;
+  background-color: teal;
+  color: white;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 2px solid #2a9d8f;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
