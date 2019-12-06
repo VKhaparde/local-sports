@@ -20,7 +20,7 @@ class LikedEvent extends React.Component {
     // const favorited = this.state.favorited; same as line 20
     const { favorited } = this.state;
     return (
-      <div className="liked-event-border p-2 m-2">
+      <div className="liked-event-border w-80 p-2 m-3 h-20">
         <div className="d-flex justify-content-between">
           <div className="liked-event-title text-wrap headers-font-ubuntu">{this.props.title}</div>
           <button id={favorited ? 'liked-event-heart' : 'unliked-heart-event'} onClick={this.handleEventClick}>

@@ -26,34 +26,45 @@ class Welcome extends React.Component {
 
   render() {
     return (
-      <div className="eventList mt-3">
-        <h1 className="eventListTitle text-center p-2 sticky-top bg-white">Welcome</h1>
-        <h2 className="text-center mt-4">Sign in</h2>
-        <form className='form container text-center mt-5'
+      <div className="eventList mt-3 d-flex flex-column text-center">
+        <h1 className="eventListTitle mt-2 p-3 headers-font-ubuntu">Welcome</h1>
+        <form className='form container'
           onClick={this.submitForm}>
-          <div className="h3 text-center"> UserName </div>
-          <label className=''>
-            <input className='text-center'
+          <div className="liked-event-border p-1 mt-5">
+            {/* <div className="h3 headers-font-ubuntu">Username</div>
+            <label className=''> */}
+            <input className='block-text-font-oswald w-100 p-1 pl-2'
               name='username'
               type='text'
-              placeholder='OldManJenkins'
+              placeholder='Username'
               value={this.state.username}
               onChange={this.updateField}></input>
-          </label>
-          <div className="h3 text-center"> Password </div>
-          <label className=''>
-            <input className='text-center'
+            {/* </label> */}
+          </div>
+          <div className="liked-event-border p-1 mt-4">
+            {/* <div className="h3 text-center headers-font-ubuntu"> Password </div>
+            <label className=''> */}
+            <input className='block-text-font-oswald w-100 p-1 pl-2'
               name='password'
               type='text'
-              placeholder='Werd to Ur mother'
+              placeholder='Password'
               value={this.state.password}
               onChange={this.updateField}></input>
-          </label>
-          <div className='button mt-3'>
-            <button className='btn btn-primary block'>Submit</button>
+            {/* </label> */}
+          </div>
+          <div className='button mt-4'>
+            <button className='btn btn-primary block submit-button headers-font-ubuntu'>Sign In</button>
+          </div>
+          <div className='button mt-4'>
+            <button className='btn btn-primary block headers-font-ubuntu create-account-button'>Create an Account</button>
+          </div>
+          <div className='button mt-4'>
+            <button className='btn btn-primary block headers-font-ubuntu skip-button'>Skip
+              <i className="fas fa-chevron-right ml-2"></i>
+            </button>
           </div>
         </form >
-      </div >
+      </div>
     );
   }
 }

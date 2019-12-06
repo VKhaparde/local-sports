@@ -5,7 +5,6 @@ import Footer from './footer';
 import Welcome from './welcome';
 import Search from './search';
 import CurrentSettings from './settings';
-// import LikedEvents from './LikedEvents';
 import LikedEventsList from './liked-events-list';
 import EventDetails from './event-details';
 

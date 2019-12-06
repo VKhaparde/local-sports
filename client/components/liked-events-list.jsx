@@ -18,24 +18,11 @@ class LikedEventsList extends React.Component {
   // fetch event data
   // }
 
-  //   window.onscroll = function () { myFunction() };
-
-  // let header = document.getElementById("myHeader");
-  // let sticky = header.offsetTop;
-
-  // function myFunction() {
-  //   if (window.pageYOffset > sticky) {
-  //     header.classList.add("sticky");
-  //   } else {
-  //     header.classList.remove("sticky");
-  //   }
-  // }
-
   render() {
     return (
       <div>
-        <div className="eventList d-flex flex-column m-3">
-          <div className="section-title headers-font-ubuntu">Liked Events</div>
+        <div className="eventList d-flex flex-column mt-3">
+          <div className="eventListTitle headers-font-ubuntu p-2">Liked Events</div>
           <div className="LikedEvents">
             {
               eventInfo.map(event => {

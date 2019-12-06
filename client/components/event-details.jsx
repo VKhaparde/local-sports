@@ -53,7 +53,7 @@ class EventDetails extends React.Component {
     if (this.state.isDetailsClicked) {
       return (
         <div className="eventDetails d-flex flex-column m-2">
-          <EventInfo info={this.props}/>
+          <EventInfo info={this.props} />
           <div className="details" onClick={this.handleClickDetails}>Details
             <div className="detailsInfo font-weight-normal">
               <div className="d-flex justify-content-between">
@@ -80,7 +80,7 @@ class EventDetails extends React.Component {
     } else if (this.state.isReviewsClicked) {
       return (
         <div className="eventDetails d-flex flex-column m-2">
-          <EventInfo info={this.props}/>
+          <EventInfo info={this.props} />
           <div className="details" onClick={this.handleClickDetails}>Details
           </div>
           <div className="reviews" onClick={this.handleClickReviews}>Reviews
@@ -119,7 +119,6 @@ function EventInfo(props) {
           onClick={() => props.callback()}>
           <i className="fas fa-arrow-left fa-3x"></i>
         </button>
-      </div>
       </div>
     </div>
   );
