@@ -1,12 +1,13 @@
 import React from 'react';
 
-class Header extends React.Component {
+function Header() {
 
-  render() {
-    return (
-      <div className="header headers-font-ubuntu col-12 pt-4 sticky-top"> Local Sports </div>
-    );
-  }
+  return (
+    <div className="header headers-font-ubuntu sticky-top">
+      <div>Local Sports</div>
+    </div>
+  );
+
 }
 
 export default Header;
