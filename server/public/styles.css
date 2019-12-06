@@ -17,7 +17,7 @@ body{
 
 .header{
   background-color: #2a9d8f;
-  height:15vh;
+  height:10vh;
   text-align: center;
   font-size: 4rem;
   color:white;
@@ -25,16 +25,14 @@ body{
 }
 
 .main{
-height:70vh;
-/* background: rgba(100, 97, 97, 0.25); */
+height:78vh;
 }
 
 .footer{
-  height: 15vh;
+  height: 10vh;
   background-color:white;
-  padding:15px;
   position: absolute;
-  bottom: 0;
+  bottom: 2%;
   border-top: 1.5px solid #cccccc;
 }
 
