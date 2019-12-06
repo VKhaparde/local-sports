@@ -25,14 +25,14 @@ body{
 }
 
 .main{
-height:78vh;
+height:80vh;
 }
 
 .footer{
   height: 10vh;
   background-color:white;
   position: absolute;
-  bottom: 2%;
+  bottom: 0;
   border-top: 1.5px solid #cccccc;
 }
 
@@ -117,7 +117,7 @@ height:75px;
 
 .eventDetails {
   position: absolute;
-  top: 15%;
+  top: 10%;
   z-index: 1;
 
   top:15%;
@@ -177,15 +177,8 @@ height:75px;
   padding:10px;
 }
 
-.detailsInfo{
-/* font-family: 'Oswald', sans-serif; */
-}
-.reviewsInfo{
-/* font-family: 'Oswald', sans-serif; */
-}
-
 .eventList{
-  height:65%;
+  /* height:65%; */
   width:90%;
   background: white;
   border: 4px solid #000000;
@@ -197,6 +190,7 @@ height:75px;
   top: 15%;
   margin-left: 5%;
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.25);
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 3%
 }
@@ -231,6 +225,7 @@ height:75px;
 .eventLocation{
   bottom: 0;
 }
+
 .rating{
   height: 30px;
   width: 90px;
@@ -305,7 +300,32 @@ height:75px;
   border: none;
 }
 
-.settingsContainer {
+.selected-day-schedule {
+  background-color: #2a9d8f;
+  color: white;
+}
+
+.settingsTitle {
+  border-bottom: 2px solid black;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.reviewListItem{
+  border: 4px solid teal;
+  height: 125px;
+  overflow: scroll;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+.not-active-day{
+  z-index: 1;
+  background-color: teal;
+  color: white;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 2px solid #2a9d8f;
+  border-radius: 10px;
+  box-sizing: border-box;
 }

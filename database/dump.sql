@@ -45,6 +45,29 @@ INSERT INTO `events` VALUES (1,11,1,2,'Come play basketball with me, Jocelyne Tu
 UNLOCK TABLES;
 
 --
+-- Table structure for table `liked-events`
+--
+
+DROP TABLE IF EXISTS `liked-events`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `liked-events` (
+  `user-id` int(11) NOT NULL,
+  `event-id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `liked-events`
+--
+
+LOCK TABLES `liked-events` WRITE;
+/*!40000 ALTER TABLE `liked-events` DISABLE KEYS */;
+INSERT INTO `liked-events` VALUES (1,3),(1,4);
+/*!40000 ALTER TABLE `liked-events` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `location`
 --
 
@@ -214,4 +237,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-04 21:31:42
+-- Dump completed on 2019-12-06 22:54:48

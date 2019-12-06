@@ -2,9 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
-import Welcome from './welcome';
+import SignIn from './sign-in';
 import Search from './search';
 import Settings from './settings';
+import Welcome from './welcome';
 import LikedEventsList from './liked-events-list';
 
 export default class App extends React.Component {
@@ -17,7 +18,7 @@ export default class App extends React.Component {
         { id: 3, title: 'Baseball Intermediate', location: 'Sweet Shade Park', rating: 7, distance: 0.3 },
         { id: 4, title: 'Basketball Intermediate', location: 'Los Olivos Community Park', rating: 7, distance: 0.3 }
       ],
-      schedule: []
+      schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     };
   }
 
@@ -38,6 +39,21 @@ export default class App extends React.Component {
   searchLikedEvent(id) {
   }
 
+  removeFromSchedule(day) {
+    this.setState({
+      schedule: this.state.schedule.filter(event => {
+        return event !== day;
+      })
+    });
+  }
+
+  addToSchedule(day) {
+    this.setState(state => {
+      const schedule = state.schedule.concat(day);
+      return { schedule };
+    });
+  }
+
   render() {
     return (
       <Router>
@@ -47,6 +63,9 @@ export default class App extends React.Component {
 
             <Route path='/' exact
               render={() => <Welcome />} />
+
+            <Route path='/signIn' exact
+              render={() => <SignIn />} />
 
             <Route path='/search' exact
               render={() =>
@@ -61,7 +80,10 @@ export default class App extends React.Component {
                   searchLike={id => this.searchLikedEvent(id)} />} />
 
             <Route path='/settings' exact
-              render={() => <Settings />} />
+              render={() => <Settings
+                removeFromSchedule={day => this.removeFromSchedule(day)}
+                addToSchedule={day => this.addToSchedule(day)}
+                schedule={this.state.schedule} />} />
 
           </Switch>
           <Footer />

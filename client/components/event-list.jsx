@@ -20,9 +20,9 @@ class EventList extends React.Component {
       if (this.props.events.events[0]) {
         var sportType = this.props.events.events[0]['sport-type'];
         return (
-          <div className="eventList mt-3">
-            <h1 className="eventListTitle shadow-lg text-center pt-4 sticky-top bg-white">{sportType}</h1>
-            <div className="d-flex flex-column overflow-hidden m-2">
+          <div className="eventList h-50 mt-3">
+            <h1 className="eventListTitle shadow-lg text-center pt-4">{sportType}</h1>
+            <div className="d-flex flex-column overflow-hidden m-2 block-text-font-oswald">
               {
                 this.props.events.events.map((currentVal, index) => {
                   return (
