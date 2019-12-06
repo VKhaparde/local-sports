@@ -28,7 +28,7 @@ class Welcome extends React.Component {
       <div className="eventList mt-3 d-flex flex-column text-center">
         <h1 className="eventListTitle mt-2 p-3 headers-font-ubuntu">Welcome</h1>
         <form className='form container'
-          onClick={this.submitForm}>
+          onSubmit={this.submitForm}>
           <div className="liked-event-border p-1 mt-5">
             <input className='block-text-font-oswald w-100 p-1 pl-2'
               name='username'
