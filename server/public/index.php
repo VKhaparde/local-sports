@@ -7,6 +7,10 @@ switch ($request['path']) {
   case '/api/event-search':
   case '/api/location-search':
   case '/api/review-search':
+  case '/api/login':
+  case '/api/logout':
+  case '/api/user-liked-events':
+
 
     require_once "..${request['path']}.php";
   default:

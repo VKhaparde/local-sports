@@ -17,7 +17,7 @@ body{
 
 .header{
   background-color: #2a9d8f;
-  height:15vh;
+  height:10vh;
   text-align: center;
   font-size: 4rem;
   color:white;
@@ -25,14 +25,12 @@ body{
 }
 
 .main{
-height:70vh;
-/* background: rgba(100, 97, 97, 0.25); */
+height:80vh;
 }
 
 .footer{
-  height: 15vh;
+  height: 10vh;
   background-color:white;
-  padding:15px;
   position: absolute;
   bottom: 0;
   border-top: 1.5px solid #cccccc;
@@ -305,4 +303,19 @@ height:75px;
 .selected-day-schedule {
   background-color: #2a9d8f;
   color: white;
+}
+
+.settingsTitle {
+  border-bottom: 2px solid black;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.reviewListItem{
+  border: 4px solid teal;
+  height: 125px;
+  overflow: scroll;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
