@@ -2,9 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
-import Welcome from './welcome';
+import SignIn from './sign-in';
 import Search from './search';
 import Settings from './settings';
+import Welcome from './welcome';
 import LikedEventsList from './liked-events-list';
 
 export default class App extends React.Component {
@@ -51,6 +52,9 @@ export default class App extends React.Component {
 
             <Route path='/' exact
               render={() => <Welcome />} />
+
+            <Route path='/signIn' exact
+              render={() => <SignIn />} />
 
             <Route path='/search' exact
               render={() =>
