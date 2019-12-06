@@ -18,16 +18,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-      $stmt->bind_result($id, $password);
+      $stmt->bind_result($user_id, $password);
       $stmt->fetch();
 
       if ($request['body']['password'] === $password) {
         session_regenerate_id();
         $_SESSION['loggedin'] = TRUE;
         $_SESSION['name'] = $request['body'];
-        $_SESSION['id'] = $id;
+        $_SESSION['user_id'] = $user_id;
         $response['body'] =  'Welcome ' . $request['body']['username'] . '!';
-        header('Locaton: https://local-sports.localsports.site/search');
+        // header('Locaton: https://local-sports.localsports.site/search');
         send($response);
       } else {
         $response['body'] = 'incorrect password';
@@ -50,3 +50,5 @@ function check_connection($link)
     'message' => 'Successfully connected to MySQL!'
   ];
 }
+
+// http post localhost:9000/api/login username=OldManJenkins420 password=420blazeit
