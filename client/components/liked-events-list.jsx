@@ -12,10 +12,10 @@ class LikedEventsList extends React.Component {
     if (this.props.likedEvents.length === 0) {
       return (
         <div>
-          <div className="eventList d-flex flex-column m-3">
-            <div className="section-title headers-font-ubuntu">Liked Events</div>
+          <div className="eventList mt-3 d-flex flex-column m-3">
+            <h1 className="eventListTitle headers-font-ubuntu mb-3">Liked Events</h1>
             <div className="likedEvents">
-              <div className='h3 text-center mt-3'> You do not have any liked events</div>
+              <h4 className='text-center mt-3 block-text-font-oswald p-2'>Your list is empty!<br></br>Return to the map to<br></br>see events around you.</h4>
             </div >
           </div>
         </div>
@@ -24,8 +24,8 @@ class LikedEventsList extends React.Component {
 
     return (
       <div>
-        <div className="eventList d-flex flex-column m-3">
-          <div className="section-title headers-font-ubuntu">Liked Events</div>
+        <div className="eventList d-flex flex-column mt-3">
+          <div className="eventListTitle mb-3 headers-font-ubuntu">Liked Events</div>
           <div className="likedEvents">
             {
               this.props.likedEvents.map(event => {
