@@ -56,7 +56,7 @@ export default class App extends React.Component {
             <Route path='/likedEvents' exact
               render={() =>
                 <LikedEventsList
-                  likedEvents = {this.state.liked}
+                  likedEvents={this.state.liked}
                   removeLike={id => this.removeLikedEvent(id)}
                   searchLike={id => this.searchLikedEvent(id)} />} />
 

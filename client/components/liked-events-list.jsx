@@ -37,7 +37,7 @@ class LikedEventsList extends React.Component {
                     rating={event.rating}
                     location={event.location}
                     removeEvent={id => this.props.removeLike(id)}
-                    eventDetail={id => this.props.searchLike(id)}/>
+                    eventDetail={id => this.props.searchLike(id)} />
                 );
               })
             }

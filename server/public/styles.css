@@ -19,7 +19,7 @@ body{
   background-color: #2a9d8f;
   height:15vh;
   text-align: center;
-  font-size: 3rem;
+  font-size: 4rem;
   color:white;
   text-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -35,6 +35,7 @@ height:70vh;
   padding:15px;
   position: absolute;
   bottom: 0;
+  border-top: 1.5px solid #cccccc;
 }
 
 .favorites-hidden {
@@ -76,25 +77,10 @@ height:70vh;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 5px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
-/* button:active{
-  border:4px solid teal;
-}
-
-button:focus{
-  outline: none;
-} */
-
 .outerSearchDiv .outerSettingsDiv{
 height:10vh;
 background-color: white;
 text-align:center;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  text-decoration: underline;
-  /* position: fixed; */
-  text-align: center;
 }
 
 .searchArea{
@@ -232,7 +218,11 @@ height:75px;
 }
 
 .eventListTitle{
-  border-bottom: 4px solid black;
+  border-bottom: 2px solid black;
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .eventTitle{
@@ -251,11 +241,11 @@ height:75px;
   padding-bottom: 3vh;
   background-image: url("./images/5stars.png");
 }
+
 /* LIKED EVENTS */
 
 .liked-event-border {
   z-index: 1;
-  width:90%;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border: 2px solid #2a9d8f;
   border-radius: 10px;
@@ -264,8 +254,7 @@ height:75px;
 
 .liked-event-heart {
   color: #2a9d8f;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
+  box-shadow: 2.5px 2.5px 2px rgba(0, 0, 0, 0.25);
   border: 1px solid #2a9d8f;
   border-radius: 10px;
   padding: 0.25em;
@@ -280,18 +269,42 @@ height:75px;
   font-size: 1.5em;
   text-align: left;
   margin-left: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.5rem
 }
 
 .liked-event-location {
   font-size: 1.2rem;
   text-align: left;
   margin-left: 1rem;
-    line-height: 1.5rem;
+  line-height: 1.3rem;
 }
 
 .hideElement {
   display: none;
+}
+
+.submit-button {
+  background-color: #2a9d8f;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: none;
+  padding: 0.5em;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.create-account-button {
+  background-color: white;
+  color: #2a9d8f;
+  border: none;
+  text-decoration: underline;
+  font-size: 1.2rem;
+}
+
+.skip-button {
+  background-color: white;
+  color: #2a9d8f;
+  border: none;
 }
 
 .settingsContainer {

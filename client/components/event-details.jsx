@@ -54,7 +54,7 @@ class EventDetails extends React.Component {
       return (
         <div className="eventDetails d-flex flex-column m-2">
           <EventInfo info={this.props}
-            toggleView={() => this.props.toggleView()}/>
+            toggleView={() => this.props.toggleView()} />
           <div className="details" onClick={this.handleClickDetails}>Details
             <div className="detailsInfo font-weight-normal">
               <div className="d-flex justify-content-between">
@@ -82,7 +82,7 @@ class EventDetails extends React.Component {
       return (
         <div className="eventDetails d-flex flex-column m-2">
           <EventInfo info={this.props}
-            toggleView={() => this.props.toggleView()}/>
+            toggleView={() => this.props.toggleView()} />
           <div className="details" onClick={this.handleClickDetails}>Details
           </div>
           <div className="reviews" onClick={this.handleClickReviews}>Reviews
@@ -94,7 +94,7 @@ class EventDetails extends React.Component {
     return (
       <div className="eventDetails d-flex flex-column m-2">
         <EventInfo info={this.props}
-          toggleView = {() => this.props.toggleView()} />
+          toggleView={() => this.props.toggleView()} />
         <div className="details" onClick={this.handleClickDetails}>Details
         </div>
         <div className="reviews" onClick={this.handleClickReviews}>Reviews
