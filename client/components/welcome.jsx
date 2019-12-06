@@ -14,8 +14,17 @@ class Welcome extends React.Component {
 
   submitForm(event) {
     event.preventDefault();
-    // console.log('clicked')
-    // fetch goes here
+    const request = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(this.state)
+    };
+
+    fetch('/api/login', request)
+      .then(response => response.json())
+      // tomas fix this area here, data is the error code from the api "user name or password is incorrect" or welcoming user
+      .then(data => console.error(data))
+      .catch(error => console.error('Error', error));
   }
 
   updateField(event) {
@@ -30,7 +39,7 @@ class Welcome extends React.Component {
         <h1 className="eventListTitle text-center p-2 sticky-top bg-white">Welcome</h1>
         <h2 className="text-center mt-4">Sign in</h2>
         <form className='form container text-center mt-5'
-          onClick={this.submitForm}>
+          onSubmit={this.submitForm}>
           <div className="h3 text-center"> UserName </div>
           <label className=''>
             <input className='text-center'
