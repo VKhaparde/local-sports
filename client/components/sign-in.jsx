@@ -27,8 +27,7 @@ class SignIn extends React.Component {
   render() {
     return (
       <div className="eventList mt-5 d-flex flex-column text-center">
-        <h1 className="eventListTitle mt-2 p-3 headers-font-ubuntu">Welcome</h1>
-        <form className='form container'
+        <form className='form mt-2 container'
           onClick={this.submitForm}>
           <div className="liked-event-border p-1 mt-5">
             {/* <div className="h3 headers-font-ubuntu">Username</div>
@@ -58,7 +57,7 @@ class SignIn extends React.Component {
           <div className='button mt-4'>
             <button className='btn btn-primary block headers-font-ubuntu create-account-button'>Create an Account</button>
           </div>
-          <div className='button mt-4'>
+          <div className='button mt-4 mb-4'>
             <button className='btn btn-primary block headers-font-ubuntu skip-button'>Skip
               <i className="fas fa-chevron-right ml-2"></i>
             </button>
