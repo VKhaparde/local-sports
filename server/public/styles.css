@@ -310,3 +310,11 @@ height:75px;
   text-align: center;
   font-size: 2rem;
 }
+
+.reviewListItem{
+  border: 4px solid teal;
+  height: 125px;
+  overflow: scroll;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
