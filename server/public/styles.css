@@ -17,24 +17,23 @@ body{
 
 .header{
   background-color: #2a9d8f;
-  height:15vh;
+  height:10vh;
   text-align: center;
-  font-size: 3rem;
+  font-size: 4rem;
   color:white;
   text-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .main{
-height:70vh;
-/* background: rgba(100, 97, 97, 0.25); */
+height:80vh;
 }
 
 .footer{
-  height: 15vh;
+  height: 10vh;
   background-color:white;
-  padding:15px;
   position: absolute;
   bottom: 0;
+  border-top: 1.5px solid #cccccc;
 }
 
 .favorites-hidden {
@@ -76,24 +75,10 @@ height:70vh;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 5px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
-button:active{
-  border:4px solid teal;
-}
-
-button:focus{
-  border:4px solid teal;
-  outline: none;
-}
 .outerSearchDiv .outerSettingsDiv{
 height:10vh;
 background-color: white;
 text-align:center;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  text-align: center;
-  text-decoration: underline;
 }
 
 .searchArea{
@@ -192,15 +177,8 @@ height:75px;
   padding:10px;
 }
 
-.detailsInfo{
-/* font-family: 'Oswald', sans-serif; */
-}
-.reviewsInfo{
-/* font-family: 'Oswald', sans-serif; */
-}
-
 .eventList{
-  height:60%;
+  /* height:65%; */
   width:90%;
   background: white;
   border: 4px solid #000000;
@@ -212,6 +190,7 @@ height:75px;
   top: 15%;
   margin-left: 5%;
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.25);
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 3%
 }
@@ -231,7 +210,11 @@ height:75px;
 }
 
 .eventListTitle{
-  border-bottom: 4px solid black;
+  border-bottom: 2px solid black;
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .eventTitle{
@@ -250,12 +233,11 @@ height:75px;
   padding-bottom: 3vh;
   background-image: url("./images/5stars.png");
 }
+
 /* LIKED EVENTS */
 
 .liked-event-border {
   z-index: 1;
-  height: 25%;
-  width:90%;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border: 2px solid #2a9d8f;
   border-radius: 10px;
@@ -264,8 +246,7 @@ height:75px;
 
 .liked-event-heart {
   color: #2a9d8f;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
+  box-shadow: 2.5px 2.5px 2px rgba(0, 0, 0, 0.25);
   border: 1px solid #2a9d8f;
   border-radius: 10px;
   padding: 0.25em;
@@ -280,14 +261,54 @@ height:75px;
   font-size: 1.5em;
   text-align: left;
   margin-left: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.5rem
 }
 
 .liked-event-location {
   font-size: 1.2rem;
   text-align: left;
   margin-left: 1rem;
-    line-height: 1.5rem;
+  line-height: 1.3rem;
+}
+
+.hideElement {
+  display: none;
+}
+
+.submit-button {
+  background-color: #2a9d8f;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: none;
+  padding: 0.5em;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.create-account-button {
+  background-color: white;
+  color: #2a9d8f;
+  border: none;
+  text-decoration: underline;
+  font-size: 1.2rem;
+}
+
+.skip-button {
+  background-color: white;
+  color: #2a9d8f;
+  border: none;
+}
+
+.selected-day-schedule {
+  background-color: #2a9d8f;
+  color: white;
+}
+
+.settingsTitle {
+  border-bottom: 2px solid black;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .reviewListItem{

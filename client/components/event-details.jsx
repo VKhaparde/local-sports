@@ -83,7 +83,8 @@ class EventDetails extends React.Component {
     } else if (this.state.isReviewsClicked) {
       return (
         <div className="eventDetails d-flex flex-column m-2">
-          <EventInfo info={this.props}/>
+          <EventInfo info={this.props}
+            toggleView={() => this.props.toggleView()} />
           <div className="details" onClick={this.handleClickDetails}>Details
           </div>
           {/* <div className="reviews" onClick={this.handleClickReviews}>Reviews
@@ -94,10 +95,10 @@ class EventDetails extends React.Component {
         </div >
       );
     }
-
     return (
       <div className="eventDetails d-flex flex-column m-2">
-        <EventInfo info={this.props} />
+        <EventInfo info={this.props}
+          toggleView={() => this.props.toggleView()} />
         <div className="details" onClick={this.handleClickDetails}>Details
         </div>
         {/* <div className="reviews" onClick={this.handleClickReviews}>Reviews
@@ -130,9 +131,3 @@ function EventInfo(props) {
     </div>
   );
 }
-
-// function Rating(props) {
-//   return (
-//     <div></div>
-//   );
-// }

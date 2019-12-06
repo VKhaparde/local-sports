@@ -1,38 +1,43 @@
 import React from 'react';
 import LikedEvent from './liked-event';
 
-const eventInfo = [
-  { id: 1, title: 'Soccer Co-Ed', location: 'Irvine Great Park', rating: 5, distance: 0.3 },
-  { id: 2, title: 'Basketball 5-on-5', location: 'Los Olivos Community Park', rating: 8, distance: 1.3 },
-  { id: 3, title: 'Baseball Intermediate', location: 'Sweet Shade Park', rating: 7, distance: 0.3 },
-  { id: 4, title: 'Basketball Intermediate', location: 'Los Olivos Community Park', rating: 7, distance: 0.3 }
-];
-
 class LikedEventsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
-  // componentDidMount() {
-  // fetch event data
-  // }
-
   render() {
+
+    if (this.props.likedEvents.length === 0) {
+      return (
+        <div>
+          <div className="eventList mt-3 d-flex flex-column m-3">
+            <h1 className="eventListTitle headers-font-ubuntu mb-3">Liked Events</h1>
+            <div className="likedEvents">
+              <h4 className='text-center mt-3 block-text-font-oswald p-2'>Your list is empty!<br></br>Return to the map to<br></br>see events around you.</h4>
+            </div >
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div>
-        <div className="eventList d-flex flex-column m-3">
-          <div className="section-title headers-font-ubuntu">Liked Events</div>
-          <div className="LikedEvents">
+        <div className="eventList d-flex flex-column mt-3">
+          <div className="eventListTitle mb-3 headers-font-ubuntu">Liked Events</div>
+          <div className="likedEvents">
             {
-              eventInfo.map(event => {
+              this.props.likedEvents.map(event => {
                 return (
                   <LikedEvent
                     key={event.id}
                     title={event.title}
-                    // rating={event.rating}
-                    // distance={event.distance}
-                    location={event.location} />
+                    id={event.id}
+                    rating={event.rating}
+                    location={event.location}
+                    removeEvent={id => this.props.removeLike(id)}
+                    eventDetail={id => this.props.searchLike(id)} />
                 );
               })
             }

@@ -1,61 +1,25 @@
 import React from 'react';
 
-class Welcome extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: '',
-      password: ''
-    };
-
-    this.submitForm = this.submitForm.bind(this);
-    this.updateField = this.updateField.bind(this);
-  }
-
-  submitForm(event) {
-    event.preventDefault();
-    // console.log('clicked')
-    // fetch goes here
-  }
-
-  updateField(event) {
-    const state = {};
-    state[event.target.name] = event.target.value;
-    this.setState(state);
-  }
-
-  render() {
-    return (
-      <div className="eventList mt-3">
-        <h1 className="eventListTitle text-center p-2 sticky-top bg-white">Welcome</h1>
-        <h2 className="text-center mt-4">Sign in</h2>
-        <form className='form container text-center mt-5'
-          onClick={this.submitForm}>
-          <div className="h3 text-center"> UserName </div>
-          <label className=''>
-            <input className='text-center'
-              name='username'
-              type='text'
-              placeholder='OldManJenkins'
-              value={this.state.username}
-              onChange={this.updateField}></input>
-          </label>
-          <div className="h3 text-center"> Password </div>
-          <label className=''>
-            <input className='text-center'
-              name='password'
-              type='text'
-              placeholder='Werd to Ur mother'
-              value={this.state.password}
-              onChange={this.updateField}></input>
-          </label>
-          <div className='button mt-3'>
-            <button className='btn btn-primary block'>Submit</button>
-          </div>
-        </form >
-      </div >
-    );
-  }
+function Welcome() {
+  return (
+    <div className="eventList h-50 mt-3 container">
+      <div className="eventListTitle text-center m-2 ml-5 mb-4">
+        <h2>Schedule</h2>
+      </div>
+      <div className="d-flex flex-column ml-4 mr-3">
+        <h4 className="liked-event-border text-center p-1 pb-2">Monday</h4>
+        <h4 className="liked-event-border text-center p-1 pb-2">Tuesday</h4>
+        <h4 className="liked-event-border text-center p-1 pb-2">Wednesday</h4>
+        <h4 className="liked-event-border text-center p-1 pb-2">Thursday</h4>
+        <h4 className="liked-event-border text-center p-1 pb-2">Friday</h4>
+        <h4 className="liked-event-border text-center p-1 pb-2">Saturday</h4>
+        <h4 className="liked-event-border text-center p-1 pb-2">Sunday</h4>
+      </div>
+      <div className="d-flex justify-content-center mt-3 mr-3">
+        <i className="fas fa-chevron-left mt-1 mr-2" />Back
+      </div>
+    </div>
+  );
 }
 
 export default Welcome;
