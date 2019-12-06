@@ -14,7 +14,6 @@ class Welcome extends React.Component {
 
   submitForm(event) {
     event.preventDefault();
-    // console.log('clicked')
     // fetch goes here
   }
 
@@ -31,26 +30,20 @@ class Welcome extends React.Component {
         <form className='form container'
           onClick={this.submitForm}>
           <div className="liked-event-border p-1 mt-5">
-            {/* <div className="h3 headers-font-ubuntu">Username</div>
-            <label className=''> */}
             <input className='block-text-font-oswald w-100 p-1 pl-2'
               name='username'
               type='text'
               placeholder='Username'
               value={this.state.username}
               onChange={this.updateField}></input>
-            {/* </label> */}
           </div>
           <div className="liked-event-border p-1 mt-4">
-            {/* <div className="h3 text-center headers-font-ubuntu"> Password </div>
-            <label className=''> */}
             <input className='block-text-font-oswald w-100 p-1 pl-2'
               name='password'
               type='text'
               placeholder='Password'
               value={this.state.password}
               onChange={this.updateField}></input>
-            {/* </label> */}
           </div>
           <div className='button mt-4'>
             <button className='btn btn-primary block submit-button headers-font-ubuntu'>Sign In</button>
