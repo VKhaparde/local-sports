@@ -18,7 +18,7 @@ export default class App extends React.Component {
         { id: 3, title: 'Baseball Intermediate', location: 'Sweet Shade Park', rating: 7, distance: 0.3 },
         { id: 4, title: 'Basketball Intermediate', location: 'Los Olivos Community Park', rating: 7, distance: 0.3 }
       ],
-      schedule: []
+      schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     };
   }
 
@@ -39,8 +39,19 @@ export default class App extends React.Component {
   searchLikedEvent(id) {
   }
 
-  updateSchedule(id) {
-    // console.log('clicked');
+  removeFromSchedule(day) {
+    this.setState({
+      schedule: this.state.schedule.filter(event => {
+        return event !== day;
+      })
+    });
+  }
+
+  addToSchedule(day) {
+    this.setState(state => {
+      const schedule = state.schedule.concat(day);
+      return { schedule };
+    });
   }
 
   render() {
@@ -70,7 +81,9 @@ export default class App extends React.Component {
 
             <Route path='/settings' exact
               render={() => <Settings
-                schedule={() => this.updateSchedule()}/>} />
+                removeFromSchedule={day => this.removeFromSchedule(day)}
+                addToSchedule={day => this.addToSchedule(day)}
+                schedule={this.state.schedule} />} />
 
           </Switch>
           <Footer />
