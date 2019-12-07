@@ -22,6 +22,14 @@ export default class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    // this.loadUser()
+  }
+
+  loadUser() {
+    // fetch()
+  }
+
   updateLikedEvents(id) {
     this.setState({
       liked: this.state.liked.push(id)

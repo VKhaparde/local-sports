@@ -1,4 +1,5 @@
 <?php
+
 $link = get_db_link();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (!isset($request['body']['username'])) {
