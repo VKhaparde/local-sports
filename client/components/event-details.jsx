@@ -11,6 +11,7 @@ class EventDetails extends React.Component {
 
     this.handleClickDetails = this.handleClickDetails.bind(this);
     this.handleClickReviews = this.handleClickReviews.bind(this);
+    this.displayRating = this.displayRating.bind(this);
   }
 
   handleClickDetails(event) {
@@ -32,13 +33,13 @@ class EventDetails extends React.Component {
     let backgroundImageUrl;
     switch (rating) {
       case 5:
-        backgroundImageUrl = '/images/5stars.png';
+        backgroundImageUrl = 'images/5stars.png';
         break;
       case 4.5:
-        backgroundImageUrl = '/images/4.5stars.png';
+        backgroundImageUrl = 'images/4.5stars.png';
         break;
       case 4:
-        backgroundImageUrl = '/images/4stars.png';
+        backgroundImageUrl = 'images/4stars.png';
         break;
       case 3.5:
         backgroundImageUrl = 'images/3.5stars.png';
@@ -51,10 +52,12 @@ class EventDetails extends React.Component {
   }
 
   render() {
+    var rating = this.props.events[0]['review-average'];
     if (this.state.isDetailsClicked) {
       return (
         <div className="eventDetails d-flex flex-column m-2">
-          <EventInfo info={this.props} ratingImage={this.displayRating()}/>
+          <EventInfo info={this.props} toggleView={() => this.props.toggleView()}
+            ratingImage={this.displayRating(rating)}/>
           <div className="details" onClick={this.handleClickDetails}>Details
             <div className="detailsInfo font-weight-normal">
               <div className="d-flex justify-content-between">
@@ -75,31 +78,32 @@ class EventDetails extends React.Component {
             </div>
           </div>
           <ReviewList onReviewsClick={this.handleClickReviews} eventId={this.props.events[0]['event-id']}
-            isReviewsClicked = {this.state.isReviewsClicked} />
+            isReviewsClicked={this.state.isReviewsClicked} />
         </div >
       );
     } else if (this.state.isReviewsClicked) {
       return (
         <div className="eventDetails d-flex flex-column m-2">
-          <EventInfo info={this.props}
-            toggleView={() => this.props.toggleView()} />
+          <EventInfo info={this.props} toggleView={() => this.props.toggleView()}
+            ratingImage={this.displayRating(rating)} />
           <div className="details" onClick={this.handleClickDetails}>Details
           </div>
-          <ReviewList onReviewsClick = {this.handleClickReviews} eventId = {this.props.events[0]['event-id']}
-            isReviewsClicked={this.state.isReviewsClicked}/>
+          <ReviewList onReviewsClick={this.handleClickReviews} eventId={this.props.events[0]['event-id']}
+            isReviewsClicked={this.state.isReviewsClicked} />
+        </div >
+      );
+    } else {
+      return (
+        <div className="eventDetails d-flex flex-column m-2">
+          <EventInfo info={this.props} toggleView={() => this.props.toggleView()}
+            ratingImage={this.displayRating(rating)}/>
+          <div className="details" onClick={this.handleClickDetails}>Details
+          </div>
+          <ReviewList onReviewsClick={this.handleClickReviews} eventId={this.props.events[0]['event-id']}
+            isReviewsClicked={this.state.isReviewsClicked} />
         </div >
       );
     }
-    return (
-      <div className="eventDetails d-flex flex-column m-2">
-        <EventInfo info={this.props}
-          toggleView={() => this.props.toggleView()} />
-        <div className="details" onClick={this.handleClickDetails}>Details
-        </div>
-        <ReviewList onReviewsClick={this.handleClickReviews} eventId={this.props.events[0]['event-id']}
-          isReviewsClicked={this.state.isReviewsClicked} />
-      </div >
-    );
   }
 }
 export default EventDetails;
@@ -112,7 +116,7 @@ function EventInfo(props) {
       </div>
       <div className="d-flex justify-content-between mt-1 ">
         <div>{props.info.events[0]['event-day']}</div>
-        <div className='rating' style={{ backgroundImage: props.ratingImage }}></div>
+        <div className='rating' style={{ backgroundImage: `url(${props.ratingImage})` }}></div>
       </div>
       <div className="d-flex justify-content-between mt-1">
         <div>{props.info.events[0].name}</div>
