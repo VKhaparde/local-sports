@@ -57,9 +57,12 @@ class EventDetails extends React.Component {
     if (this.state.isDetailsClicked) {
       return (
         <div className="eventDetails d-flex flex-column m-2">
-          <EventInfo info={this.props} toggleView={() => this.props.toggleView()}
-            ratingImage={this.displayRating(rating)}/>
-          <div className="details" onClick={this.handleClickDetails}>Details
+          <EventInfo
+            info={this.props}
+            toggleView={() => this.props.toggleView()}
+            ratingImage={this.displayRating(rating)} />
+          <div className="details"
+            onClick={this.handleClickDetails}>Details
             <div className="detailsInfo font-weight-normal">
               <div className="d-flex justify-content-between">
                 <div>Organizer:</div>
@@ -78,29 +81,41 @@ class EventDetails extends React.Component {
               </div>
             </div>
           </div>
-          <ReviewList onReviewsClick={this.handleClickReviews} eventId={this.props.events[0]['event-id']}
+          <ReviewList
+            onReviewsClick={this.handleClickReviews}
+            eventId={this.props.events[0]['event-id']}
             isReviewsClicked={this.state.isReviewsClicked} />
         </div >
       );
     } else if (this.state.isReviewsClicked) {
       return (
         <div className="eventDetails d-flex flex-column m-2">
-          <EventInfo info={this.props} toggleView={() => this.props.toggleView()}
+          <EventInfo
+            info={this.props}
+            toggleView={() => this.props.toggleView()}
             ratingImage={this.displayRating(rating)} />
-          <div className="details" onClick={this.handleClickDetails}>Details
+          <div className="details"
+            onClick={this.handleClickDetails}>Details
           </div>
-          <ReviewList onReviewsClick={this.handleClickReviews} eventId={this.props.events[0]['event-id']}
+          <ReviewList
+            onReviewsClick={this.handleClickReviews}
+            eventId={this.props.events[0]['event-id']}
             isReviewsClicked={this.state.isReviewsClicked} />
         </div >
       );
     } else {
       return (
         <div className="eventDetails d-flex flex-column m-2">
-          <EventInfo info={this.props} toggleView={() => this.props.toggleView()}
-            ratingImage={this.displayRating(rating)}/>
-          <div className="details" onClick={this.handleClickDetails}>Details
+          <EventInfo
+            info={this.props}
+            toggleView={() => this.props.toggleView()}
+            ratingImage={this.displayRating(rating)} />
+          <div className="details"
+            onClick={this.handleClickDetails}>Details
           </div>
-          <ReviewList onReviewsClick={this.handleClickReviews} eventId={this.props.events[0]['event-id']}
+          <ReviewList
+            onReviewsClick={this.handleClickReviews}
+            eventId={this.props.events[0]['event-id']}
             isReviewsClicked={this.state.isReviewsClicked} />
         </div >
       );
