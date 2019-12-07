@@ -2,18 +2,20 @@ import React from 'react';
 
 function EventListItem(props) {
   return (
-    <div className="eventListCard rounded m-2"
+    <div className="liked-event-border p-2 m-2"
       onClick={() => props.callback(props.id)}>
-      <div className="eventListItem ml-2 d-flex flex-column">
-        <div className="eventTitle h3 m-0">{props.name}</div>
-        <div className="d-flex justify-content-end mr-2 pt-1">5 Star</div>
-        <div className="mt-1">
-          <div className="h4 m-0">{props.date}</div>
-          <div className="">{props.locationName}</div>
-        </div>
+      <div className="d-flex justify-content-between">
+        <div className="liked-event-title text-wrap headers-font-ubuntu">{props.name}</div>
+        <button>
+          <i className="liked-event-heart far fa-heart fa-2x"></i>
+        </button>
+      </div>
+      <div className="liked-event-location text-wrap block-text-font-oswald">
+        5 Star<br></br>
+        {props.date}<br></br>
+        {props.locationName}
       </div>
     </div>
-
   );
 }
 
