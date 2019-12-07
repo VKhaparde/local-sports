@@ -63,7 +63,7 @@ CREATE TABLE `liked-events` (
 
 LOCK TABLES `liked-events` WRITE;
 /*!40000 ALTER TABLE `liked-events` DISABLE KEYS */;
-INSERT INTO `liked-events` VALUES (1,3),(1,4);
+INSERT INTO `liked-events` VALUES (1,3),(1,4),(1,5);
 /*!40000 ALTER TABLE `liked-events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -208,14 +208,10 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -224,7 +220,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'James Franco','714-714-7147','jamesfrancofranco@gmail.com','male','StumpyArm','12345'),(2,'Gene Hackman','949-949-9949','genehackmanmail@mail.com','male','SuperMansOutHereSomewhere','clarkkent'),(3,'Jenkins Jenkins','540-540-5540','oldmanjenkins420@gmail.cmo','male','OldManJenkins420','420blazeit');
+INSERT INTO `users` VALUES (4,'test','$2y$10$k6EgEtmaO8q7.aCqRXPTd.hEfRU.yq/1uXo.dPU6OYS1CVWVHA8/S'),(5,'OldManJenkins420','$2y$10$goOiqMFja2/r.rPV0oZvjOuzUPtB9DmbOv0sXqtFDbbS3zoImIVkq'),(6,'StumpyArm','$2y$10$qblF9Z5zVFH4YBkJsyeM.eEV360I/MyKrDZXu1etic9YlmMoRUmd2');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -237,4 +233,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-06 22:54:48
+-- Dump completed on 2019-12-07  0:28:23

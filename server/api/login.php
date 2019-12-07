@@ -1,4 +1,5 @@
 <?php
+
 $link = get_db_link();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (!isset($request['body']['username'])) {
@@ -21,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $stmt->bind_result($user_id, $password);
       $stmt->fetch();
 
-      if ($request['body']['password'] === $password) {
+      if (password_verify($request['body']['password'], $password)) {
         session_regenerate_id();
         $_SESSION['loggedin'] = TRUE;
         $_SESSION['name'] = $request['body'];

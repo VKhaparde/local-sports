@@ -5,7 +5,9 @@ class GoogleMap extends React.Component {
     super(props);
     this.state = {
       events: [],
-      view: 'map'
+      view: 'map',
+      userLat: 0,
+      userLong: 0
     };
     this.googleMapRef = React.createRef();
     this.markers = [];
@@ -29,6 +31,14 @@ class GoogleMap extends React.Component {
       this.googleMap = this.createGoogleMap();
       this.createMarker();
     }
+    // this.getUserLocation();
+  }
+
+  getUserLocation() {
+    // navigator.geolocation.getCurrentPosition(position => {
+    //   this.setState({userLat: position.coords.latitude, userLng: position.coords.longitude})
+    // });
+    // console.log(this.state)
   }
 
   createGoogleMap() {

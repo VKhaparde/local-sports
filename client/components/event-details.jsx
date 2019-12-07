@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewList from './reviews-list';
+import EventInfo from './event-info';
 
 class EventDetails extends React.Component {
   constructor(props) {
@@ -106,25 +107,5 @@ class EventDetails extends React.Component {
     }
   }
 }
-export default EventDetails;
 
-function EventInfo(props) {
-  return (
-    <div className="eventInfo d-flex flex-column overflow-hidden p-2">
-      <div className="d-flex justify-content-between h3 m-0">{props.info.events[0]['event-name']}
-        <i className="far fa-heart"></i>
-      </div>
-      <div className="d-flex justify-content-between mt-1 ">
-        <div>{props.info.events[0]['event-day']}</div>
-        <div className='rating' style={{ backgroundImage: `url(${props.ratingImage})` }}></div>
-      </div>
-      <div className="d-flex justify-content-between mt-1">
-        <div>{props.info.events[0].name}</div>
-        <button className="backButton"
-          onClick={() => props.toggleView()}>
-          <i className="fas fa-arrow-left fa-1.5x"></i>
-        </button>
-      </div>
-    </div>
-  );
-}
+export default EventDetails;
