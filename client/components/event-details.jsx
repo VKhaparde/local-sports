@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewList from './reviews-list';
+import EventInfo from './event-info';
 
 class EventDetails extends React.Component {
   constructor(props) {
@@ -54,7 +55,7 @@ class EventDetails extends React.Component {
     if (this.state.isDetailsClicked) {
       return (
         <div className="eventDetails d-flex flex-column m-2">
-          <EventInfo info={this.props} ratingImage={this.displayRating()}/>
+          <EventInfo info={this.props} ratingImage={this.displayRating()} />
           <div className="details" onClick={this.handleClickDetails}>Details
             <div className="detailsInfo font-weight-normal">
               <div className="d-flex justify-content-between">
@@ -75,7 +76,7 @@ class EventDetails extends React.Component {
             </div>
           </div>
           <ReviewList onReviewsClick={this.handleClickReviews} eventId={this.props.events[0]['event-id']}
-            isReviewsClicked = {this.state.isReviewsClicked} />
+            isReviewsClicked={this.state.isReviewsClicked} />
         </div >
       );
     } else if (this.state.isReviewsClicked) {
@@ -85,8 +86,8 @@ class EventDetails extends React.Component {
             toggleView={() => this.props.toggleView()} />
           <div className="details" onClick={this.handleClickDetails}>Details
           </div>
-          <ReviewList onReviewsClick = {this.handleClickReviews} eventId = {this.props.events[0]['event-id']}
-            isReviewsClicked={this.state.isReviewsClicked}/>
+          <ReviewList onReviewsClick={this.handleClickReviews} eventId={this.props.events[0]['event-id']}
+            isReviewsClicked={this.state.isReviewsClicked} />
         </div >
       );
     }
@@ -102,25 +103,5 @@ class EventDetails extends React.Component {
     );
   }
 }
-export default EventDetails;
 
-function EventInfo(props) {
-  return (
-    <div className="eventInfo d-flex flex-column overflow-hidden p-2">
-      <div className="d-flex justify-content-between h3 m-0">{props.info.events[0]['event-name']}
-        <i className="far fa-heart"></i>
-      </div>
-      <div className="d-flex justify-content-between mt-1 ">
-        <div>{props.info.events[0]['event-day']}</div>
-        <div className='rating' style={{ backgroundImage: props.ratingImage }}></div>
-      </div>
-      <div className="d-flex justify-content-between mt-1">
-        <div>{props.info.events[0].name}</div>
-        <button className="backButton"
-          onClick={() => props.toggleView()}>
-          <i className="fas fa-arrow-left fa-1.5x"></i>
-        </button>
-      </div>
-    </div>
-  );
-}
+export default EventDetails;
