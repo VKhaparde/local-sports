@@ -71,9 +71,6 @@ function retrieve_favorite_sports($link)
   return mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
 
-//needs user session id
-//needs user id from session id
-//needs event id from events table
-
-//create user can like with session ids
-//create user can register *with hashed passwords*
+//http post localhost:9000/api/user-liked-events event-id=5
+//http delete localhost:9000/api/user-liked-events event-id=5
+//http get localhost:9000/api/user-liked-event
