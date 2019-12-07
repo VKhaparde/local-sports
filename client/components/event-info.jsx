@@ -13,6 +13,7 @@ class EventInfo extends React.Component {
     this.setState(({ favorited }) => {
       return { favorited: !favorited };
     });
+
   }
 
   render() {
