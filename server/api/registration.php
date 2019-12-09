@@ -1,6 +1,5 @@
 <?php
 $link = get_db_link();
-
 $username = $request['body']['username'];
 $password = $request['body']['password'];
 $confirm_password = $request['body']['confirm_password'];
@@ -49,10 +48,12 @@ if ($request['method'] === 'POST') {
   }
 
 
+
   $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
 
   if ($stmt = $link->prepare($sql)) {
-    $stmt->bind_param("ss", $param_username, $param_password);
+    $stmt->bind_param("ss",$param_username, $param_password);
+
 
     $param_username = $username;
     $param_password = password_hash($password, PASSWORD_BCRYPT);
