@@ -45,6 +45,8 @@ if ($request['method'] === 'POST') {
     }
   }
 
+
+
   $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
 
   if ($stmt = $link->prepare($sql)) {
