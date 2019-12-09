@@ -1,8 +1,7 @@
-
 import React from 'react';
 import GoogleMap from './google-map';
 import Favorites from './favorites';
-import EventList from './event-list';
+// import EventList from './event-list';
 import EventDetails from './event-details';
 
 class Search extends React.Component {
@@ -16,9 +15,6 @@ class Search extends React.Component {
     };
 
     this.detailSearch = this.detailSearch.bind(this);
-  }
-
-  componentDidUpdate() {
   }
 
   sportSearch(sport) {
@@ -59,12 +55,16 @@ class Search extends React.Component {
   }
 
   render() {
+
     if (this.state.eventInfoDisplay === true) {
       return (
         <div className="">
-          <GoogleMap events={this.state}
+          <GoogleMap
+            events={this.state}
+            display = {this.state.eventInfoDisplay}
             callback={sport => this.detailSearch(sport)} />
-          <EventDetails events={this.state.eventInfo}
+          <EventDetails
+            events={this.state.eventInfo}
             callback={id => this.props.likedEventsCallback(id)}
             toggleView={() => this.toggleDetailView()}/>
           <Favorites
@@ -73,42 +73,14 @@ class Search extends React.Component {
             listCallback={() => this.toggleList()} />
         </div>
       );
-    }
-
-    if (this.state.view === 'map') {
-      return (
-        <div className="">
-          <GoogleMap events={this.state}
-            callback={sport => this.detailSearch(sport)}
-            listCallback={events => this.displayList(events)} />
-          <Favorites
-            events={this.state}
-            callback={sport => this.sportSearch(sport)}
-            listCallback={() => this.toggleList()} />
-        </div>
-      );
-    }
-
-    if (this.state.view === 'list') {
-      return (
-        <div className=''>
-          <GoogleMap events={this.state}
-            callback={sport => this.detailSearch(sport)}
-            listCallback={events => this.displayList(events)} />
-          <EventList events={this.state}
-            onClick={id => this.detailSearch(id)}/>
-          <Favorites
-            events={this.state}
-            callback={sport => this.sportSearch(sport)}
-            listCallback={() => this.toggleMap()} />
-        </div>
-      );
     } else {
-
       return (
         <div className="">
-          <GoogleMap events={this.state}
+          <GoogleMap
+            events={this.state}
+            display={this.state.eventInfoDisplay}
             callback={sport => this.detailSearch(sport)} />
+
           <Favorites
             events={this.state}
             callback={sport => this.sportSearch(sport)}
@@ -116,6 +88,50 @@ class Search extends React.Component {
         </div>
       );
     }
+
+    // if (this.state.view === 'map') {
+    //   return (
+    //     <div className="">
+    //       <GoogleMap
+    //         events={this.state}
+    //         callback={sport => this.detailSearch(sport)}
+    //         listCallback={events => this.displayList(events)} />
+    //       <Favorites
+    //         events={this.state}
+    //         callback={sport => this.sportSearch(sport)}
+    //         listCallback={() => this.toggleList()} />
+    //     </div>
+    //   );
+    // }
+
+    // if (this.state.view === 'list') {
+    //   return (
+    //     <div className=''>
+    //       <GoogleMap
+    //         events={this.state}
+    //         callback={sport => this.detailSearch(sport)}
+    //         listCallback={events => this.displayList(events)} />
+    //       <EventList events={this.state}
+    //         onClick={id => this.detailSearch(id)}/>
+    //       <Favorites
+    //         events={this.state}
+    //         callback={sport => this.sportSearch(sport)}
+    //         listCallback={() => this.toggleMap()} />
+    //     </div>
+    //   );
+    // } else {
+
+    //   return (
+    //     <div className="">
+    //       <GoogleMap events={this.state}
+    //         callback={sport => this.detailSearch(sport)} />
+    //       <Favorites
+    //         events={this.state}
+    //         callback={sport => this.sportSearch(sport)}
+    //         listCallback={() => this.toggleList()} />
+    //     </div>
+    //   );
+    // }
 
   }
 }
