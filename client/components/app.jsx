@@ -45,7 +45,6 @@ export default class App extends React.Component {
   }
 
   removeLikedEvent(id) {
-
     const req = {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
@@ -57,8 +56,8 @@ export default class App extends React.Component {
     fetch('/api/user-liked-events', req)
       .then(data => data.json())
       .then(data => event => {
-        const eventId = this.state.liked.filter(events => events.id !== id);
-        this.setState({ liked: eventId });
+        const events = this.state.liked.filter(events => events.id !== id);
+        this.setState({ liked: events });
       });
   }
 

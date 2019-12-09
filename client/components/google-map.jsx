@@ -53,8 +53,8 @@ class GoogleMap extends React.Component {
   }
 
   componentDidUpdate() {
-    // this.markers.map(marker => marker.setMap(null));
-    // this.markers.length = 0;
+    this.markers.map(marker => marker.setMap(null));
+    this.markers.length = 0;
     this.createMarker();
     if (this.props.display === false) {
       this.handleResetZoom();
