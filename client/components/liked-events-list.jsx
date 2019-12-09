@@ -10,6 +10,7 @@ class LikedEventsList extends React.Component {
   }
 
   render() {
+    // console.log(this.props.likedEvents['liked-events'])
 
     if (this.props.likedEvents.length === 0) {
       return (
@@ -38,14 +39,11 @@ class LikedEventsList extends React.Component {
           <div className="eventListTitle mb-3 headers-font-ubuntu">Liked Events</div>
           <div className="text-capitalize">
             {
-              this.props.likedEvents.map(event => {
+              this.props.likedEvents['liked-events'].map((event, index) => {
                 return (
                   <LikedEvent
-                    key={event.id}
-                    title={event.title}
-                    id={event.id}
-                    rating={event.rating}
-                    location={event.location}
+                    key={index}
+                    event={event}
                     removeEvent={id => this.props.removeLike(id)}
                     eventDetail={id => this.props.searchLike(id)} />
                 );
