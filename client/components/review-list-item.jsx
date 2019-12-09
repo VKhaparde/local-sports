@@ -10,8 +10,8 @@ class ReviewListItem extends React.Component {
       <div className="reviewListItem d-flex flex-column"
         onClick={handleClick}>
         <div className="d-flex justify-content-between">
-          <div>{this.props.userName}</div>
-          <div>{this.props.rating}</div>
+          <div className="">{this.props.userName}</div>
+          <div className='rating m-2' style={{ backgroundImage: `url(${this.props.ratingImage})` }}></div>
         </div>
         <div>{this.props.reviewDescription}</div>
       </div>

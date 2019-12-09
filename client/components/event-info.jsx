@@ -13,6 +13,7 @@ class EventInfo extends React.Component {
     this.setState(({ favorited }) => {
       return { favorited: !favorited };
     });
+
   }
 
   render() {
@@ -28,7 +29,7 @@ class EventInfo extends React.Component {
         </div>
         <div className="d-flex justify-content-between mt-1 ">
           <div>{this.props.info.events[0]['event-day']}</div>
-          <div className='rating' style={{ backgroundImage: this.props.ratingImage }}></div>
+          <div className='rating' style={{ backgroundImage: `url(${this.props.ratingImage})` }}></div>
         </div>
         <div className="d-flex justify-content-between mt-1">
           <div>{this.props.info.events[0].name}</div>
