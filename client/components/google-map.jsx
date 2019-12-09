@@ -5,7 +5,9 @@ class GoogleMap extends React.Component {
     super(props);
     this.state = {
       events: [],
-      view: 'map'
+      view: 'map',
+      userLat: 0,
+      userLong: 0
     };
     this.googleMapRef = React.createRef();
     this.markers = [];
@@ -29,23 +31,34 @@ class GoogleMap extends React.Component {
       this.googleMap = this.createGoogleMap();
       this.createMarker();
     }
+
+  }
+
+  getUserLocation() {
+    // navigator.geolocation.getCurrentPosition(position => {
+    //   this.setState({userLat: position.coords.latitude, userLng: position.coords.longitude})
+    // });
+    // console.log(this.state)
   }
 
   createGoogleMap() {
     return new window.google.maps.Map(this.googleMapRef.current, {
-      zoom: 12,
+      zoom: 11,
       center: {
-        lat: 33.657567,
-        lng: -117.83154
+        lat: 33.727567,
+        lng: -117.80154
       },
       disableDefaultUI: true
     });
   }
 
   componentDidUpdate() {
-    this.markers.map(marker => marker.setMap(null));
-    this.markers.length = 0;
+    // this.markers.map(marker => marker.setMap(null));
+    // this.markers.length = 0;
     this.createMarker();
+    if (this.props.display === false) {
+      this.handleResetZoom();
+    }
   }
 
   createMarker() {
@@ -67,7 +80,7 @@ class GoogleMap extends React.Component {
   }
 
   handleResetZoom() {
-    // this.googleMap.setZoom(12);
+    this.googleMap.setZoom(11);
   }
 
   render() {
