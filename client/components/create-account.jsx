@@ -55,12 +55,12 @@ class CreateAccount extends React.Component {
   render() {
     if (this.state.isUserAccountCreated) {
       return (
-        <div className="eventList mt-5 d-flex flex-column text-center">
-          <div className="createAccount  headers-font-ubuntu">
+        <div className="eventList mt-2 d-flex flex-column text-center">
+          <div className="createAccount headers-font-ubuntu">
             Your account has been created successfully.
           </div>
           <Link to='/search'>
-            <div className='mt-4'>
+            <div className='m-4'>
               <button className='btn btn-success submit-button headers-font-ubuntu'>
               Click here to continue</button>
             </div>
