@@ -56,6 +56,7 @@ class Search extends React.Component {
   // }
 
   render() {
+    // console.log(this.props)
 
     if (this.state.eventInfoDisplay === true) {
       return (
@@ -66,7 +67,9 @@ class Search extends React.Component {
             callback={sport => this.detailSearch(sport)} />
           <EventDetails
             events={this.state.eventInfo}
-            callback={id => this.props.likedEventsCallback(id)}
+            likedEvents={this.props.likedEvents}
+            addLike={id => this.props.addLiked(id)}
+            removeLike={id => this.props.removeLiked(id)}
             toggleView={() => this.toggleMap()} />
           <Favorites
             events={this.state}
@@ -75,21 +78,6 @@ class Search extends React.Component {
         </div>
       );
     }
-    // else {
-    //   return (
-    //     <div className="">
-    //       <GoogleMap
-    //         events={this.state}
-    //         display={this.state.eventInfoDisplay}
-    //         callback={sport => this.detailSearch(sport)} />
-
-    //       <Favorites
-    //         events={this.state}
-    //         callback={sport => this.sportSearch(sport)}
-    //         listCallback={() => this.toggleList()} />
-    //     </div>
-    //   );
-    // }
 
     if (this.state.view === 'map') {
       return (

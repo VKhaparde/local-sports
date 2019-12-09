@@ -1,6 +1,7 @@
 import React from 'react';
 import LikedEvent from './liked-event';
 import { Link } from 'react-router-dom';
+import GoogleMap from './google-map';
 
 class LikedEventsList extends React.Component {
   constructor(props) {
@@ -9,10 +10,10 @@ class LikedEventsList extends React.Component {
   }
 
   render() {
-    // console.log(this.props.likedEvents['liked-events'])
     if (this.props.likedEvents.length === 0) {
       return (
         <div>
+          <GoogleMap />
           <div className="eventList mt-3 d-flex flex-column m-3">
             <h1 className="eventListTitle headers-font-ubuntu mb-3">Liked Events</h1>
             <div className="likedEvents">
@@ -29,14 +30,14 @@ class LikedEventsList extends React.Component {
         </div>
       );
     }
-
     return (
       <div>
+        {/* <GoogleMap /> */}
         <div className="eventList d-flex flex-column mt-3">
           <div className="eventListTitle mb-3 headers-font-ubuntu">Liked Events</div>
           <div className="text-capitalize">
             {
-              this.props.likedEvents['liked-events'].map((event, index) => {
+              this.props.likedEvents.map((event, index) => {
                 return (
                   <LikedEvent
                     key={index}
