@@ -26,7 +26,7 @@ export default class App extends React.Component {
     fetch('/api/user-liked-events')
       .then(data => data.json())
       .then(data => this.setState({
-        liked: data
+        liked: data['liked-events']
       }));
   }
 
@@ -98,13 +98,15 @@ export default class App extends React.Component {
             <Route path='/search' exact
               render={() =>
                 <Search
-                  likedEventsCallback={id => this.addLikedEvents(id)} />} />
+                  likedEvents={this.state.liked}
+                  addLiked={id => this.addLikedEvents(id)}
+                  removeLiked={id => this.removeLikedEvent(id)} />} />
 
             <Route path='/likedEvents' exact
               render={() =>
                 <LikedEventsList
                   likedEvents={this.state.liked}
-                  removeLike={id => this.removeLikedEvent(id)}
+                  removeLiked={id => this.removeLikedEvent(id)}
                   searchLike={id => this.searchLikedEvent(id)} />} />
 
             <Route path='/settings' exact

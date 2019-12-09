@@ -9,16 +9,38 @@ class EventInfo extends React.Component {
     this.handleEventClick = this.handleEventClick.bind(this);
   }
 
+  componentDidMount() {
+    this.checkLikedEventCondition();
+  }
+
+  checkLikedEventCondition() {
+    const id = this.props.info.events[0]['event-id'];
+    this.props.info.likedEvents.filter(event => {
+      if (event['event-id'] === id) {
+        this.setState({
+          favorited: true
+        });
+      }
+    });
+  }
+
   handleEventClick(event) {
+    if (this.state.favorited === true) {
+      this.props.info.removeLike(event);
+    }
+
+    if (this.state.favorited === false) {
+      this.props.info.addLike(event);
+    }
+
     this.setState(({ favorited }) => {
       return { favorited: !favorited };
     });
-    this.props.info.callback(event);
+
   }
 
   render() {
     const { favorited } = this.state;
-
     return (
       <div className="eventInfo d-flex flex-column overflow-hidden p-2">
         <div className="d-flex justify-content-between h3 m-0">{this.props.info.events[0]['event-name']}
