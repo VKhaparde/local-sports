@@ -8,10 +8,6 @@ class CreateAccount extends React.Component {
       username: '',
       password: '',
       confirmPassword: '',
-      name: '',
-      email: '',
-      gender: '',
-      phone: '',
       isUserAccountCreated: false
     };
     this.submitForm = this.submitForm.bind(this);
@@ -29,11 +25,7 @@ class CreateAccount extends React.Component {
       body: JSON.stringify({
         username: this.state.username,
         password: this.state.password,
-        confirmPassword: this.state.confirmPassword,
-        name: this.state.name,
-        phone: this.state.phone,
-        email: this.state.email,
-        gender: this.state.gender
+        confirmPassword: this.state.confirmPassword
       })
     };
     fetch('/api/registration', req)
@@ -73,31 +65,31 @@ class CreateAccount extends React.Component {
         <div className="createAccount  headers-font-ubuntu">Create Account</div>
         <form className='form mt-2 container'
           onSubmit={this.submitForm}>
-          <div className="liked-event-border p-1 mt-2 ">
+          {/* <div className="liked-event-border p-1 mt-2 ">
             <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
               name='name'
               type='text'
               placeholder='Fullname' autoComplete='off'
               value={this.state.name} required
               onChange={this.updateField}></input>
-          </div>
-          <div className="liked-event-border p-1 mt-2">
+          </div> */}
+          {/* <div className="liked-event-border p-1 mt-2">
             <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
               name='email'
               type='email'
               placeholder='Email' autoComplete='off'
               value={this.state.email}
               onChange={this.updateField}></input>
-          </div>
-          <div className="liked-event-border p-1 mt-2">
+          </div> */}
+          {/* <div className="liked-event-border p-1 mt-2">
             <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
               name='phone'
               type='text'
               placeholder='Phonenumber' autoComplete='off'
               value={this.state.phone} required
               onChange={this.updateField}></input>
-          </div>
-          <div className="liked-event-border p-1 mt-2">
+          </div> */}
+          {/* <div className="liked-event-border p-1 mt-2">
             <select className='form-control custom-select block-text-font-oswald w-100 p-1 pl-2'
               name='gender'
               type='text'
@@ -108,7 +100,7 @@ class CreateAccount extends React.Component {
               <option value="Female">Female</option>
               <option value="nopref">No Pref</option>
             </select>
-          </div>
+          </div> */}
           <div className="liked-event-border p-1 mt-2">
             <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
               name='username'
