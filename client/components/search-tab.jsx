@@ -27,7 +27,7 @@ class SearchTab extends React.Component {
               <div className="" >
                 <i className="fas fa-search m-2"></i>
               </div>
-              <p className='search text-center'>Soccer</p>
+              <p className="search text-center">Soccer</p>
               <div onClick={this.handleClick}>
                 <i className="fas fa-bars m-2"></i>
               </div>

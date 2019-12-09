@@ -4,7 +4,7 @@ function EventListItem(props) {
   return (
     <div className="liked-event-border p-2 m-2"
       onClick={() => props.callback(props.id)}>
-      <div className="d-flex justify-content-between">
+      <div className="d-flex justify-content-between text-capitalize">
         <div className="liked-event-title text-wrap headers-font-ubuntu">{props.name}</div>
         <button>
           <i className="liked-event-heart far fa-heart fa-2x"></i>

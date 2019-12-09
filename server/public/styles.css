@@ -129,14 +129,13 @@ height:75px;
 }
 
 .eventInfo{
-  height:60%;
-  width:100%;
+ height:60%;
+ width:100%;
  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
  padding:0;
 }
 
 .details, .reviews{
-  /* font-family:'Ubuntu Condensed', sans-serif; */
   height:20%;
   width:100%;
   box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
@@ -254,7 +253,7 @@ height:75px;
   font-size: 1.5em;
   text-align: left;
   margin-left: 1rem;
-  line-height: 1.5rem
+  line-height: 1.5rem;
 }
 
 .liked-event-location {
@@ -305,9 +304,7 @@ height:75px;
 }
 
 .reviewList{
-  border: 4px solid black;
   overflow:scroll;
-  /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25); */
   border-radius: 20px;
 }
 

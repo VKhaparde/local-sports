@@ -63,9 +63,9 @@ class ReviewsList extends React.Component {
   render() {
     if (this.props.isReviewsClicked) {
       return (
-        <div className="reviews font-text-bold" onClick={this.props.onReviewsClick}>
-          Reviews
-          <div className="reviewList m-2 p-2">
+        <div className="reviews headers-font-ubuntu" onClick={this.props.onReviewsClick}>
+          <h4><u>Reviews</u></h4>
+          <div className="reviewList m-2 p-2 block-text-font-oswald ml-2">
             {
               this.state.reviews.map((currentVal, index) => {
                 return (
@@ -76,7 +76,7 @@ class ReviewsList extends React.Component {
                     rating={currentVal['review-rating']}
                     reviewDescription={currentVal['review-description']}
                     onSpecificReviewClick={this.handleSpecificReviewClick}
-                    ratingImage={this.displayRating(currentVal['review-rating'])}/>);
+                    ratingImage={this.displayRating(currentVal['review-rating'])} />);
               })
             }
           </div>
@@ -84,14 +84,15 @@ class ReviewsList extends React.Component {
       );
     } else if (!this.props.isReviewsClicked) {
       return (
-        <div className="reviews" onClick={this.props.onReviewsClick}>Reviews
+        <div className="reviews headers-font-ubuntu" onClick={this.props.onReviewsClick}>
+          Reviews
         </div>
       );
     } else if (this.props.isReviewsClicked && this.state.isSpecificReviewClicked) {
       return (
-        <div className="reviews font-text-bold" onClick={this.props.onReviewsClick}>
+        <div className="reviews headers-font-ubuntu" onClick={this.props.onReviewsClick}>
           Reviews
-          <div className="reviewList m-2 p-2">
+          <div className="reviewList m-2 p-2 block-text-font-oswald ml-2">
             {
               this.state.reviews.map((currentVal, index) => {
                 return (
@@ -102,7 +103,7 @@ class ReviewsList extends React.Component {
                     rating={currentVal['review-rating']}
                     reviewDescription={currentVal['review-description']}
                     onSpecificReviewClick={this.handleSpecificReviewClick}
-                    ratingImage={this.displayRating(currentVal['review-rating'])}/>);
+                    ratingImage={this.displayRating(currentVal['review-rating'])} />);
               })
             }
           </div>
