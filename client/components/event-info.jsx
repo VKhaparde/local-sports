@@ -9,11 +9,11 @@ class EventInfo extends React.Component {
     this.handleEventClick = this.handleEventClick.bind(this);
   }
 
-  handleEventClick() {
+  handleEventClick(event) {
     this.setState(({ favorited }) => {
       return { favorited: !favorited };
     });
-
+    this.props.info.callback(event);
   }
 
   render() {
@@ -23,7 +23,7 @@ class EventInfo extends React.Component {
       <div className="eventInfo d-flex flex-column overflow-hidden p-2">
         <div className="d-flex justify-content-between h3 m-0">{this.props.info.events[0]['event-name']}
           <button id={favorited ? 'liked-event-heart' : 'unliked-heart-event'}
-            onClick={() => this.handleEventClick()}>
+            onClick={() => this.handleEventClick(this.props.info.events[0])}>
             <i className={`liked-event-heart ${favorited ? 'fas' : 'far'} fa-heart`}></i>
           </button>
         </div>
