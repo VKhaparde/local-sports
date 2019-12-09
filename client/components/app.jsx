@@ -7,6 +7,7 @@ import Search from './search';
 import Settings from './settings';
 import Welcome from './welcome';
 import LikedEventsList from './liked-events-list';
+import CreateAccount from './create-account';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -74,6 +75,9 @@ export default class App extends React.Component {
 
             <Route path='/signIn' exact
               render={() => <SignIn />} />
+
+            <Route path='/createAccount' exact
+              render={() => <CreateAccount />} />
 
             <Route path='/search' exact
               render={() =>
