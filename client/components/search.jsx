@@ -1,4 +1,3 @@
-
 import React from 'react';
 import GoogleMap from './google-map';
 import Favorites from './favorites';
@@ -16,9 +15,6 @@ class Search extends React.Component {
     };
 
     this.detailSearch = this.detailSearch.bind(this);
-  }
-
-  componentDidUpdate() {
   }
 
   sportSearch(sport) {
@@ -48,25 +44,33 @@ class Search extends React.Component {
 
   toggleMap() {
     this.setState({
-      view: 'map'
-    });
-  }
-
-  toggleDetailView() {
-    this.setState({
+      view: 'map',
       eventInfoDisplay: !this.state.eventInfoDisplay
     });
   }
 
+  // toggleDetailView() {
+  //   this.setState({
+  //     eventInfoDisplay: !this.state.eventInfoDisplay
+  //   });
+  // }
+
   render() {
+    // console.log(this.props)
+
     if (this.state.eventInfoDisplay === true) {
       return (
         <div className="">
-          <GoogleMap events={this.state}
+          <GoogleMap
+            events={this.state}
+            display={this.state.eventInfoDisplay}
             callback={sport => this.detailSearch(sport)} />
-          <EventDetails events={this.state.eventInfo}
-            callback={id => this.props.likedEventsCallback(id)}
-            toggleView={() => this.toggleDetailView()}/>
+          <EventDetails
+            events={this.state.eventInfo}
+            likedEvents={this.props.likedEvents}
+            addLike={id => this.props.addLiked(id)}
+            removeLike={id => this.props.removeLiked(id)}
+            toggleView={() => this.toggleMap()} />
           <Favorites
             events={this.state}
             callback={sport => this.sportSearch(sport)}
@@ -78,7 +82,9 @@ class Search extends React.Component {
     if (this.state.view === 'map') {
       return (
         <div className="">
-          <GoogleMap events={this.state}
+          <GoogleMap
+            display={this.state.eventInfoDisplay}
+            events={this.state}
             callback={sport => this.detailSearch(sport)}
             listCallback={events => this.displayList(events)} />
           <Favorites
@@ -92,11 +98,12 @@ class Search extends React.Component {
     if (this.state.view === 'list') {
       return (
         <div className=''>
-          <GoogleMap events={this.state}
+          <GoogleMap
+            events={this.state}
             callback={sport => this.detailSearch(sport)}
             listCallback={events => this.displayList(events)} />
           <EventList events={this.state}
-            onClick={id => this.detailSearch(id)}/>
+            onClick={id => this.detailSearch(id)} />
           <Favorites
             events={this.state}
             callback={sport => this.sportSearch(sport)}

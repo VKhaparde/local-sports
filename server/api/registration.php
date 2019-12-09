@@ -4,9 +4,11 @@ $username = $request['body']['username'];
 $password = $request['body']['password'];
 $confirm_password = $request['body']['confirm_password'];
 
+
+
 if ($request['method'] === 'POST') {
   if (!isset($username)) {
-    throw new ApiError('insert a user name yo');
+    throw new ApiError('Insert a user name.');
   } else {
     $sql = "SELECT id FROM users WHERE username = ?";
 
@@ -19,42 +21,45 @@ if ($request['method'] === 'POST') {
         $stmt->store_result();
 
         if ($stmt->num_rows == 1) {
-          throw new ApiError('This username already exists my dude');
+          throw new ApiError('This username already exists.');
         } else {
           $username = $request['body']['username'];
         }
       } else {
-        throw new ApiError('something went wrong my guy');
+        throw new ApiError('Something went wrong.');
       }
     }
     $stmt->close();
   }
 
   if (!isset($password)) {
-    throw new ApiError('gotta get that password in mate');
+    throw new ApiError('Please enter a valid password.');
   } else {
     $password = $request['body']['password'];
   }
 
   if (!isset($confirm_password)) {
-    throw new ApiError('gotta confirm that password egghead');
+    throw new ApiError('Gotta confirm that password.');
   } else {
     $confirm_password = $request['body']['confirm_password'];
     if ($password != $confirm_password) {
-      throw new ApiError('your passwords dont match dude');
+      throw new ApiError('Your passwords don\'t match.');
     }
   }
+
+
 
   $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
 
   if ($stmt = $link->prepare($sql)) {
-    $stmt->bind_param("ss", $param_username, $param_password);
+    $stmt->bind_param("ss",$param_username, $param_password);
+
 
     $param_username = $username;
     $param_password = password_hash($password, PASSWORD_BCRYPT);
 
     if ($stmt->execute()) {
-      $response['body'] = 'you have successfully created your account!';
+      $response['body'] = 'You have successfully created your account!';
       send($response);
     }
     $stmt->close();
@@ -63,4 +68,4 @@ if ($request['method'] === 'POST') {
 }
 
 
-//http post localhost:9000/api/registration username=test password=test confirm_password=test
+//http -v post localhost:9000/api/registration name=Kelly phone=123456789 email=kelly@gmail.com username=kellyrocks password=test confirm_password=test

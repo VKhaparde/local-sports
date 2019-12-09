@@ -9,7 +9,30 @@ class EventInfo extends React.Component {
     this.handleEventClick = this.handleEventClick.bind(this);
   }
 
-  handleEventClick() {
+  componentDidMount() {
+    this.checkLikedEventCondition();
+  }
+
+  checkLikedEventCondition() {
+    const id = this.props.info.events[0]['event-id'];
+    this.props.info.likedEvents.filter(event => {
+      if (event['event-id'] === id) {
+        this.setState({
+          favorited: true
+        });
+      }
+    });
+  }
+
+  handleEventClick(event) {
+    if (this.state.favorited === true) {
+      this.props.info.removeLike(event);
+    }
+
+    if (this.state.favorited === false) {
+      this.props.info.addLike(event);
+    }
+
     this.setState(({ favorited }) => {
       return { favorited: !favorited };
     });
@@ -18,12 +41,11 @@ class EventInfo extends React.Component {
 
   render() {
     const { favorited } = this.state;
-
     return (
       <div className="eventInfo d-flex flex-column overflow-hidden p-2">
         <div className="d-flex justify-content-between text-capitalize headers-font-ubuntu h3 m-1 ml-2">{this.props.info.events[0]['event-name']}
           <button id={favorited ? 'liked-event-heart' : 'unliked-heart-event'}
-            onClick={() => this.handleEventClick()}>
+            onClick={() => this.handleEventClick(this.props.info.events[0])}>
             <i className={`liked-event-heart ${favorited ? 'fas' : 'far'} fa-heart`}></i>
           </button>
         </div>

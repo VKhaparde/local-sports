@@ -31,7 +31,7 @@ class GoogleMap extends React.Component {
       this.googleMap = this.createGoogleMap();
       this.createMarker();
     }
-    // this.getUserLocation();
+
   }
 
   getUserLocation() {
@@ -43,10 +43,10 @@ class GoogleMap extends React.Component {
 
   createGoogleMap() {
     return new window.google.maps.Map(this.googleMapRef.current, {
-      zoom: 12,
+      zoom: 11,
       center: {
-        lat: 33.657567,
-        lng: -117.83154
+        lat: 33.727567,
+        lng: -117.80154
       },
       disableDefaultUI: true
     });
@@ -56,9 +56,13 @@ class GoogleMap extends React.Component {
     this.markers.map(marker => marker.setMap(null));
     this.markers.length = 0;
     this.createMarker();
+    if (this.props.display === false) {
+      this.handleResetZoom();
+    }
   }
 
   createMarker() {
+    if (this.props.events.events.length === 0) return null;
     this.props.events.events.map(event => {
       const marker = new window.google.maps.Marker({
         position: { lat: event.lat, lng: -event.lng },
@@ -77,7 +81,7 @@ class GoogleMap extends React.Component {
   }
 
   handleResetZoom() {
-    // this.googleMap.setZoom(12);
+    this.googleMap.setZoom(11);
   }
 
   render() {
