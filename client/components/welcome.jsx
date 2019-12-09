@@ -13,12 +13,10 @@ function Welcome() {
         Filter by your sport of choice, day of choice, and location of choice, then go out and play!
       </h4>
       </div>
-      <div className='button mt-3'>
-        <button className='btn btn-primary block submit-button headers-font-ubuntu'>Sign In</button>
-        <button className='btn btn-primary block submit-button headers-font-ubuntu mt-4'>Create an Account</button>
-      </div>
-      <div className='button mt-4 mb-3'>
-        <button className='btn btn-primary block headers-font-ubuntu skip-button'>Skip
+      <div className='button mt-3 headers-font-ubuntu'>
+        <button className='btn btn-primary block submit-button'>Sign In</button>
+        <button className='btn btn-primary block submit-button mt-4'>Create an Account</button>
+        <button className='btn btn-primary block mt-3 skip-button'>Skip
           <i className="fas fa-chevron-right ml-2"></i>
         </button>
       </div>
