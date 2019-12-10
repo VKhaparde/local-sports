@@ -25,7 +25,7 @@ class CreateAccount extends React.Component {
       body: JSON.stringify({
         username: this.state.username,
         password: this.state.password,
-        confirmPassword: this.state.confirmPassword
+        confirm_password: this.state.confirmPassword
       })
     };
     fetch('/api/registration', req)
@@ -63,44 +63,8 @@ class CreateAccount extends React.Component {
     return (
       <div className="eventList mt-2 d-flex flex-column text-center">
         <div className="createAccount  headers-font-ubuntu">Create Account</div>
-        <form className='form mt-2 container'
+        <form className='form mt-4 container'
           onSubmit={this.submitForm}>
-          {/* <div className="liked-event-border p-1 mt-2 ">
-            <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
-              name='name'
-              type='text'
-              placeholder='Fullname' autoComplete='off'
-              value={this.state.name} required
-              onChange={this.updateField}></input>
-          </div> */}
-          {/* <div className="liked-event-border p-1 mt-2">
-            <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
-              name='email'
-              type='email'
-              placeholder='Email' autoComplete='off'
-              value={this.state.email}
-              onChange={this.updateField}></input>
-          </div> */}
-          {/* <div className="liked-event-border p-1 mt-2">
-            <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
-              name='phone'
-              type='text'
-              placeholder='Phonenumber' autoComplete='off'
-              value={this.state.phone} required
-              onChange={this.updateField}></input>
-          </div> */}
-          {/* <div className="liked-event-border p-1 mt-2">
-            <select className='form-control custom-select block-text-font-oswald w-100 p-1 pl-2'
-              name='gender'
-              type='text'
-              value={this.state.gender}
-              onChange={this.updateField}>
-              <option value="Gender">Gender</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="nopref">No Pref</option>
-            </select>
-          </div> */}
           <div className="liked-event-border p-1 mt-2">
             <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
               name='username'
@@ -125,7 +89,7 @@ class CreateAccount extends React.Component {
               value={this.state.confirmPassword} required
               onChange={this.updateField}></input>
           </div>
-          <div className='button mt-4'>
+          <div className='button m-4'>
             <button className='btn btn-success block submit-button headers-font-ubuntu'>Create Account</button>
           </div>
         </form >

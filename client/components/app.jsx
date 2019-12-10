@@ -8,6 +8,7 @@ import Settings from './settings';
 import Welcome from './welcome';
 import LikedEventsList from './liked-events-list';
 import CreateAccount from './create-account';
+// import EventDetails from './event-details';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -62,8 +63,9 @@ export default class App extends React.Component {
       });
   }
 
-  searchLikedEvent(id) {
-  }
+  // searchLikedEvent(id) {
+
+  // }
 
   removeFromSchedule(day) {
     this.setState({
@@ -101,12 +103,17 @@ export default class App extends React.Component {
                 <Search
                   likedEventsCallback={id => this.addLikedEvents(id)} />} />
 
+            {/* <Route path='/eventDetails/:id' render={(props) => (
+              <EventDetails eventId={props.match.params.id}></EventDetails>
+            )}></Route> */}
+
             <Route path='/likedEvents' exact
               render={() =>
                 <LikedEventsList
                   likedEvents={this.state.liked}
                   removeLike={id => this.removeLikedEvent(id)}
-                  searchLike={id => this.searchLikedEvent(id)} />} />
+                  // searchLike={id => this.searchLikedEvent(id)}
+                />} />
 
             <Route path='/settings' exact
               render={() => <Settings
