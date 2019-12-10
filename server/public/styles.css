@@ -237,6 +237,7 @@ height:75px;
   border: 2px solid #2a9d8f;
   border-radius: 10px;
   box-sizing: border-box;
+  display: flex;
 }
 
 .liked-event-heart {
@@ -273,15 +274,13 @@ height:75px;
   border: none;
   padding: 0.5em;
   width: 100%;
-  font-size: 1rem;
 }
 
 .create-account-button {
   background-color: white;
   color: #2a9d8f;
-  border: none;
+  border: #2a9d8f;
   text-decoration: underline;
-  font-size: 1.2rem;
 }
 
 .skip-button {
@@ -324,6 +323,8 @@ height:75px;
   box-sizing: border-box;
 }
 
-.createAccount{
-  font-size:1.75rem;
+.username-password-icons {
+  padding: 1rem;
+  width: 3rem;
+  text-align: center;
 }

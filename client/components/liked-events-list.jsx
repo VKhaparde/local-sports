@@ -27,8 +27,8 @@ class LikedEventsList extends React.Component {
     return (
       <div>
         <div className="eventList d-flex flex-column mt-3">
-          <div className="eventListTitle mb-3 headers-font-ubuntu">Liked Events</div>
-          <div className="text-capitalize">
+          <div className="eventListTitle mt-3 headers-font-ubuntu">Liked Events</div>
+          <div className="text-capitalize ml-4">
             {
               this.props.likedEvents.map((event, index) => {
                 return (

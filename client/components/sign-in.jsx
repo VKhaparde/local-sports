@@ -36,16 +36,20 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div className="eventList mt-5 d-flex flex-column text-center">
-        <form className='form mt-2 container'
+      <div className="eventList mt-3 mb-2 flex-column text-center">
+        <form className='form d-flex flex-column ml-5 mr-5'
           onSubmit={this.submitForm}>
-          <div className="liked-event-border p-1 mt-5">
+          <div className="eventListTitle mt-5 headers-font-ubuntu">
+            Sign In
+          </div>
+          <div className="liked-event-border mt-5 p-1">
             <input className='block-text-font-oswald w-100 p-1 pl-2'
               name='username'
               type='text'
               placeholder='Username'
               value={this.state.username}
               onChange={this.updateField}></input>
+            <i className="fas fa-user text-muted username-password-icons"></i>
           </div>
           <div className="liked-event-border p-1 mt-4">
             <input className='block-text-font-oswald w-100 p-1 pl-2'
@@ -54,20 +58,18 @@ class SignIn extends React.Component {
               placeholder='Password'
               value={this.state.password}
               onChange={this.updateField}></input>
+            <i className="fas fa-lock text-muted username-password-icons"></i>
           </div>
-          <div className='button mt-4'>
-            <button className='btn btn-primary block submit-button headers-font-ubuntu'>Sign In</button>
+          <div className='button mt-5 headers-font-ubuntu'>
+            <button className='btn btn-primary block submit-button'>Sign In</button>
+            <button className='btn btn-primary block mt-4 create-account-button'>Create an Account</button>
+            <br></br>
+            <button className='btn btn-primary block mt-4 skip-button'>
+              Skip
+              <i className="fas fa-chevron-right ml-2"></i>
+            </button>
           </div>
         </form >
-        <div className='button mt-4'>
-          <button className='btn btn-primary block headers-font-ubuntu create-account-button'>Create an Account</button>
-        </div>
-        <div className='button mt-4 mb-4'>
-          <button className='btn btn-primary block headers-font-ubuntu skip-button'>Skip
-            <i className="fas fa-chevron-right ml-2"></i>
-          </button>
-        </div>
-
       </div>
     );
   }

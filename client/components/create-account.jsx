@@ -54,15 +54,17 @@ class CreateAccount extends React.Component {
           <Link to='/search'>
             <div className='m-4'>
               <button className='btn btn-success submit-button headers-font-ubuntu'>
-              Click here to continue</button>
+                Click here to continue</button>
             </div>
           </Link>
         </div>
       );
     }
     return (
-      <div className="eventList mt-2 d-flex flex-column text-center">
-        <div className="createAccount  headers-font-ubuntu">Create Account</div>
+      <div className="eventList mt-5 d-flex flex-column text-center">
+        <div className="eventListTitle headers-font-ubuntu">
+          Create Account
+        </div>
         <form className='form mt-2 container'
           onSubmit={this.submitForm}>
           {/* <div className="liked-event-border p-1 mt-2 ">
