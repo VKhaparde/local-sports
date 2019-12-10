@@ -38,27 +38,34 @@ export default class App extends React.Component {
         'event-id': event['event-id']
       })
     };
-
     fetch('/api/user-liked-events', req)
       .then(data => data.json())
-      .then(data => this.setState({ liked: this.state.liked, data }));
+      .then(data => this.setState(liked => {
+        return { liked: this.state.liked, data };
+      }));
   }
 
-  removeLikedEvent(id) {
+  removeLikedEvent(event) {
     const req = {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        'event-id': id
+        'event-id': event['event-id']
       })
     };
 
     fetch('/api/user-liked-events', req)
       .then(data => data.json())
-      .then(data => event => {
-        const events = this.state.liked.filter(events => events.id !== id);
-        this.setState({ liked: events });
-      });
+      .then(data => this.setState(state => {
+        const list = this.state.liked.filter(events => events['event-id'] !== event['event-id']);
+        return { liked: list };
+      })
+
+        //   this.setState({
+        //   liked: this.state.liked.filter(events => events.id !== event['event-id'])
+        // })
+        // );
+      );
   }
 
   searchLikedEvent(id) {
