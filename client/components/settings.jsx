@@ -38,7 +38,7 @@ class Settings extends React.Component {
         <div className="d-flex flex-column ml-5 mr-5 mb-3">
           {this.state.schedule.map((day, index) => {
             return (
-              <h4 className={this.state[day] ? 'not-active-day text-center p-1 block-text-font-oswald' : 'liked-event-border text-center p-1 block-text-font-oswald'}
+              <h4 className={`${this.state[day] ? 'not-active-day' : 'liked-event-border'} text-center p-1 block-text-font-oswald`}
                 key={index}
                 onClick={() => this.handleEventClick(day)}>{day}</h4>
             );
