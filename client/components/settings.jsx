@@ -31,7 +31,7 @@ class Settings extends React.Component {
   render() {
 
     return (
-      <div className="eventList mt-3 flex-column text-center overflow-none">
+      <div className="eventList mt-3 flex-column text-center">
         <div className="eventListTitle mt-4 mb-4 headers-font-ubuntu">
           <h2>Schedule</h2>
         </div>

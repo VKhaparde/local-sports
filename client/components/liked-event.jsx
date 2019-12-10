@@ -19,7 +19,7 @@ class LikedEvent extends React.Component {
   render() {
     const { favorited } = this.state;
     return (
-      <div className="liked-event-border p-2 m-2"
+      <div className="liked-event-border w-75 p-1 m-4"
         onClick={() => this.props.eventDetail(this.props.event['event-id'])}>
         <div className="d-flex justify-content-between">
           <div className="liked-event-title text-wrap headers-font-ubuntu">{this.props.event['event-name']}</div>
