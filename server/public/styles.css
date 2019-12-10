@@ -212,6 +212,8 @@ height:75px;
   width: 70%;
   text-align: center;
   font-size: 2rem;
+  overflow: hidden;
+  line-height: 2.25rem;
 }
 
 .eventTitle{
@@ -327,4 +329,8 @@ height:75px;
   padding: 1rem;
   width: 3rem;
   text-align: center;
+}
+
+.form-control {
+  border: none;
 }
