@@ -1,19 +1,13 @@
 import React from 'react';
 import LikedEvent from './liked-event';
 import { Link } from 'react-router-dom';
-import GoogleMap from './google-map';
 
 class LikedEventsList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
 
   render() {
     if (this.props.likedEvents.length === 0) {
       return (
         <div>
-          <GoogleMap />
           <div className="eventList mt-3 d-flex flex-column m-3">
             <h1 className="eventListTitle headers-font-ubuntu mb-3">Liked Events</h1>
             <div className="likedEvents">
@@ -32,7 +26,6 @@ class LikedEventsList extends React.Component {
     }
     return (
       <div>
-        {/* <GoogleMap /> */}
         <div className="eventList d-flex flex-column mt-3">
           <div className="eventListTitle mb-3 headers-font-ubuntu">Liked Events</div>
           <div className="text-capitalize">
@@ -42,7 +35,7 @@ class LikedEventsList extends React.Component {
                   <LikedEvent
                     key={index}
                     event={event}
-                    removeEvent={id => this.props.removeLike(id)}
+                    removeEvent={id => this.props.removeLiked(id)}
                     eventDetail={id => this.props.searchLike(id)} />
                 );
               })

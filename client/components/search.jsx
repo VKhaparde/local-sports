@@ -44,19 +44,18 @@ class Search extends React.Component {
 
   toggleMap() {
     this.setState({
-      view: 'map',
+      view: 'map'
+      // eventInfoDisplay: !this.state.eventInfoDisplay
+    });
+  }
+
+  toggleDetailView() {
+    this.setState({
       eventInfoDisplay: !this.state.eventInfoDisplay
     });
   }
 
-  // toggleDetailView() {
-  //   this.setState({
-  //     eventInfoDisplay: !this.state.eventInfoDisplay
-  //   });
-  // }
-
   render() {
-    // console.log(this.props)
 
     if (this.state.eventInfoDisplay === true) {
       return (
@@ -70,7 +69,7 @@ class Search extends React.Component {
             likedEvents={this.props.likedEvents}
             addLike={id => this.props.addLiked(id)}
             removeLike={id => this.props.removeLiked(id)}
-            toggleView={() => this.toggleMap()} />
+            toggleView={() => this.toggleDetailView()} />
           <Favorites
             events={this.state}
             callback={sport => this.sportSearch(sport)}

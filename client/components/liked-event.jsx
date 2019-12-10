@@ -9,11 +9,11 @@ class LikedEvent extends React.Component {
     this.handleEventClick = this.handleEventClick.bind(this);
   }
 
-  handleEventClick(id) {
+  handleEventClick(event) {
     this.setState(({ favorited }) => {
       return { favorited: !favorited };
     });
-    setTimeout(() => { this.props.removeEvent(id); }, 300);
+    setTimeout(() => { this.props.removeEvent(event); }, 300);
   }
 
   render() {
@@ -24,7 +24,7 @@ class LikedEvent extends React.Component {
         <div className="d-flex justify-content-between">
           <div className="liked-event-title text-wrap headers-font-ubuntu">{this.props.event['event-name']}</div>
           <button id={favorited ? 'liked-event-heart' : 'unliked-heart-event'}
-            onClick={() => this.handleEventClick(this.props.event['event-id'])}>
+            onClick={() => this.handleEventClick(this.props.event)}>
             <i className={`liked-event-heart ${favorited ? 'fas' : 'far'} fa-heart fa-2x`}></i>
           </button>
         </div>
