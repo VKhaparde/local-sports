@@ -65,7 +65,8 @@ class CreateAccount extends React.Component {
         <div className="createAccount  headers-font-ubuntu">Create Account</div>
         <form className='form mt-4 container'
           onSubmit={this.submitForm}>
-          <div className="liked-event-border p-1 mt-2">
+          <div className="liked-event-border d-flex p-1 mt-2">
+            <i className="fas fa-user text-muted username-password-icons"></i>
             <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
               name='username'
               type='text'
@@ -101,12 +102,12 @@ class CreateAccount extends React.Component {
             <button className='btn btn-primary block create-account-button mt-4'>Back to Sign In</button>
           </Link>
           <br></br>
-          <Link to='/search'>
+          {/* <Link to='/search'>
             <button className='btn btn-primary block mt-4 skip-button'>
               Skip
               <i className="fas fa-chevron-right ml-2"></i>
             </button>
-          </Link>
+          </Link> */}
         </div>
       </div>
     );

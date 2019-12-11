@@ -1,5 +1,7 @@
 <?php
-$response['body'] =  'you:  ' . $request['body']['username'] . 'have logged out';
-send($response);
 
-session_destroy();
+if ($request['method'] === 'POST') {
+  if (isset($_SESSION['user_id'])) {
+    session_destroy();
+  }
+};

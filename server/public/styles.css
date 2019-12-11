@@ -265,6 +265,11 @@ height:75px;
   line-height: 1.3rem;
 }
 
+.liked-events-list{
+  position: absolute;
+  top: 50%;
+}
+
 .hideElement {
   display: none;
 }
@@ -310,7 +315,7 @@ height:75px;
 
 .reviewListItem{
   border: 4px solid #2a9d8f;
-  height: 125px;
+  /* height: 125px; */
   overflow: scroll;
   border-radius: 10px;
 }

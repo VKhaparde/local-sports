@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(!password_verify($request['body']['password'], $password)){
       throw new ApiError('Invalid Login', 401);
     }
-    session_regenerate_id();
+    // session_regenerate_id();
     $_SESSION['user_id'] = $user_id;
     $response['body'] = [
       'message' => 'Welcome ' . $request['body']['username'] . '!'

@@ -29,6 +29,17 @@ class Settings extends React.Component {
     }
   }
 
+  handleSignOut() {
+    const req = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: ''
+    };
+    fetch('/api/logout', req)
+      .then(data => data.json())
+      .then(data => data);
+  }
+
   render() {
 
     return (
@@ -49,7 +60,8 @@ class Settings extends React.Component {
           <h2>Sign Out</h2>
         </div>
         <Link to='/signIn'>
-          <button className="mt-3">
+          <button className="mt-3"
+            onClick={this.handleSignOut}>
             <i className="fas fa-sign-out-alt fa-2x" />
           </button>
         </Link>
