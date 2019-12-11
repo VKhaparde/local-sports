@@ -39,28 +39,34 @@ export default class App extends React.Component {
         'event-id': event['event-id']
       })
     };
-
     fetch('/api/user-liked-events', req)
       .then(data => data.json())
-      .then(data => this.setState({ liked: this.state.liked, data }));
+      .then(data => this.setState(liked => {
+        return { liked: this.state.liked, data };
+      }));
   }
 
-  removeLikedEvent(id) {
-
+  removeLikedEvent(event) {
     const req = {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        'event-id': id
+        'event-id': event['event-id']
       })
     };
 
     fetch('/api/user-liked-events', req)
       .then(data => data.json())
-      .then(data => event => {
-        const eventId = this.state.liked.filter(events => events.id !== id);
-        this.setState({ liked: eventId });
-      });
+      .then(data => this.setState(state => {
+        const list = this.state.liked.filter(events => events['event-id'] !== event['event-id']);
+        return { liked: list };
+      })
+
+        //   this.setState({
+        //   liked: this.state.liked.filter(events => events.id !== event['event-id'])
+        // })
+        // );
+      );
   }
 
   // searchLikedEvent(id) {
@@ -101,7 +107,9 @@ export default class App extends React.Component {
             <Route path='/search' exact
               render={() =>
                 <Search
-                  likedEventsCallback={id => this.addLikedEvents(id)} />} />
+                  likedEvents={this.state.liked}
+                  addLiked={id => this.addLikedEvents(id)}
+                  removeLiked={id => this.removeLikedEvent(id)} />} />
 
             {/* <Route path='/eventDetails/:id' render={(props) => (
               <EventDetails eventId={props.match.params.id}></EventDetails>
@@ -111,9 +119,11 @@ export default class App extends React.Component {
               render={() =>
                 <LikedEventsList
                   likedEvents={this.state.liked}
+
                   removeLike={id => this.removeLikedEvent(id)}
-                  // searchLike={id => this.searchLikedEvent(id)}
+                 
                 />} />
+                 
 
             <Route path='/settings' exact
               render={() => <Settings

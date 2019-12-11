@@ -34,7 +34,7 @@ class Favorites extends React.Component {
             onClick={() => this.toggleShow()}>
             <i className="fas fa-chevron-up fa-2x m-2"></i>
           </div> */}
-          <button className="favorites-icons menu-icon m-1">
+          <button className="favorites-icons m-1">
             <i className="fas fa-map-marker-alt fa-2x m-2"
               onClick={() => this.props.listCallback()} />
           </button>
@@ -49,7 +49,7 @@ class Favorites extends React.Component {
             onClick={() => this.toggleShow()}>
             <i className="fas fa-chevron-up fa-2x text-white"></i>
           </div>
-          <button className="favorites-icons menu-icon m-1">
+          <button className="favorites-icons m-1">
             <i className="fas fa-list fa-2x m-2"
               onClick={() => this.props.listCallback()} />
           </button>
@@ -70,7 +70,7 @@ class Favorites extends React.Component {
                   key={sport}
                   props={sport} />
               )}
-              <button className="favorites-icons menu-icon m-1">
+              <button className="favorites-icons m-1">
                 <i className="fas fa-list fa-2x m-2"
                   onClick={() => this.props.listCallback()}
                 />

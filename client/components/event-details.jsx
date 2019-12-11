@@ -61,9 +61,10 @@ class EventDetails extends React.Component {
             info={this.props}
             toggleView={() => this.props.toggleView()}
             ratingImage={this.displayRating(rating)} />
-          <div className="details"
-            onClick={this.handleClickDetails}>Details
-            <div className="detailsInfo font-weight-normal">
+          <div className="details headers-font-ubuntu"
+            onClick={this.handleClickDetails}>
+            <h4><u>Details</u></h4>
+            <div className="detailsInfo block-text-font-oswald ml-2 mr-2">
               <div className="d-flex justify-content-between">
                 <div>Organizer:</div>
                 <div>{this.props.events[0]['organizer-name']}</div>
@@ -76,8 +77,8 @@ class EventDetails extends React.Component {
                 <div>Phone:</div>
                 <div>{this.props.events[0].phone}</div>
               </div>
-              <div className="d-flex justify-content-between">
-                <div>{this.props.events[0]['event-description']}</div>
+              <div className="d-flex justify-content-between mt-3">
+                <p className="font-italic">{this.props.events[0]['event-description']}</p>
               </div>
             </div>
           </div>
@@ -94,8 +95,9 @@ class EventDetails extends React.Component {
             info={this.props}
             toggleView={() => this.props.toggleView()}
             ratingImage={this.displayRating(rating)} />
-          <div className="details"
-            onClick={this.handleClickDetails}>Details
+          <div className="details headers-font-ubuntu"
+            onClick={this.handleClickDetails}>
+            Details
           </div>
           <ReviewList
             onReviewsClick={this.handleClickReviews}
@@ -110,8 +112,9 @@ class EventDetails extends React.Component {
             info={this.props}
             toggleView={() => this.props.toggleView()}
             ratingImage={this.displayRating(rating)} />
-          <div className="details"
-            onClick={this.handleClickDetails}>Details
+          <div className="details headers-font-ubuntu"
+            onClick={this.handleClickDetails}>
+            Details
           </div>
           <ReviewList
             onReviewsClick={this.handleClickReviews}

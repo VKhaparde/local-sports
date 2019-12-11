@@ -10,12 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $sql = "SELECT id, password
     FROM `users`
     WHERE username = ?";
+
     $stmt = $link->prepare($sql);
     $stmt->bind_param('s', $request['body']['username']);
     $stmt->execute();
     $stmt->store_result();
     if($stmt->num_rows === 0){
       throw new ApiError('Invalid login', 401);
+
     }
     $stmt->bind_result($user_id, $password);
     $stmt->fetch();
@@ -30,4 +32,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // header('Locaton: https://local-sports.localsports.site/search');
     send($response);
 }
+
 // http post localhost:9000/api/login username=OldManJenkins420 password=420blazeit

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Settings extends React.Component {
   constructor(props) {
@@ -31,26 +32,27 @@ class Settings extends React.Component {
   render() {
 
     return (
-      <div className="eventList mt-3 container">
-        <div className="settingsContainer rounded m-2 ">
-          <div className="settingsTitle text-center m-2 sticky-top">
-            <h2>Schedule</h2>
-          </div>
-          <div className="d-flex flex-column ml-1 mt-4">
-            {this.state.schedule.map((day, index) => {
-              return (
-                <h4 className={this.state[day] ? 'not-active-day text-center p-1' : 'liked-event-border text-center p-1'}
-                  key={index}
-                  onClick={() => this.handleEventClick(day)}>{day}</h4>
-              );
-            })}
-          </div>
-          <div className="d-flex justify-content-end">
-            <button> Sign out
-              <i className="fas fa-arrow-left fa-3x mt-4 mr-2" />
-            </button>
-          </div>
+      <div className="eventList mt-3 flex-column text-center">
+        <div className="eventListTitle mt-4 mb-4 headers-font-ubuntu">
+          <h2>Schedule</h2>
         </div>
+        <div className="d-flex flex-column ml-5 mr-5 mb-3">
+          {this.state.schedule.map((day, index) => {
+            return (
+              <h4 className={`${this.state[day] ? 'not-active-day' : 'liked-event-border'} text-center p-1 block-text-font-oswald`}
+                key={index}
+                onClick={() => this.handleEventClick(day)}>{day}</h4>
+            );
+          })}
+        </div>
+        <div className="eventListTitle headers-font-ubuntu">
+          <h2>Sign Out</h2>
+        </div>
+        <Link to='/signIn'>
+          <button className="mt-3">
+            <i className="fas fa-sign-out-alt fa-2x" />
+          </button>
+        </Link>
       </div>
     );
   }

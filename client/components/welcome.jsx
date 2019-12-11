@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 
 function Welcome() {
   return (
-    <div className="eventList mt-1 d-flex flex-column text-center">
-      <div className="eventListTitle m-2 ml-5 mb-3">
+
+    <div className="eventList mt-3 mb-2 flex-column text-center overflow-none">
+      <div className="eventListTitle m-5 headers-font-ubuntu">
         <h2>Welcome</h2>
       </div>
-      <div className="liked-event-location text-wrap block-text-font-oswald text-center m-2"><h4>
+      <div className="liked-event-location text-wrap block-text-font-oswald text-center m-4"><h4>
         Local Sports helps you select the perfect pick-up sporting event.
         <br></br>
         <br></br>
@@ -26,6 +27,7 @@ function Welcome() {
             <i className="fas fa-chevron-right ml-2"></i>
           </button>
         </Link>
+
       </div>
     </div>
   );

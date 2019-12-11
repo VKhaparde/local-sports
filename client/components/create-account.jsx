@@ -47,14 +47,14 @@ class CreateAccount extends React.Component {
   render() {
     if (this.state.isUserAccountCreated) {
       return (
-        <div className="eventList mt-2 d-flex flex-column text-center">
-          <div className="createAccount headers-font-ubuntu">
+        <div className="eventList mt-1 mb-2 d-flex flex-column text-center">
+          <div className="eventListTitle mt-5 headers-font-ubuntu">
             Your account has been created successfully.
           </div>
           <Link to='/search'>
             <div className='m-4'>
               <button className='btn btn-success submit-button headers-font-ubuntu'>
-              Click here to continue</button>
+                Click here to continue</button>
             </div>
           </Link>
         </div>
@@ -73,7 +73,8 @@ class CreateAccount extends React.Component {
               value={this.state.username} required
               onChange={this.updateField}></input>
           </div>
-          <div className="liked-event-border p-1 mt-2">
+          <div className="liked-event-border d-flex p-1 mt-3">
+            <i className="fas fa-lock text-muted username-password-icons"></i>
             <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
               name='password'
               type='password'
@@ -81,7 +82,8 @@ class CreateAccount extends React.Component {
               value={this.state.password} required
               onChange={this.updateField}></input>
           </div>
-          <div className="liked-event-border p-1 mt-2">
+          <div className="liked-event-border d-flex p-1 mt-3">
+            <i className="fas fa-lock text-muted username-password-icons"></i>
             <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
               name='confirmPassword'
               type='password' autoComplete='off'
@@ -89,10 +91,23 @@ class CreateAccount extends React.Component {
               value={this.state.confirmPassword} required
               onChange={this.updateField}></input>
           </div>
-          <div className='button m-4'>
-            <button className='btn btn-success block submit-button headers-font-ubuntu'>Create Account</button>
+
+          <div className='button mt-5 headers-font-ubuntu'>
+            <button className='btn btn-success block submit-button headers-font-ubuntu'>Create an Account</button>
           </div>
         </form >
+        <div className='button mt-2 headers-font-ubuntu'>
+          <Link to='/signIn'>
+            <button className='btn btn-primary block create-account-button mt-4'>Back to Sign In</button>
+          </Link>
+          <br></br>
+          <Link to='/search'>
+            <button className='btn btn-primary block mt-4 skip-button'>
+              Skip
+              <i className="fas fa-chevron-right ml-2"></i>
+            </button>
+          </Link>
+        </div>
       </div>
     );
   }

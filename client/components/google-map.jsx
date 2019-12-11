@@ -53,8 +53,8 @@ class GoogleMap extends React.Component {
   }
 
   componentDidUpdate() {
-    // this.markers.map(marker => marker.setMap(null));
-    // this.markers.length = 0;
+    this.markers.map(marker => marker.setMap(null));
+    this.markers.length = 0;
     this.createMarker();
     if (this.props.display === false) {
       this.handleResetZoom();
@@ -62,6 +62,7 @@ class GoogleMap extends React.Component {
   }
 
   createMarker() {
+    if (this.props.events.events.length === 0) return null;
     this.props.events.events.map(event => {
       const marker = new window.google.maps.Marker({
         position: { lat: event.lat, lng: -event.lng },

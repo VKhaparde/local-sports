@@ -4,15 +4,15 @@ function FavoritesDisplay(props) {
   if (props.props === 'futbol') {
     return (
       <button className="favorites-icons m-1">
-        <i className={`fas fa-${props.props} fa-2x m-2`}
-          onClick={() => props.callback('Soccer')}/>
+        <i className={`fas fa-${props.props} fa-3x m-1`}
+          onClick={() => props.callback('Soccer')} />
       </button>
     );
   } else {
     return (
       <button className="favorites-icons m-1">
-        <i className={`fas fa-${props.props}-ball fa-2x m-2`}
-          onClick={() => props.callback(props.props)}/>
+        <i className={`fas fa-${props.props}-ball fa-3x m-1`}
+          onClick={() => props.callback(props.props)} />
       </button>
     );
   }

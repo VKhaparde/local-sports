@@ -59,11 +59,16 @@ class SignIn extends React.Component {
       {this.state.loginError}</div>;
 
     return (
-      <div className="eventList mt-5 d-flex flex-column text-center">
+      <div className="eventList mt-3 mb-2 d-flex flex-column text-center">
         {message}
         <form className='form mt-2 container'
+
           onSubmit={this.submitForm}>
-          <div className="liked-event-border p-1 mt-5">
+          <div className="eventListTitle mt-5 headers-font-ubuntu">
+            Sign In
+          </div>
+          <div className="liked-event-border d-flex mt-5 p-1">
+            <i className="fas fa-user text-muted username-password-icons"></i>
             <input className='block-text-font-oswald w-100 p-1 pl-2'
               name='username'
               type='text'
@@ -71,7 +76,8 @@ class SignIn extends React.Component {
               value={this.state.username}
               onChange={this.updateField}></input>
           </div>
-          <div className="liked-event-border p-1 mt-4">
+          <div className="liked-event-border d-flex p-1 mt-4">
+            <i className="fas fa-lock text-muted username-password-icons"></i>
             <input className='block-text-font-oswald w-100 p-1 pl-2'
               name='password'
               type='password'
@@ -79,8 +85,8 @@ class SignIn extends React.Component {
               value={this.state.password}
               onChange={this.updateField}></input>
           </div>
-          <div className='button mt-4'>
-            <button className='btn btn-primary block submit-button headers-font-ubuntu'>Sign In</button>
+          <div className='button mt-5 headers-font-ubuntu'>
+            <button className='btn btn-primary block submit-button'>Sign In</button>
           </div>
         </form >
         <Link to='/createAccount' >
@@ -95,6 +101,7 @@ class SignIn extends React.Component {
             </button>
           </div>
         </Link>
+
       </div>
     );
 
