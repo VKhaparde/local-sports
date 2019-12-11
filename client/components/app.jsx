@@ -27,7 +27,7 @@ export default class App extends React.Component {
     fetch('/api/user-liked-events')
       .then(data => data.json())
       .then(data => this.setState({
-        liked: data
+        liked: data['liked-events']
       }));
   }
 
@@ -93,7 +93,7 @@ export default class App extends React.Component {
               render={() => <Welcome />} />
 
             <Route path='/signIn' exact
-              render={() => <SignIn />} />
+              render={props => <SignIn {...props}/>} />
 
             <Route path='/createAccount' exact
               render={() => <CreateAccount />} />

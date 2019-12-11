@@ -332,3 +332,8 @@ height:75px;
 .createAccount{
   font-size:1.75rem;
 }
+
+.errorMessage{
+font-size: 1.75rem;
+color:teal;
+}

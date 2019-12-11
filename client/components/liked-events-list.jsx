@@ -25,6 +25,12 @@ class LikedEventsList extends React.Component {
       .catch(error => console.error('Error', error));
   }
 
+  toggleDetailView() {
+    this.setState({
+      eventInfoDisplay: !this.state.eventInfoDisplay
+    });
+  }
+
   render() {
 
     if (this.props.likedEvents.length === 0) {
@@ -48,7 +54,9 @@ class LikedEventsList extends React.Component {
       );
     } else if (this.props.likedEvents.length !== 0 && this.state.eventInfoDisplay) {
       return (
-        <EventDetails events={this.state.eventInfo}/>
+        <EventDetails events={this.state.eventInfo}
+          toggleView={() => this.toggleDetailView()}
+        />
       );
 
     }
