@@ -47,8 +47,8 @@ class CreateAccount extends React.Component {
   render() {
     if (this.state.isUserAccountCreated) {
       return (
-        <div className="eventList mt-2 d-flex flex-column text-center">
-          <div className="createAccount headers-font-ubuntu">
+        <div className="eventList mt-3 mb-2 d-flex flex-column text-center">
+          <div className="eventListTitle mt-5 headers-font-ubuntu">
             Your account has been created successfully.
           </div>
           <Link to='/search'>
@@ -61,12 +61,12 @@ class CreateAccount extends React.Component {
       );
     }
     return (
-      <div className="eventList mt-5 d-flex flex-column text-center">
-        <div className="eventListTitle headers-font-ubuntu">
-          Create Account
-        </div>
-        <form className='form mt-2 container'
+      <div className="eventList mt-3 mb-2 d-flex flex-column text-center">
+        <form className='form d-flex flex-column ml-5 mr-5'
           onSubmit={this.submitForm}>
+          <div className="eventListTitle mt-5 headers-font-ubuntu">
+            Create an Account
+          </div>
           {/* <div className="liked-event-border p-1 mt-2 ">
             <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
               name='name'
@@ -103,32 +103,41 @@ class CreateAccount extends React.Component {
               <option value="nopref">No Pref</option>
             </select>
           </div> */}
-          <div className="liked-event-border p-1 mt-2">
-            <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
+          <div className="liked-event-border p-1 mt-4 pt-2">
+            <input className='form-control block-text-font-oswald w-100'
               name='username'
               type='text'
               placeholder='Username' autoComplete='off'
               value={this.state.username} required
               onChange={this.updateField}></input>
+            <i className="fas fa-user text-muted username-password-icons"></i>
           </div>
-          <div className="liked-event-border p-1 mt-2">
+          <div className="liked-event-border p-1 mt-3">
             <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
               name='password'
               type='password'
               placeholder='Password' autoComplete='off'
               value={this.state.password} required
               onChange={this.updateField}></input>
+            <i className="fas fa-lock text-muted username-password-icons"></i>
           </div>
-          <div className="liked-event-border p-1 mt-2">
+          <div className="liked-event-border p-1 mt-3">
             <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
               name='confirmPassword'
               type='password' autoComplete='off'
               placeholder='Confirm Password'
               value={this.state.confirmPassword} required
               onChange={this.updateField}></input>
+            <i className="fas fa-lock text-muted username-password-icons"></i>
           </div>
-          <div className='button mt-4'>
-            <button className='btn btn-success block submit-button headers-font-ubuntu'>Create Account</button>
+          <div className='button mt-5 headers-font-ubuntu'>
+            <button className='btn btn-success block submit-button headers-font-ubuntu'>Create an Account</button>
+            <button className='btn btn-primary block create-account-button mt-4'>Sign In</button>
+            <br></br>
+            <button className='btn btn-primary block mt-4 skip-button'>
+              Skip
+              <i className="fas fa-chevron-right ml-2"></i>
+            </button>
           </div>
         </form >
       </div>
