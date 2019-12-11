@@ -31,8 +31,6 @@ class LikedEventsList extends React.Component {
   }
 
   render() {
-
-
     if (this.props.likedEvents.length === 0) {
       return (
         <div>
@@ -63,14 +61,17 @@ class LikedEventsList extends React.Component {
           </div>
         </div>
       );
-    } else if (this.props.likedEvents.length !== 0 && this.state.eventInfoDisplay) {
-      return (
-        <EventDetails events={this.state.eventInfo}
-          toggleView={() => this.toggleDetailView()}
-        />
-      );
-
     }
+
+    if (this.state.eventInfoDisplay) {
+      return (
+        <div>
+          <EventDetails events={this.state.eventInfo}
+            toggleView={() => this.toggleDetailView()} />
+        </div>
+      );
+    }
+
     return (
       <div>
         <div className="eventList mt-3 flex-column text-center">
@@ -79,7 +80,7 @@ class LikedEventsList extends React.Component {
           </div>
           <div className="text-capitalize d-flex flex-column ml-5 mr-5 mb-3">
             {
-              this.props.likedEvents['liked-events'].map((event, index) => {
+              this.props.likedEvents.map((event, index) => {
 
                 return (
                   <LikedEvent
