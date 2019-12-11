@@ -8,15 +8,26 @@ class LikedEventsList extends React.Component {
     if (this.props.likedEvents.length === 0) {
       return (
         <div>
-          <div className="eventList mt-3 d-flex flex-column m-3">
-            <h1 className="eventListTitle headers-font-ubuntu mb-3">Liked Events</h1>
+          <div className="eventList mt-3 flex-column text-center h-50">
+            <div className="eventListTitle mt-4 mb-4 headers-font-ubuntu">
+              <h2>Liked Events</h2>
+            </div>
             <div className="likedEvents">
-              <h4 className='text-center mt-3 block-text-font-oswald p-2'>Your list is empty!<br></br>Return to the map to<br></br>see events around you.</h4>
+              <h4 className='text-center mt-4 block-text-font-oswald p-2'>
+                <h3><i>
+                  Your list is empty!
+                </i></h3>
+                <br></br>
+                Return to the map to
+                <br></br>
+                see events around you.
+              </h4>
             </div >
             <Link to='/search'>
-              <div className="text-center">
-                <button className="backButton">
-                  <i className="fas fa-arrow-left fa-3x"></i>
+              <div className="text-center mt-5">
+                <button className="backButton submit-button w-25 block-text-font-oswald text-white">
+                  <i className="fas fa-chevron-left mr-2"></i>
+                  Back
                 </button>
               </div>
             </Link>
@@ -26,9 +37,11 @@ class LikedEventsList extends React.Component {
     }
     return (
       <div>
-        <div className="eventList d-flex flex-column mt-3">
-          <div className="eventListTitle mt-3 headers-font-ubuntu">Liked Events</div>
-          <div className="text-capitalize ml-4">
+        <div className="eventList mt-3 flex-column text-center">
+          <div className="eventListTitle mt-4 mb-4 headers-font-ubuntu">
+            <h2>Liked Events</h2>
+          </div>
+          <div className="text-capitalize d-flex flex-column ml-5 mr-5 mb-3">
             {
               this.props.likedEvents.map((event, index) => {
                 return (
