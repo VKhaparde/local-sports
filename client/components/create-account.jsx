@@ -65,35 +65,73 @@ class CreateAccount extends React.Component {
         <div className="createAccount  headers-font-ubuntu">Create Account</div>
         <form className='form mt-4 container'
           onSubmit={this.submitForm}>
-          <div className="liked-event-border d-flex p-1 mt-2">
-            <i className="fas fa-user text-muted username-password-icons"></i>
+          <div className="eventListTitle mt-5 headers-font-ubuntu">
+            <h2>Create an Account</h2>
+          </div>
+          {/* <div className="liked-event-border p-1 mt-2 ">
             <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
+              name='name'
+              type='text'
+              placeholder='Fullname' autoComplete='off'
+              value={this.state.name} required
+              onChange={this.updateField}></input>
+          </div> */}
+          {/* <div className="liked-event-border p-1 mt-2">
+            <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
+              name='email'
+              type='email'
+              placeholder='Email' autoComplete='off'
+              value={this.state.email}
+              onChange={this.updateField}></input>
+          </div> */}
+          {/* <div className="liked-event-border p-1 mt-2">
+            <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
+              name='phone'
+              type='text'
+              placeholder='Phonenumber' autoComplete='off'
+              value={this.state.phone} required
+              onChange={this.updateField}></input>
+          </div> */}
+          {/* <div className="liked-event-border p-1 mt-2">
+            <select className='form-control custom-select block-text-font-oswald w-100 p-1 pl-2'
+              name='gender'
+              type='text'
+              value={this.state.gender}
+              onChange={this.updateField}>
+              <option value="Gender">Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="nopref">No Pref</option>
+            </select>
+          </div> */}
+          <div className="liked-event-border mt-4 p-1 account-input-container">
+            <i className="fas fa-user username-password-icons"></i>
+            <input className='form-control block-text-font-oswald account-input-field'
               name='username'
               type='text'
               placeholder='Username' autoComplete='off'
               value={this.state.username} required
               onChange={this.updateField}></input>
           </div>
-          <div className="liked-event-border d-flex p-1 mt-3">
-            <i className="fas fa-lock text-muted username-password-icons"></i>
-            <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
+          <div className="liked-event-border p-1 mt-2 account-input-container">
+            <i className="fas fa-lock username-password-icons"></i>
+            <input className='form-control block-text-font-oswald account-input-field'
               name='password'
               type='password'
               placeholder='Password' autoComplete='off'
               value={this.state.password} required
               onChange={this.updateField}></input>
           </div>
-          <div className="liked-event-border d-flex p-1 mt-3">
-            <i className="fas fa-lock text-muted username-password-icons"></i>
-            <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
+          <div className="liked-event-border p-1 mt-2 account-input-container">
+            <i className="fas fa-lock username-password-icons"></i>
+            <input className='form-control block-text-font-oswald'
               name='confirmPassword'
               type='password' autoComplete='off'
               placeholder='Confirm Password'
               value={this.state.confirmPassword} required
               onChange={this.updateField}></input>
           </div>
-
-          <div className='button mt-5 headers-font-ubuntu'>
+          <div className='button mt-4 headers-font-ubuntu'>
             <button className='btn btn-success block submit-button headers-font-ubuntu'>Create an Account</button>
           </div>
         </form >

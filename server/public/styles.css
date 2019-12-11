@@ -134,6 +134,7 @@ height:75px;
  height:60%;
  width:100%;
  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
+ border-radius: 10px;
  padding:0;
 }
 
@@ -142,7 +143,7 @@ height:75px;
   height:20%;
   width:100%;
   box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 3px;
+  border-radius: 10px;
   transform: matrix(1, 0, 0, 1, 0, 0);
   padding:10px;
 }
@@ -283,6 +284,11 @@ height:75px;
   width: 100%;
 }
 
+.submit-button:hover {
+  padding:1rem;
+  opacity: 1;
+}
+
 .create-account-button {
   background-color: white;
   color: #2a9d8f;
@@ -311,13 +317,21 @@ height:75px;
 .reviewList{
   overflow:scroll;
   border-radius: 20px;
+  height: 30vh;
 }
 
 .reviewListItem{
+<<<<<<< HEAD
+  border: 2px solid #2a9d8f;
+=======
   border: 4px solid #2a9d8f;
   /* height: 125px; */
+>>>>>>> 9d55bf9eb9fa694dfa84e663b25a5a7e90e68b23
   overflow: scroll;
   border-radius: 10px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: left;
+
 }
 
 .not-active-day{
@@ -331,9 +345,26 @@ height:75px;
 }
 
 .username-password-icons {
-  padding: 1rem;
-  width: 3rem;
+  padding: 0.75rem;
+  width: 2rem;
   text-align: center;
+  color: #2a9d8f;
+}
+
+.account-input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.account-input-field {
+  width: 100%;
+  padding: 0.25rem;
+}
+
+.account-input-field:focus {
+  outline: none;
+  padding: .5rem;
 }
 
 .form-control {
