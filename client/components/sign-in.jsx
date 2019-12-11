@@ -94,13 +94,13 @@ class SignIn extends React.Component {
             <button className='btn btn-primary block headers-font-ubuntu create-account-button'>Create an Account</button>
           </div>
         </Link>
-        <Link to='/search' >
+        {/* <Link to='/search' >
           <div className='button mt-4 mb-4'>
             <button className='btn btn-primary block headers-font-ubuntu skip-button'>Skip
               <i className="fas fa-chevron-right ml-2"></i>
             </button>
           </div>
-        </Link>
+        </Link> */}
 
       </div>
     );
