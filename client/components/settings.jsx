@@ -45,7 +45,7 @@ class Settings extends React.Component {
           })}
         </div>
         <div className="eventListTitle headers-font-ubuntu">
-          Sign Out
+          <h2>Sign Out</h2>
         </div>
         <button className="mt-3">
           <i className="fas fa-sign-out-alt fa-2x" />
