@@ -40,27 +40,27 @@ class SignIn extends React.Component {
         <form className='form d-flex flex-column ml-5 mr-5'
           onSubmit={this.submitForm}>
           <div className="eventListTitle mt-5 headers-font-ubuntu">
-            Sign In
+            <h2>Sign In</h2>
           </div>
-          <div className="liked-event-border mt-5 p-1">
-            <input className='block-text-font-oswald w-100 p-1 pl-2'
+          <div className="liked-event-border account-input-container mt-5 p-1">
+            <i className="fas fa-user username-password-icons"></i>
+            <input className='block-text-font-oswald account-input-field'
               name='username'
               type='text'
               placeholder='Username'
               value={this.state.username}
               onChange={this.updateField}></input>
-            <i className="fas fa-user text-muted username-password-icons"></i>
           </div>
-          <div className="liked-event-border p-1 mt-4">
-            <input className='block-text-font-oswald w-100 p-1 pl-2'
+          <div className="liked-event-border account-input-container p-1 mt-3">
+            <i className="fas fa-lock username-password-icons"></i>
+            <input className='block-text-font-oswald account-input-field'
               name='password'
               type='text'
               placeholder='Password'
               value={this.state.password}
               onChange={this.updateField}></input>
-            <i className="fas fa-lock text-muted username-password-icons"></i>
           </div>
-          <div className='button mt-5 headers-font-ubuntu'>
+          <div className='button mt-3 headers-font-ubuntu'>
             <button className='btn btn-primary block submit-button'>Sign In</button>
             <button className='btn btn-primary block mt-4 create-account-button'>Create an Account</button>
             <br></br>

@@ -16,7 +16,7 @@ function Welcome() {
       <div className='button m-5 headers-font-ubuntu'>
         <button className='btn btn-primary block submit-button'>Sign In</button>
         <button className='btn btn-primary block submit-button mt-4'>Create an Account</button>
-        <button className='btn btn-primary block mt-5 skip-button'>Skip
+        <button className='btn btn-primary block mt-4 skip-button'>Skip
           <i className="fas fa-chevron-right ml-2"></i>
         </button>
       </div>

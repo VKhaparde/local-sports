@@ -65,7 +65,7 @@ class CreateAccount extends React.Component {
         <form className='form d-flex flex-column ml-5 mr-5'
           onSubmit={this.submitForm}>
           <div className="eventListTitle mt-5 headers-font-ubuntu">
-            Create an Account
+            <h2>Create an Account</h2>
           </div>
           {/* <div className="liked-event-border p-1 mt-2 ">
             <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
@@ -103,34 +103,34 @@ class CreateAccount extends React.Component {
               <option value="nopref">No Pref</option>
             </select>
           </div> */}
-          <div className="liked-event-border p-1 mt-4 pt-2">
-            <input className='form-control block-text-font-oswald w-100'
+          <div className="liked-event-border mt-4 p-1 account-input-container">
+            <i className="fas fa-user username-password-icons"></i>
+            <input className='form-control block-text-font-oswald account-input-field'
               name='username'
               type='text'
               placeholder='Username' autoComplete='off'
               value={this.state.username} required
               onChange={this.updateField}></input>
-            <i className="fas fa-user text-muted username-password-icons"></i>
           </div>
-          <div className="liked-event-border p-1 mt-3">
-            <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
+          <div className="liked-event-border p-1 mt-2 account-input-container">
+            <i className="fas fa-lock username-password-icons"></i>
+            <input className='form-control block-text-font-oswald account-input-field'
               name='password'
               type='password'
               placeholder='Password' autoComplete='off'
               value={this.state.password} required
               onChange={this.updateField}></input>
-            <i className="fas fa-lock text-muted username-password-icons"></i>
           </div>
-          <div className="liked-event-border p-1 mt-3">
-            <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
+          <div className="liked-event-border p-1 mt-2 account-input-container">
+            <i className="fas fa-lock username-password-icons"></i>
+            <input className='form-control block-text-font-oswald'
               name='confirmPassword'
               type='password' autoComplete='off'
               placeholder='Confirm Password'
               value={this.state.confirmPassword} required
               onChange={this.updateField}></input>
-            <i className="fas fa-lock text-muted username-password-icons"></i>
           </div>
-          <div className='button mt-5 headers-font-ubuntu'>
+          <div className='button mt-4 headers-font-ubuntu'>
             <button className='btn btn-success block submit-button headers-font-ubuntu'>Create an Account</button>
             <button className='btn btn-primary block create-account-button mt-4'>Sign In</button>
             <br></br>
