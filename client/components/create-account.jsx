@@ -25,7 +25,7 @@ class CreateAccount extends React.Component {
       body: JSON.stringify({
         username: this.state.username,
         password: this.state.password,
-        confirmPassword: this.state.confirmPassword
+        confirm_password: this.state.confirmPassword
       })
     };
     fetch('/api/registration', req)
@@ -47,7 +47,7 @@ class CreateAccount extends React.Component {
   render() {
     if (this.state.isUserAccountCreated) {
       return (
-        <div className="eventList mt-3 mb-2 d-flex flex-column text-center">
+        <div className="eventList mt-1 mb-2 d-flex flex-column text-center">
           <div className="eventListTitle mt-5 headers-font-ubuntu">
             Your account has been created successfully.
           </div>
@@ -61,8 +61,9 @@ class CreateAccount extends React.Component {
       );
     }
     return (
-      <div className="eventList mt-3 mb-2 d-flex flex-column text-center">
-        <form className='form d-flex flex-column ml-5 mr-5'
+      <div className="eventList mt-2 d-flex flex-column text-center">
+        <div className="createAccount  headers-font-ubuntu">Create Account</div>
+        <form className='form mt-4 container'
           onSubmit={this.submitForm}>
           <div className="eventListTitle mt-5 headers-font-ubuntu">
             <h2>Create an Account</h2>
@@ -132,14 +133,20 @@ class CreateAccount extends React.Component {
           </div>
           <div className='button mt-4 headers-font-ubuntu'>
             <button className='btn btn-success block submit-button headers-font-ubuntu'>Create an Account</button>
-            <button className='btn btn-primary block create-account-button mt-4'>Sign In</button>
-            <br></br>
+          </div>
+        </form >
+        <div className='button mt-2 headers-font-ubuntu'>
+          <Link to='/signIn'>
+            <button className='btn btn-primary block create-account-button mt-4'>Back to Sign In</button>
+          </Link>
+          <br></br>
+          {/* <Link to='/search'>
             <button className='btn btn-primary block mt-4 skip-button'>
               Skip
               <i className="fas fa-chevron-right ml-2"></i>
             </button>
-          </div>
-        </form >
+          </Link> */}
+        </div>
       </div>
     );
   }

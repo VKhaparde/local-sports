@@ -8,6 +8,7 @@ import Settings from './settings';
 import Welcome from './welcome';
 import LikedEventsList from './liked-events-list';
 import CreateAccount from './create-account';
+// import EventDetails from './event-details';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -68,8 +69,9 @@ export default class App extends React.Component {
       );
   }
 
-  searchLikedEvent(id) {
-  }
+  // searchLikedEvent(id) {
+
+  // }
 
   removeFromSchedule(day) {
     this.setState({
@@ -97,33 +99,41 @@ export default class App extends React.Component {
               render={() => <Welcome />} />
 
             <Route path='/signIn' exact
-              render={() => <SignIn />} />
+              render={props => <SignIn {...props} />} />
 
             <Route path='/createAccount' exact
               render={() => <CreateAccount />} />
 
             <Route path='/search' exact
               render={() =>
-                <Search
-                  likedEvents={this.state.liked}
-                  addLiked={id => this.addLikedEvents(id)}
-                  removeLiked={id => this.removeLikedEvent(id)} />} />
+                <div>
+                  <Search
+                    likedEvents={this.state.liked}
+                    addLiked={id => this.addLikedEvents(id)}
+                    removeLiked={id => this.removeLikedEvent(id)} />
+                  <Footer />
+                </div>}/>
 
             <Route path='/likedEvents' exact
               render={() =>
-                <LikedEventsList
-                  likedEvents={this.state.liked}
-                  removeLiked={id => this.removeLikedEvent(id)}
-                  searchLike={id => this.searchLikedEvent(id)} />} />
+                <div>
+                  <LikedEventsList
+                    likedEvents={this.state.liked}
+                    removeLike={id => this.removeLikedEvent(id)}/>
+                  <Footer />
+                </div>} />
 
             <Route path='/settings' exact
-              render={() => <Settings
-                removeFromSchedule={day => this.removeFromSchedule(day)}
-                addToSchedule={day => this.addToSchedule(day)}
-                schedule={this.state.schedule} />} />
+              render={() =>
+                <div>
+                  <Settings
+                    removeFromSchedule={day => this.removeFromSchedule(day)}
+                    addToSchedule={day => this.addToSchedule(day)}
+                    schedule={this.state.schedule} />
+                  <Footer />
+                </div>} />
 
           </Switch>
-          <Footer />
         </div>
       </Router >
     );

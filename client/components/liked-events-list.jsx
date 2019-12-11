@@ -1,8 +1,34 @@
 import React from 'react';
 import LikedEvent from './liked-event';
 import { Link } from 'react-router-dom';
+import EventDetails from './event-details';
 
 class LikedEventsList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // isLikedEventClicked: false,
+      eventInfo: [],
+      eventInfoDisplay: false
+    };
+    this.searchLikedEvent = this.searchLikedEvent.bind(this);
+  }
+
+  searchLikedEvent(id) {
+    fetch(`/api/event-search?id=${id}`)
+      .then(response => response.json())
+      .then(data => this.setState({
+        eventInfo: data,
+        eventInfoDisplay: true
+      }))
+      .catch(error => console.error('Error', error));
+  }
+
+  toggleDetailView() {
+    this.setState({
+      eventInfoDisplay: !this.state.eventInfoDisplay
+    });
+  }
 
   render() {
     if (this.props.likedEvents.length === 0) {
@@ -13,6 +39,7 @@ class LikedEventsList extends React.Component {
               <h2>Liked Events</h2>
             </div>
             <div className="likedEvents">
+
               <h4 className='text-center mt-4 block-text-font-oswald p-2'>
                 <h3><i>
                   Your list is empty!
@@ -35,21 +62,53 @@ class LikedEventsList extends React.Component {
         </div>
       );
     }
+
+    if (this.state.eventInfoDisplay) {
+      return (
+        <div>
+          <EventDetails
+            events={this.state.eventInfo}
+            toggleView={() => this.toggleDetailView()} />
+          <div className="text-capitalize d-flex flex-column liked-events-list">
+            {
+              this.props.likedEvents.map((event, index) => {
+
+                return (
+                  <LikedEvent
+                    key={index}
+                    event={event}
+                    removeEvent={id => this.props.removeLike(id)}
+                    // eventDetail={id => this.props.searchLike(id)}
+                    eventDetail={id => this.searchLikedEvent(id)}
+                  />
+
+                );
+              })
+            }
+          </div >
+        </div>
+      );
+    }
+
     return (
       <div>
         <div className="eventList mt-3 flex-column text-center">
           <div className="eventListTitle mt-4 mb-4 headers-font-ubuntu">
             <h2>Liked Events</h2>
           </div>
-          <div className="text-capitalize d-flex flex-column ml-5 mr-5 mb-3">
+          <div className="text-capitalize d-flex flex-column mb-3">
             {
               this.props.likedEvents.map((event, index) => {
+
                 return (
                   <LikedEvent
                     key={index}
                     event={event}
-                    removeEvent={id => this.props.removeLiked(id)}
-                    eventDetail={id => this.props.searchLike(id)} />
+                    removeEvent={id => this.props.removeLike(id)}
+                    // eventDetail={id => this.props.searchLike(id)}
+                    eventDetail={id => this.searchLikedEvent(id)}
+                  />
+
                 );
               })
             }

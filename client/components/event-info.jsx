@@ -14,6 +14,10 @@ class EventInfo extends React.Component {
   }
 
   checkLikedEventCondition() {
+    if (this.props.info.likedEvents === undefined) {
+      return null;
+    }
+
     const id = this.props.info.events[0]['event-id'];
     this.props.info.likedEvents.filter(event => {
       if (event['event-id'] === id) {
