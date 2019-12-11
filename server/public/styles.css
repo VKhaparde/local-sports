@@ -334,3 +334,8 @@ height:75px;
 .form-control {
   border: none;
 }
+
+.errorMessage{
+font-size: 1.75rem;
+color:teal;
+}
