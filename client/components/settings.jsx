@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Settings extends React.Component {
   constructor(props) {
@@ -47,9 +48,11 @@ class Settings extends React.Component {
         <div className="eventListTitle headers-font-ubuntu">
           <h2>Sign Out</h2>
         </div>
-        <button className="mt-3">
-          <i className="fas fa-sign-out-alt fa-2x" />
-        </button>
+        <Link to='/signIn'>
+          <button className="mt-3">
+            <i className="fas fa-sign-out-alt fa-2x" />
+          </button>
+        </Link>
       </div>
     );
   }
