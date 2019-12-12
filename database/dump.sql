@@ -41,7 +41,7 @@ CREATE TABLE `events` (
 
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
-INSERT INTO `events` VALUES (1,11,1,2,'Come play basketball with me, Jocelyne Tubbles this weekend!','Basketball for fun!','Monday','3:00 pm '),(4,13,6,2,'come play basketball with us!','random basketball shennannigans','Monday','4:00 pm'),(5,3,3,3,'Come play baseball at the park!','Park Baseball','Tuesday','12:30 pm'),(6,4,4,1,'Come play an intense soccer match with us!','Kicking the soccer ball ','Wednesday','8:00 am'),(7,5,5,3,'Come play baseball because you have nothing better to do ','Boring Baseball','Thursday','10:00 am'),(8,6,6,3,'come punch each other with bats at our baseball game!','buh buh buh baseball!','Friday','8:00 pm'),(9,7,7,2,'come throw a ball in a hoop for your Saturday night festivities! ','throw a ball in a hoop','Saturday','9:00 pm'),(10,8,8,1,'low key soccer for beginners','beginner soccer','Saturday','12:00 pm'),(11,9,9,2,'come shoot some baskethewps with us!','baskethewps ','Sunday','11:00 am'),(12,10,10,1,'kick some balls at the park!','Soccer time for cool kids ','Sunday','1:00 pm'),(13,12,11,3,'come smack some balls with a bat!','smacking balls with a bat at the park','Friday','11:30 am'),(14,14,12,1,'GTFO unless you\'re a pro','Pros Only Soccer','Monday','10:45 am'),(15,15,13,2,'Come only if you think youre the next Michael Jordan','Pros Only Basketball','Tuesday','3:45 pm'),(16,16,14,3,'We accept mediocrity','Pros Only Baseball','Wednesday ','3:00 pm'),(17,17,15,1,'Its some kids birthday and we\'re playing soccer. ','Birthday Party Soccer','Thursday','10:00 am'),(18,18,16,2,'come in your favorite Hawaiian shirt because you\'re an awesome human being and have a Hawaiian shirt. Bonus points if theres pinapples or kiwis on it.','Hawaiian Shirt Friday Basketball','Friday','8:00 pm'),(19,19,17,3,'Come ruin your Saturday by playing baseball in the morning','Saturday Baseball Sadness','Saturday','11:00 am'),(20,20,18,1,'Come play Soccer! On Saturday','Soccer On Saturday','Saturday','11:30 am');
+INSERT INTO `events` VALUES (1,11,1,2,'Come play basketball with me, Jocelyne Tubbles this weekend!','Basketball for fun!','Monday','3:00 pm '),(4,13,6,2,'come play basketball with us!','random basketball shennannigans','Monday','4:00 pm'),(5,3,3,3,'Come play baseball at the park!','Park Baseball','Tuesday','12:30 pm'),(6,4,4,1,'Come play an intense soccer match with us!','Kicking the soccer ball ','Wednesday','8:00 am'),(7,5,5,3,'Come play baseball because you have nothing better to do ','Boring Baseball','Thursday','10:00 am'),(8,6,6,3,'come punch each other with bats at our baseball game!','buh buh buh baseball!','Friday','8:00 pm'),(9,7,7,2,'come throw a ball in a hoop for your Saturday night festivities! ','throw a ball in a hoop','Saturday','9:00 pm'),(10,8,8,1,'low key soccer for beginners','beginner soccer','Saturday','12:00 pm'),(11,9,9,2,'come shoot some baskethewps with us!','baskethewps ','Sunday','11:00 am'),(12,10,10,1,'kick some balls at the park!','Soccer time for cool kids ','Sunday','1:00 pm'),(13,12,11,3,'come smack some balls with a bat!','smacking balls with a bat at the park','Friday','11:30 am'),(14,14,12,1,'GTFO unless you\'re a pro','Pros Only Soccer','Monday','10:45 am'),(15,15,13,2,'Come only if you think youre the next Michael Jordan','Pros Only Basketball','Tuesday','3:45 pm'),(16,16,14,3,'We accept mediocrity','Pros Only Baseball','Wednesday ','3:00 pm'),(17,17,15,1,'Its some kids birthday and we\'re playing soccer. ','Birthday Party Soccer','Thursday','10:00 am'),(18,18,16,2,'come in your favorite Hawaiian shirt because you\'re an awesome human being and have a Hawaiian shirt.','Hawaiian Shirt Friday Basketball','Friday','8:00 pm'),(19,19,17,3,'Come ruin your Saturday by playing baseball in the morning','Saturday Baseball Sadness','Saturday','11:00 am'),(20,20,18,1,'Come play Soccer! On Saturday','Soccer On Saturday','Saturday','11:30 am');
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,7 +64,7 @@ CREATE TABLE `liked-events` (
 
 LOCK TABLES `liked-events` WRITE;
 /*!40000 ALTER TABLE `liked-events` DISABLE KEYS */;
-INSERT INTO `liked-events` VALUES (1,3),(1,4),(1,5),(6,8),(6,14);
+INSERT INTO `liked-events` VALUES (1,3),(6,8),(6,14),(7,4),(1,11),(1,9),(1,18),(1,8);
 /*!40000 ALTER TABLE `liked-events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,7 +93,7 @@ CREATE TABLE `location` (
 
 LOCK TABLES `location` WRITE;
 /*!40000 ALTER TABLE `location` DISABLE KEYS */;
-INSERT INTO `location` VALUES (3,'William R Mason Regional Park','18712 University Dr, Irvine, CA 92612',33.657001,117.831596,1,4.50),(4,'Irvine Great Park','Great Park Blvd Irvine, CA 92618',33.796299,117.752602,2,3.50),(5,'Orange County Great Park','8000 Great Park Boulevard, Irvine, CA 92618',33.673401,117.745796,3,5.00),(6,'Parasol Park','375 Magnet, Irvine, CA 92618',33.680302,117.735199,4,2.50),(7,'Los Olivos Community Park','101 Alfonso Dr, Irvine, CA 92618',33.635899,117.745796,5,4.50),(8,'Quail Hill Community Park','35 Shady Canyon Dr, Irvine, CA 92603',33.652802,117.782204,6,3.50),(9,'Bill Barber Memorial Park','4 Civic Center Plaza, Irvine, CA 92606',33.688301,117.822800,7,4.00),(10,'Heritage Park Community Center','14301 Yale Ave &, Walnut Ave, Irvine, CA 92604',33.700802,117.777100,8,3.50),(11,'Beacon Park','501 Benchmark, Irvine, CA 92618',33.688900,117.733398,9,3.00),(12,'Oak Creek Park','15616 Valley Oak Dr, Irvine, CA 92618',33.667198,117.771301,10,4.50),(13,'Sweet Shade Park','15 Sweet Shade, Irvine, CA 92606',33.714058,117.768120,11,5.00),(14,'Turtle Rock Community Park','1 Sunnyhill, Irvine CA 92603',33.636978,117.804855,12,4.50),(15,'Knollcrest Park','2069 Knollcrest, Irvine, CA 92603',33.651409,117.772415,13,4.00),(16,'Stonegate Park','280 Honors, Irvine, CA 92620',33.708149,117.740974,14,3.50),(17,'Northwood Community Center','4531 Bryan Ave, Irvine, CA 92620',33.714130,117.768486,15,4.00),(18,'Mike Ward Community Park Woodbridge','20 Lake Rd, Irvine, CA 92604',33.678783,117.801727,16,4.50),(19,'Las Lomas Community Park and Community Center','10 Federation Way, Irvine CA 92603',33.634457,117.828148,17,5.00),(20,'Ridgeview Park','56 Ridge Valley, Irvine, CA 92618',33.710632,117.720413,18,4.00);
+INSERT INTO `location` VALUES (3,'William R Mason Regional Park','18712 University Dr, Irvine, CA 92612',33.657001,117.831596,1,4.50),(4,'Irvine Great Park','Great Park Blvd Irvine, CA 92618',33.796299,117.752602,2,3.50),(5,'Orange County Great Park','8000 Great Park Boulevard, Irvine, CA 92618',33.673401,117.745796,3,5.00),(6,'Parasol Park','375 Magnet, Irvine, CA 92618',33.680302,117.735199,4,3.50),(7,'Los Olivos Community Park','101 Alfonso Dr, Irvine, CA 92618',33.635899,117.745796,5,4.50),(8,'Quail Hill Community Park','35 Shady Canyon Dr, Irvine, CA 92603',33.652802,117.782204,6,3.50),(9,'Bill Barber Memorial Park','4 Civic Center Plaza, Irvine, CA 92606',33.688301,117.822800,7,4.00),(10,'Heritage Park Community Center','14301 Yale Ave &, Walnut Ave, Irvine, CA 92604',33.700802,117.777100,8,3.50),(11,'Beacon Park','501 Benchmark, Irvine, CA 92618',33.688900,117.733398,9,3.00),(12,'Oak Creek Park','15616 Valley Oak Dr, Irvine, CA 92618',33.667198,117.771301,10,4.50),(13,'Sweet Shade Park','15 Sweet Shade, Irvine, CA 92606',33.714058,117.768120,11,5.00),(14,'Turtle Rock Community Park','1 Sunnyhill, Irvine CA 92603',33.636978,117.804855,12,4.50),(15,'Knollcrest Park','2069 Knollcrest, Irvine, CA 92603',33.651409,117.772415,13,4.00),(16,'Stonegate Park','280 Honors, Irvine, CA 92620',33.708149,117.740974,14,3.50),(17,'Northwood Community Center','4531 Bryan Ave, Irvine, CA 92620',33.714130,117.768486,15,4.00),(18,'Mike Ward Community Park Woodbridge','20 Lake Rd, Irvine, CA 92604',33.678783,117.801727,16,4.50),(19,'Las Lomas Community Park and Community Center','10 Federation Way, Irvine CA 92603',33.634457,117.828148,17,5.00),(20,'Ridgeview Park','56 Ridge Valley, Irvine, CA 92618',33.710632,117.720413,18,4.00);
 /*!40000 ALTER TABLE `location` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -212,7 +212,7 @@ CREATE TABLE `users` (
   `username` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -221,7 +221,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'StumpyArm','$2y$10$qblF9Z5zVFH4YBkJsyeM.eEV360I/MyKrDZXu1etic9YlmMoRUmd2'),(2,'OldManJenkins420','$2y$10$goOiqMFja2/r.rPV0oZvjOuzUPtB9DmbOv0sXqtFDbbS3zoImIVkq'),(3,'GeneHackman','$2y$10$k6EgEtmaO8q7.aCqRXPTd.hEfRU.yq/1uXo.dPU6OYS1CVWVHA8/S');
+INSERT INTO `users` VALUES (1,'StumpyArm','$2y$10$qblF9Z5zVFH4YBkJsyeM.eEV360I/MyKrDZXu1etic9YlmMoRUmd2'),(2,'OldManJenkins420','$2y$10$goOiqMFja2/r.rPV0oZvjOuzUPtB9DmbOv0sXqtFDbbS3zoImIVkq'),(3,'GeneHackman','$2y$10$k6EgEtmaO8q7.aCqRXPTd.hEfRU.yq/1uXo.dPU6OYS1CVWVHA8/S'),(7,'Tomas','$2y$10$eyPrltRTB7MuyJO0VHOgNOH97hOhg3Nn5o5kg5wefZJlg.CaDVO6e');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -234,4 +234,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-11  1:43:20
+-- Dump completed on 2019-12-12 21:16:30
