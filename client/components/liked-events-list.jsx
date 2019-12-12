@@ -66,8 +66,27 @@ class LikedEventsList extends React.Component {
     if (this.state.eventInfoDisplay) {
       return (
         <div>
-          <EventDetails events={this.state.eventInfo}
-            toggleView={() => this.toggleDetailView()} />
+          <EventDetails
+            events={this.state.eventInfo}
+            toggleView={() => this.toggleDetailView()}
+          />
+          <div className="text-capitalize d-flex flex-column liked-events-list">
+            {
+              this.props.likedEvents.map((event, index) => {
+
+                return (
+                  <LikedEvent
+                    key={index}
+                    event={event}
+                    removeEvent={id => this.props.removeLike(id)}
+                    // eventDetail={id => this.props.searchLike(id)}
+                    // eventDetail={id => this.searchLikedEvent(id)}
+                  />
+
+                );
+              })
+            }
+          </div >
         </div>
       );
     }
@@ -78,7 +97,7 @@ class LikedEventsList extends React.Component {
           <div className="eventListTitle mt-4 mb-4 headers-font-ubuntu">
             <h2>Liked Events</h2>
           </div>
-          <div className="text-capitalize d-flex flex-column ml-5 mr-5 mb-3">
+          <div className="text-capitalize d-flex flex-column mb-3">
             {
               this.props.likedEvents.map((event, index) => {
 
@@ -88,7 +107,7 @@ class LikedEventsList extends React.Component {
                     event={event}
                     removeEvent={id => this.props.removeLike(id)}
                     // eventDetail={id => this.props.searchLike(id)}
-                    eventDetail={id => this.searchLikedEvent(id)}
+                    // eventDetail={id => this.searchLikedEvent(id)}
                   />
 
                 );

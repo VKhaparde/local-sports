@@ -65,27 +65,27 @@ class SignIn extends React.Component {
 
           onSubmit={this.submitForm}>
           <div className="eventListTitle mt-5 headers-font-ubuntu">
-            Sign In
+            <h2>Sign In</h2>
           </div>
-          <div className="liked-event-border d-flex mt-5 p-1">
-            <i className="fas fa-user text-muted username-password-icons"></i>
-            <input className='block-text-font-oswald w-100 p-1 pl-2'
+          <div className="liked-event-border account-input-container mt-5 p-1">
+            <i className="fas fa-user username-password-icons"></i>
+            <input className='block-text-font-oswald account-input-field'
               name='username'
               type='text'
               placeholder='Username'
               value={this.state.username}
               onChange={this.updateField}></input>
           </div>
-          <div className="liked-event-border d-flex p-1 mt-4">
-            <i className="fas fa-lock text-muted username-password-icons"></i>
-            <input className='block-text-font-oswald w-100 p-1 pl-2'
+          <div className="liked-event-border account-input-container p-1 mt-3">
+            <i className="fas fa-lock username-password-icons"></i>
+            <input className='block-text-font-oswald account-input-field'
               name='password'
               type='password'
               placeholder='Password'
               value={this.state.password}
               onChange={this.updateField}></input>
           </div>
-          <div className='button mt-5 headers-font-ubuntu'>
+          <div className='button mt-3 headers-font-ubuntu'>
             <button className='btn btn-primary block submit-button'>Sign In</button>
           </div>
         </form >
@@ -94,13 +94,13 @@ class SignIn extends React.Component {
             <button className='btn btn-primary block headers-font-ubuntu create-account-button'>Create an Account</button>
           </div>
         </Link>
-        <Link to='/search' >
+        {/* <Link to='/search' >
           <div className='button mt-4 mb-4'>
             <button className='btn btn-primary block headers-font-ubuntu skip-button'>Skip
               <i className="fas fa-chevron-right ml-2"></i>
             </button>
           </div>
-        </Link>
+        </Link> */}
 
       </div>
     );

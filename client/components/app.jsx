@@ -29,6 +29,10 @@ export default class App extends React.Component {
     this.loadUser();
   }
 
+  componentDidUpdate() {
+    // this.loadUser();
+  }
+
   loadUser() {
     fetch('/api/user-liked-events')
       .then(data => data.json())
@@ -115,33 +119,40 @@ export default class App extends React.Component {
 
             <Route path='/search' exact
               render={() =>
-                <Search
-                  likedEvents={this.state.liked}
-                  addLiked={id => this.addLikedEvents(id)}
-                  removeLiked={id => this.removeLikedEvent(id)}
-                  schedule={this.state.schedule} />} />
 
-            {/* <Route path='/eventDetails/:id' render={(props) => (
-              <EventDetails eventId={props.match.params.id}></EventDetails>
-            )}></Route> */}
+                <div>
+                  <Search
+                    likedEvents={this.state.liked}
+                    addLiked={id => this.addLikedEvents(id)}
+                    removeLiked={id => this.removeLikedEvent(id)}
+                    schedule={this.state.schedule}/>
+                  <Footer />
+                </div>}/>
+
 
             <Route path='/likedEvents' exact
               render={() =>
-                <LikedEventsList
-                  likedEvents={this.state.liked}
-                  removeLike={id => this.removeLikedEvent(id)}
-                />} />
+                <div>
+                  <LikedEventsList
+                    likedEvents={this.state.liked}
+                    removeLike={id => this.removeLikedEvent(id)}/>
+                  <Footer />
+                </div>} />
 
             <Route path='/settings' exact
-              render={() => <Settings
-                removeFromSchedule={day => this.removeFromSchedule(day)}
-                addToSchedule={day => this.addToSchedule(day)}
-                schedule={this.state.schedule}
-                days={this.state}
-              />} />
+
+              render={() =>
+                <div>
+                  <Settings
+                    removeFromSchedule={day => this.removeFromSchedule(day)}
+                    addToSchedule={day => this.addToSchedule(day)}
+                    schedule={this.state.schedule} 
+                    days={this.state}/>
+                  <Footer />
+                </div>} />
+
 
           </Switch>
-          <Footer />
         </div>
       </Router >
     );

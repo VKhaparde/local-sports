@@ -7,13 +7,16 @@ class ReviewListItem extends React.Component {
       this.props.onSpecificReviewClick(this.props.id);
     };
     return (
-      <div className="reviewListItem d-flex flex-column"
+      <div className="reviewListItem mb-2 p-2 d-flex flex-column"
         onClick={handleClick}>
-        <div className="d-flex justify-content-between">
+        <div className="d-flex justify-content-between mt-2 pl-2 pr-2">
           <div className="">{this.props.userName}</div>
-          <div className='rating m-2' style={{ backgroundImage: `url(${this.props.ratingImage})` }}></div>
+          <div className="rating" style={{ backgroundImage: `url(${this.props.ratingImage})` }}></div>
         </div>
-        <div>{this.props.reviewDescription}</div>
+        <div className="d-flex justify-content-between m-2">
+          <i>{this.props.reviewDescription}</i>
+        </div>
+        {/* <div className=""><i>{this.props.reviewDescription}</i></div> */}
       </div>
     );
   }
