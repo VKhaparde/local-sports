@@ -34,7 +34,7 @@ class LikedEventsList extends React.Component {
     if (this.props.likedEvents.length === 0) {
       return (
         <div>
-          <div className="eventList mt-3 flex-column text-center h-50">
+          <div className="eventList mt-3 flex-column text-center">
             <div className="eventListTitle mt-4 mb-4 headers-font-ubuntu">
               <h2>Liked Events</h2>
             </div>
