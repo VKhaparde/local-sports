@@ -321,12 +321,8 @@ height:75px;
 }
 
 .reviewListItem{
-<<<<<<< HEAD
-  border: 2px solid #2a9d8f;
-=======
   border: 4px solid #2a9d8f;
   /* height: 125px; */
->>>>>>> 9d55bf9eb9fa694dfa84e663b25a5a7e90e68b23
   overflow: scroll;
   border-radius: 10px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
