@@ -20,10 +20,26 @@ class Search extends React.Component {
   sportSearch(sport) {
     fetch(`/api/sport-search?sport=${sport}`)
       .then(response => response.json())
-      .then(data => this.setState({
-        events: data
-      }))
+      .then(data => {
+        const selectedDayEvents = this.showEventsForSelectedDays(data);
+        this.setState({
+          events: selectedDayEvents
+        });
+      })
       .catch(error => console.error('Error', error));
+  }
+
+  showEventsForSelectedDays(eventsData) {
+    const schedule = this.props.schedule;
+    const selectedDayEvents = [];
+    for (let dayIndex = 0; dayIndex < schedule.length; dayIndex++) {
+      for (let eventIndex = 0; eventIndex < eventsData.length; eventIndex++) {
+        if (eventsData[eventIndex]['event-day'] === schedule[dayIndex]) {
+          selectedDayEvents.push(eventsData[eventIndex]);
+        }
+      }
+    }
+    return selectedDayEvents;
   }
 
   detailSearch(id) {
@@ -56,7 +72,6 @@ class Search extends React.Component {
   }
 
   render() {
-
     if (this.state.eventInfoDisplay === true) {
       return (
         <div className="">

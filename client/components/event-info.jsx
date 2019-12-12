@@ -14,9 +14,9 @@ class EventInfo extends React.Component {
   }
 
   checkLikedEventCondition() {
-    // if (this.props.info.likedEvents === undefined) {
-    //   return null;
-    // }
+    if (this.props.info.likedEvents === undefined) {
+      return null;
+    }
 
     const id = this.props.info.events[0]['event-id'];
     this.props.info.likedEvents.filter(event => {
@@ -46,23 +46,23 @@ class EventInfo extends React.Component {
   render() {
     const { favorited } = this.state;
     return (
-      <div className="eventInfo d-flex flex-column p-2 ">
-        <div className="d-flex justify-content-between text-capitalize headers-font-ubuntu h3 m-1 ml-2">{this.props.info.events[0]['event-name']}
-          <button id={favorited ? 'liked-event-heart' : 'unliked-heart-event'}
+      <div className="eventInfo d-flex flex-column overflow-hidden p-2 ">
+        <div className="d-flex justify-content-between text-capitalize headers-font-ubuntu h3 m-1 ml-2 text-left">{this.props.info.events[0]['event-name']}
+          <div className="heart-div-button" id={favorited ? 'liked-event-heart' : 'unliked-heart-event'}
             onClick={() => this.handleEventClick(this.props.info.events[0])}>
             <i className={`liked-event-heart ${favorited ? 'fas' : 'far'} fa-heart`}></i>
-          </button>
+          </div>
         </div>
         <div className="d-flex justify-content-between ml-2 mt-1 block-text-font-oswald">
           <div>{this.props.info.events[0]['event-day']}</div>
-          <div className='rating mr-1' style={{ backgroundImage: `url(${this.props.ratingImage})` }}></div>
         </div>
         <div className="d-flex justify-content-between ml-2 mt-1 block-text-font-oswald">
           <div>{this.props.info.events[0].name}</div>
-          <button className="backButton"
+          <div className='rating mr-3' style={{ backgroundImage: `url(${this.props.ratingImage})` }}></div>
+          {/* <button className="backButton"
             onClick={() => this.props.toggleView()}>
-            <i className="fas fa-arrow-left fa-2x"></i>
-          </button>
+            <i className="fas fa-arrow-left fa-1.5x"></i>
+          </button> */}
         </div>
       </div>
     );

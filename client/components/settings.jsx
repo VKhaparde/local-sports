@@ -5,14 +5,14 @@ class Settings extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      Monday: true,
-      Tuesday: true,
-      Wednesday: true,
-      Thursday: true,
-      Friday: true,
-      Saturday: true,
-      Sunday: true
+      schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+      // Monday: true,
+      // Tuesday: true,
+      // Wednesday: true,
+      // Thursday: true,
+      // Friday: true,
+      // Saturday: true,
+      // Sunday: true
     };
     this.handleEventClick = this.handleEventClick.bind(this);
   }
@@ -41,7 +41,6 @@ class Settings extends React.Component {
   }
 
   render() {
-
     return (
       <div className="eventList mt-3 flex-column text-center">
         <div className="eventListTitle mt-4 mb-4 headers-font-ubuntu">
@@ -50,7 +49,7 @@ class Settings extends React.Component {
         <div className="d-flex flex-column ml-5 mr-5 mb-3">
           {this.state.schedule.map((day, index) => {
             return (
-              <h4 className={`${this.state[day] ? 'not-active-day' : 'liked-event-border'} text-center p-1 block-text-font-oswald`}
+              <h4 className={`${this.props.days[day] ? 'not-active-day' : 'liked-event-border'} text-center p-1 block-text-font-oswald`}
                 key={index}
                 onClick={() => this.handleEventClick(day)}>{day}</h4>
             );
@@ -60,7 +59,7 @@ class Settings extends React.Component {
           <h2>Sign Out</h2>
         </div>
         <Link to='/signIn'>
-          <button className="mt-3"
+          <button className="mt-3 heart-div-button"
             onClick={this.handleSignOut}>
             <i className="fas fa-sign-out-alt fa-2x" />
           </button>

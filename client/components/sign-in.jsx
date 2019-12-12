@@ -55,14 +55,12 @@ class SignIn extends React.Component {
   }
 
   render() {
-    const message = this.state.loginError && <div className="errorMessage">
+    const message = this.state.loginError && <div className="errorMessage mt-2">
       {this.state.loginError}</div>;
 
     return (
-      <div className="eventList mt-3 mb-2 d-flex flex-column text-center">
-        {message}
+      <div className="welcome-signin-createaccount-pages mt-3 mb-2 d-flex flex-column text-center">
         <form className='form mt-2 container'
-
           onSubmit={this.submitForm}>
           <div className="eventListTitle mt-5 headers-font-ubuntu">
             <h2>Sign In</h2>
@@ -76,7 +74,7 @@ class SignIn extends React.Component {
               value={this.state.username}
               onChange={this.updateField}></input>
           </div>
-          <div className="liked-event-border account-input-container p-1 mt-3">
+          <div className="liked-event-border account-input-container p-1 mt-4">
             <i className="fas fa-lock username-password-icons"></i>
             <input className='block-text-font-oswald account-input-field'
               name='password'
@@ -85,12 +83,13 @@ class SignIn extends React.Component {
               value={this.state.password}
               onChange={this.updateField}></input>
           </div>
-          <div className='button mt-3 headers-font-ubuntu'>
+          {message}
+          <div className='button mt-5 headers-font-ubuntu'>
             <button className='btn btn-primary block submit-button'>Sign In</button>
           </div>
         </form >
         <Link to='/createAccount' >
-          <div className='button mt-4'>
+          <div className='button mt-5'>
             <button className='btn btn-primary block headers-font-ubuntu create-account-button'>Create an Account</button>
           </div>
         </Link>

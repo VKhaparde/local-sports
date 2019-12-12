@@ -18,20 +18,22 @@ class LikedEvent extends React.Component {
     const { favorited } = this.state;
     return (
       <div className="liked-event-border p-2 m-2"
-        // onClick={() => this.props.eventDetail(this.props.event['event-id'])}
+      // onClick={() => this.props.eventDetail(this.props.event['event-id'])}
       >
         <div className="d-flex justify-content-between">
           <div className="liked-event-title text-wrap headers-font-ubuntu">
             <h5>{this.props.event['event-name']}</h5>
+            <h6>{this.props.event['event-day']}</h6>
+            <h6>{this.props.event['event-location']}</h6>
           </div>
-          <button id={favorited ? 'liked-event-heart' : 'unliked-heart-event'}
+          <div className="heart-div-button" id={favorited ? 'liked-event-heart' : 'unliked-heart-event'}
             onClick={() => this.handleEventClick(this.props.event)}>
             <i className={`liked-event-heart ${favorited ? 'fas' : 'far'} fa-heart fa-2x`}></i>
-          </button>
+          </div>
         </div>
-        <div className="liked-event-location text-wrap block-text-font-oswald">
+        {/* <div className="liked-event-location text-wrap block-text-font-oswald">
           <h6>{this.props.event['event-day']}</h6>
-        </div>
+        </div> */}
       </div>
     );
   }

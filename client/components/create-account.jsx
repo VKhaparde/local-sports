@@ -47,7 +47,7 @@ class CreateAccount extends React.Component {
   render() {
     if (this.state.isUserAccountCreated) {
       return (
-        <div className="eventList mt-1 mb-2 d-flex flex-column text-center">
+        <div className="welcome-signin-createaccount-pages mt-3 mb-2 d-flex flex-column text-center">
           <div className="eventListTitle mt-5 headers-font-ubuntu">
             Your account has been created successfully.
           </div>
@@ -61,8 +61,7 @@ class CreateAccount extends React.Component {
       );
     }
     return (
-      <div className="eventList mt-2 d-flex flex-column text-center">
-        <div className="createAccount  headers-font-ubuntu">Create Account</div>
+      <div className="welcome-signin-createaccount-pages mt-3 mb-2 d-flex flex-column text-center">
         <form className='form mt-4 container'
           onSubmit={this.submitForm}>
           <div className="eventListTitle mt-5 headers-font-ubuntu">
@@ -104,7 +103,7 @@ class CreateAccount extends React.Component {
               <option value="nopref">No Pref</option>
             </select>
           </div> */}
-          <div className="liked-event-border mt-4 p-1 account-input-container">
+          <div className="liked-event-border account-input-container mt-4 p-1">
             <i className="fas fa-user username-password-icons"></i>
             <input className='form-control block-text-font-oswald account-input-field'
               name='username'
@@ -113,7 +112,7 @@ class CreateAccount extends React.Component {
               value={this.state.username} required
               onChange={this.updateField}></input>
           </div>
-          <div className="liked-event-border p-1 mt-2 account-input-container">
+          <div className="liked-event-border account-input-container p-1 mt-2">
             <i className="fas fa-lock username-password-icons"></i>
             <input className='form-control block-text-font-oswald account-input-field'
               name='password'
@@ -122,9 +121,9 @@ class CreateAccount extends React.Component {
               value={this.state.password} required
               onChange={this.updateField}></input>
           </div>
-          <div className="liked-event-border p-1 mt-2 account-input-container">
+          <div className="liked-event-border account-input-container p-1 mt-2">
             <i className="fas fa-lock username-password-icons"></i>
-            <input className='form-control block-text-font-oswald'
+            <input className='form-control block-text-font-oswald account-input-field'
               name='confirmPassword'
               type='password' autoComplete='off'
               placeholder='Confirm Password'
@@ -147,7 +146,7 @@ class CreateAccount extends React.Component {
             </button>
           </Link> */}
         </div>
-      </div>
+      </div >
     );
   }
 

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Welcome() {
   return (
 
-    <div className="eventList mt-3 mb-2 flex-column text-center overflow-none">
+    <div className="welcome-signin-createaccount-pages mb-2 flex-column text-center overflow-none">
       <div className="eventListTitle m-5 headers-font-ubuntu">
         <h2>Welcome</h2>
       </div>
