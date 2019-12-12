@@ -116,7 +116,9 @@ class Search extends React.Component {
             events={this.state}
             callback={sport => this.detailSearch(sport)}
             listCallback={events => this.displayList(events)} />
-          <EventList events={this.state}
+          <EventList
+            events={this.state}
+            likedEvents={this.props.likedEvents}
             onClick={id => this.detailSearch(id)} />
           <Favorites
             events={this.state}

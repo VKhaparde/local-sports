@@ -77,7 +77,15 @@ class EventDetails extends React.Component {
                 <div>Phone:</div>
                 <div>{this.props.events[0].phone}</div>
               </div>
-              <div className="d-flex justify-content-between mt-3">
+              <div className="d-flex justify-content-between">
+                <div>Time</div>
+                <div>{this.props.events[0].time}</div>
+              </div>
+              <div className="d-flex justify-content-between">
+                <div>Address:</div>
+                <div>{this.props.events[0].address}</div>
+              </div>
+              <div className="d-flex justify-content-between mt-3 h4">
                 <p className="font-italic">{this.props.events[0]['event-description']}</p>
               </div>
             </div>

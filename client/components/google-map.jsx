@@ -45,8 +45,8 @@ class GoogleMap extends React.Component {
     return new window.google.maps.Map(this.googleMapRef.current, {
       zoom: 11,
       center: {
-        lat: 33.727567,
-        lng: -117.80154
+        lat: 33.707567,
+        lng: -117.77154
       },
       disableDefaultUI: true
     });
@@ -81,7 +81,7 @@ class GoogleMap extends React.Component {
   }
 
   handleResetZoom() {
-    this.googleMap.setZoom(11);
+    this.googleMap.setZoom(11.5);
   }
 
   render() {

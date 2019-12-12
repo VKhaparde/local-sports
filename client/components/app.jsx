@@ -52,7 +52,8 @@ export default class App extends React.Component {
     fetch('/api/user-liked-events', req)
       .then(data => data.json())
       .then(data => this.setState(liked => {
-        return { liked: this.state.liked, data };
+        const likedArray = this.state.liked.concat(event);
+        return { liked: likedArray };
       }));
   }
 
