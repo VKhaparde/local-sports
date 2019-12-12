@@ -17,7 +17,7 @@ function EventListItem(props) {
       <div className="liked-event-location text-wrap block-text-font-oswald mt-4">
         <div className="d-flex justify-content-between">
           {props.locationName}
-          <div className='justify-content-end mr-2'>
+          <div className='justify-content-end mr-1'>
             {props.time}
           </div>
         </div>

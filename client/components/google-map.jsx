@@ -1,4 +1,5 @@
 import React from 'react';
+/* global google */
 
 class GoogleMap extends React.Component {
   constructor(props) {
@@ -62,12 +63,21 @@ class GoogleMap extends React.Component {
   }
 
   createMarker() {
+    // const icons = {
+    //   soccer: {
+    //     icon: 'images/IconSoccer.jpeg'
+    //   },
+    // }
+
     if (this.props.events.events.length === 0) return null;
     this.props.events.events.map(event => {
       const marker = new window.google.maps.Marker({
         position: { lat: event.lat, lng: -event.lng },
+        type: 'soccer',
         map: this.googleMap,
-        id: event.id
+        id: event.id,
+        animation: google.maps.Animation.DROP
+        // icon: icons.soccer.icon,
       });
 
       this.markers.push(marker);
