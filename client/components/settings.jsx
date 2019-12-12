@@ -59,7 +59,7 @@ class Settings extends React.Component {
           <h2>Sign Out</h2>
         </div>
         <Link to='/signIn'>
-          <button className="mt-3"
+          <button className="mt-3 heart-div-button"
             onClick={this.handleSignOut}>
             <i className="fas fa-sign-out-alt fa-2x" />
           </button>

@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 function Welcome() {
   return (
 
-    <div className="eventList mt-3 mb-2 flex-column text-center overflow-none">
-      <div className="eventListTitle m-4 headers-font-ubuntu">
-        <h2 className="text-center">Welcome</h2>
+    <div className="welcome-signin-createaccount-pages mb-2 flex-column text-center overflow-none">
+      <div className="eventListTitle m-5 headers-font-ubuntu">
+        <h2>Welcome</h2>
       </div>
       <div className="liked-event-location text-wrap block-text-font-oswald text-center m-4"><h4>
         Local Sports helps you select the perfect pick-up sporting event.

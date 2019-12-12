@@ -129,7 +129,6 @@ export default class App extends React.Component {
                   <Footer />
                 </div>}/>
 
-
             <Route path='/likedEvents' exact
               render={() =>
                 <div>
@@ -146,11 +145,10 @@ export default class App extends React.Component {
                   <Settings
                     removeFromSchedule={day => this.removeFromSchedule(day)}
                     addToSchedule={day => this.addToSchedule(day)}
-                    schedule={this.state.schedule} 
+                    schedule={this.state.schedule}
                     days={this.state}/>
                   <Footer />
                 </div>} />
-
 
           </Switch>
         </div>
