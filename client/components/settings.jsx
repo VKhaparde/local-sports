@@ -43,10 +43,10 @@ class Settings extends React.Component {
   render() {
     return (
       <div className="eventList mt-3 flex-column text-center">
-        <div className="eventListTitle mt-4 mb-4 headers-font-ubuntu">
+        <div className="eventListTitle mt-2 mb-4 headers-font-ubuntu">
           <h2>Schedule</h2>
         </div>
-        <div className="d-flex flex-column ml-5 mr-5 mb-3">
+        <div className="d-flex flex-column ml-5 mr-5 mb-2">
           {this.state.schedule.map((day, index) => {
             return (
               <h4 className={`${this.props.days[day] ? 'not-active-day' : 'liked-event-border'} text-center p-1 mb-3 block-text-font-oswald`}
@@ -64,6 +64,12 @@ class Settings extends React.Component {
             </button>
           </Link>
         </div>
+        <Link to='/signIn'>
+          <button className="bg-white m-3 heart-div-button"
+            onClick={this.handleSignOut}>
+            <i className="fas fa-sign-out-alt fa-2x" />
+          </button>
+        </Link>
       </div>
     );
   }

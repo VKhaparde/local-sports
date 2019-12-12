@@ -18,10 +18,10 @@ function Welcome() {
       <div className='button m-5 headers-font-ubuntu'>
         <div className='button mt-2 headers-font-ubuntu col-12'>
           <Link to='/signIn' >
-            <button className='btn btn-primary block submit-button'>Sign In</button>
+            <button className='btn block submit-button'>Sign In</button>
           </Link>
           <Link to='/createAccount' >
-            <button className='btn btn-primary block submit-button mt-3'>Create an Account</button>
+            <button className='btn block submit-button mt-3'>Create an Account</button>
           </Link>
           {/* <Link to= '/search' >
           <button className='btn btn-primary block mt-2 skip-button'>Skip

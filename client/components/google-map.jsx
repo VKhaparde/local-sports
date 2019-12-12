@@ -1,4 +1,5 @@
 import React from 'react';
+/* global google */
 
 class GoogleMap extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class GoogleMap extends React.Component {
     };
     this.googleMapRef = React.createRef();
     this.markers = [];
-    this.GOOGLE_MAP_API_KEY = 'AIzaSyD3QCxuw - dLr9u23x2dU7BJXmU4PLso5vY';
+    this.GOOGLE_MAP_API_KEY = 'AIzaSyAOJECdvPZz9UkXONB7GvgiYfrP_s6RNOw';
 
     this.createMarker = this.createMarker.bind(this);
   }
@@ -62,12 +63,21 @@ class GoogleMap extends React.Component {
   }
 
   createMarker() {
+    // const icons = {
+    //   soccer: {
+    //     icon: 'images/IconSoccer.jpeg'
+    //   },
+    // }
+
     if (this.props.events.events.length === 0) return null;
     this.props.events.events.map(event => {
       const marker = new window.google.maps.Marker({
         position: { lat: event.lat, lng: -event.lng },
+        type: 'soccer',
         map: this.googleMap,
-        id: event.id
+        id: event.id,
+        animation: google.maps.Animation.DROP
+        // icon: icons.soccer.icon,
       });
 
       this.markers.push(marker);

@@ -36,11 +36,6 @@ height:80vh;
   border-top: 1.5px solid #cccccc;
 }
 
-/* .favorites-background-div {
-  background-color: #cccccc;
-  opacity: 50%;
-} */
-
 .favorites-hidden {
   position: absolute;
   right: 3%;
@@ -133,7 +128,7 @@ height:75px;
 }
 
 .eventInfo{
- height:60%;
+ height:175px;
  width:100%;
  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
  border-radius: 10px;
@@ -144,6 +139,7 @@ height:75px;
 .details, .reviews{
   height:20%;
   width:100%;
+  overflow: scroll;
   box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   transform: matrix(1, 0, 0, 1, 0, 0);
@@ -193,22 +189,18 @@ height:75px;
 }
 
 .eventList{
-  height:60%;
+  max-height:67%;
   width:90%;
   border: 4px solid #000000;
   box-sizing: border-box;
   border-radius: 20px;
-  /* scroll-behavior: smooth; */
   overflow: scroll;
   position: absolute;
   top: 10%;
   margin: 5%;
-  /* margin-right: 5%; */
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.25);
   text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
   background: white;
-  /* border-radius: 10px; */
-  /* padding: 3% */
 }
 
 .eventListCard {
@@ -278,7 +270,7 @@ height:75px;
 .liked-event-location {
   font-size: 1.2rem;
   text-align: left;
-  margin-left: 1rem;
+  margin-left: .5rem;
   line-height: 1.3rem;
 }
 
@@ -394,4 +386,8 @@ color:#2a9d8f;
 
 .backButton {
   border: none;
+}
+
+.markers {
+  animation: none;
 }

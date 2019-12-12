@@ -34,21 +34,21 @@ class LikedEventsList extends React.Component {
     if (this.props.likedEvents.length === 0) {
       return (
         <div>
-          <div className="eventList mt-3 flex-column text-center h-50">
+          <div className="eventList mt-3 flex-column text-center">
             <div className="eventListTitle mt-4 mb-4 headers-font-ubuntu">
               <h2>Liked Events</h2>
             </div>
             <div className="likedEvents">
 
-              <h4 className='text-center mt-4 block-text-font-oswald p-2'>
-                <h3><i>
+              <h3 className='text-center mt-4 block-text-font-oswald p-2'>
+                <h4><i>
                   Your list is empty!
-                </i></h3>
+                </i></h4>
                 <br></br>
                 Return to the map to
                 <br></br>
                 see events around you.
-              </h4>
+              </h3>
             </div >
             <Link to='/search'>
               <div className="text-center mt-5">
@@ -105,8 +105,8 @@ class LikedEventsList extends React.Component {
                     key={event['event-id']}
                     event={event}
                     removeEvent={id => this.props.removeLike(id)}
-                    // eventDetail={id => this.props.searchLike(id)}
-                    // eventDetail={id => this.searchLikedEvent(id)}
+                  // eventDetail={id => this.props.searchLike(id)}
+                  // eventDetail={id => this.searchLikedEvent(id)}
                   />
 
                 );
