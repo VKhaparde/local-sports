@@ -53,7 +53,6 @@ class EventInfo extends React.Component {
             <i className={`liked-event-heart ${favorited ? 'fas' : 'far'} fa-heart`}></i>
           </div>
         </div>
-        {/* <div className='rating ml-2' style={{ backgroundImage: `url(${this.props.ratingImage})` }}></div> */}
         <div className="d-flex justify-content-between ml-2  block-text-font-oswald">
           <div className="h5">{this.props.info.events[0]['event-day']}</div>
           <div className='rating mr-2 ' style={{ backgroundImage: `url(${this.props.ratingImage})` }}></div>
@@ -61,7 +60,8 @@ class EventInfo extends React.Component {
 
         <div className="d-flex justify-content-between ml-2 block-text-font-oswald">
           <div>{this.props.info.events[0].name}</div>
-          <button className="backButton"
+          <div className='rating mr-3' style={{ backgroundImage: `url(${this.props.ratingImage})` }}></div>
+          <button className="backButton bg-white"
             onClick={() => this.props.toggleView()}>
             <i className="fas fa-arrow-left fa-1.75x"></i>
           </button>
