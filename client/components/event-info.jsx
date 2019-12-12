@@ -46,7 +46,7 @@ class EventInfo extends React.Component {
   render() {
     const { favorited } = this.state;
     return (
-      <div className="eventInfo d-flex flex-column overflow-hidden p-2">
+      <div className="eventInfo d-flex flex-column overflow-hidden p-2 ">
         <div className="d-flex justify-content-between text-capitalize headers-font-ubuntu h3 m-1 ml-2">{this.props.info.events[0]['event-name']}
           <button id={favorited ? 'liked-event-heart' : 'unliked-heart-event'}
             onClick={() => this.handleEventClick(this.props.info.events[0])}>
