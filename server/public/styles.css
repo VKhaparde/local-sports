@@ -36,7 +36,6 @@ height:80vh;
   border-top: 1.5px solid #cccccc;
 }
 
-
 .favorites-hidden {
   position: absolute;
   right: 3%;
@@ -263,8 +262,8 @@ height:75px;
 .liked-event-title {
   font-size: 2em;
   text-align: left;
-  margin-left: .5rem;
-  line-height: 1.5rem;
+  margin-left: 1rem;
+  line-height: 2rem;
 }
 
 .liked-event-location {
@@ -381,4 +380,5 @@ color:#2a9d8f;
 
 .heart-div-button {
   border: none;
+  background-color: white;
 }
