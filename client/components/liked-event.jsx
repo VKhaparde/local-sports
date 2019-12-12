@@ -21,7 +21,8 @@ class LikedEvent extends React.Component {
 
     return (
       <div className="liked-event-border p-2 m-2"
-        onClick={() => this.props.eventDetail(this.props.event['event-id'])}>
+        // onClick={() => this.props.eventDetail(this.props.event['event-id'])}
+      >
         <div className="d-flex justify-content-between">
           <div className="liked-event-title text-wrap headers-font-ubuntu">
             <h5>{this.props.event['event-name']}</h5>

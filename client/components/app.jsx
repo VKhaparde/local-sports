@@ -23,6 +23,10 @@ export default class App extends React.Component {
     this.loadUser();
   }
 
+  componentDidUpdate() {
+    // this.loadUser();
+  }
+
   loadUser() {
     fetch('/api/user-liked-events')
       .then(data => data.json())
