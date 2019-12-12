@@ -47,8 +47,6 @@ if ($request['method'] === 'POST') {
     }
   }
 
-
-
   $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
 
   if ($stmt = $link->prepare($sql)) {
@@ -66,6 +64,3 @@ if ($request['method'] === 'POST') {
   }
   $mysqli->close();
 }
-
-
-//http -v post localhost:9000/api/registration name=Kelly phone=123456789 email=kelly@gmail.com username=kellyrocks password=test confirm_password=test

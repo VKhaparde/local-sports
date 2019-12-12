@@ -29,10 +29,6 @@ export default class App extends React.Component {
     this.loadUser();
   }
 
-  componentDidUpdate() {
-    // this.loadUser();
-  }
-
   loadUser() {
     fetch('/api/user-liked-events')
       .then(data => data.json())
@@ -72,17 +68,8 @@ export default class App extends React.Component {
         const list = this.state.liked.filter(events => events['event-id'] !== event['event-id']);
         return { liked: list };
       })
-
-      //   this.setState({
-      //   liked: this.state.liked.filter(events => events.id !== event['event-id'])
-      // })
-      // );
       );
   }
-
-  // searchLikedEvent(id) {
-
-  // }
 
   removeFromSchedule(day) {
     this.setState({
@@ -91,7 +78,6 @@ export default class App extends React.Component {
         return event !== day;
       })
     });
-  // this.setState({days[day]:false});
   }
 
   addToSchedule(day) {
@@ -113,7 +99,7 @@ export default class App extends React.Component {
               render={() => <Welcome />} />
 
             <Route path='/signIn' exact
-              render={props => <SignIn {...props} />} />
+              render={props => <SignIn {...props} callbackSignIn={() => this.loadUser()}/>} />
 
             <Route path='/createAccount' exact
               render={() => <CreateAccount />} />

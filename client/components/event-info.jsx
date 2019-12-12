@@ -57,7 +57,6 @@ class EventInfo extends React.Component {
           <div className="h5">{this.props.info.events[0]['event-day']}</div>
           <div className='rating mr-2 ' style={{ backgroundImage: `url(${this.props.ratingImage})` }}></div>
         </div>
-
         <div className="d-flex justify-content-between ml-2 block-text-font-oswald">
           <div>{this.props.info.events[0].name}</div>
           <div className='rating mr-3' style={{ backgroundImage: `url(${this.props.ratingImage})` }}></div>

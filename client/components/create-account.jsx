@@ -10,6 +10,7 @@ class CreateAccount extends React.Component {
       confirmPassword: '',
       isUserAccountCreated: false
     };
+
     this.submitForm = this.submitForm.bind(this);
     this.updateField = this.updateField.bind(this);
     this.displayMessage = this.displayMessage.bind(this);
@@ -51,7 +52,7 @@ class CreateAccount extends React.Component {
           <div className="eventListTitle mt-5 headers-font-ubuntu">
             Your account has been created successfully.
           </div>
-          <Link to='/search'>
+          <Link to='/signIn'>
             <div className='m-4'>
               <button className='btn btn-success submit-button headers-font-ubuntu'>
                 Click here to continue</button>
@@ -67,42 +68,6 @@ class CreateAccount extends React.Component {
           <div className="eventListTitle mt-5 headers-font-ubuntu">
             <h2>Create an Account</h2>
           </div>
-          {/* <div className="liked-event-border p-1 mt-2 ">
-            <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
-              name='name'
-              type='text'
-              placeholder='Fullname' autoComplete='off'
-              value={this.state.name} required
-              onChange={this.updateField}></input>
-          </div> */}
-          {/* <div className="liked-event-border p-1 mt-2">
-            <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
-              name='email'
-              type='email'
-              placeholder='Email' autoComplete='off'
-              value={this.state.email}
-              onChange={this.updateField}></input>
-          </div> */}
-          {/* <div className="liked-event-border p-1 mt-2">
-            <input className='form-control block-text-font-oswald w-100 p-1 pl-2'
-              name='phone'
-              type='text'
-              placeholder='Phonenumber' autoComplete='off'
-              value={this.state.phone} required
-              onChange={this.updateField}></input>
-          </div> */}
-          {/* <div className="liked-event-border p-1 mt-2">
-            <select className='form-control custom-select block-text-font-oswald w-100 p-1 pl-2'
-              name='gender'
-              type='text'
-              value={this.state.gender}
-              onChange={this.updateField}>
-              <option value="Gender">Gender</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="nopref">No Pref</option>
-            </select>
-          </div> */}
           <div className="liked-event-border account-input-container mt-4 p-1">
             <i className="fas fa-user username-password-icons"></i>
             <input className='form-control block-text-font-oswald account-input-field'
@@ -139,12 +104,6 @@ class CreateAccount extends React.Component {
             <button className='btn btn-primary block create-account-button mt-4'>Back to Sign In</button>
           </Link>
           <br></br>
-          {/* <Link to='/search'>
-            <button className='btn btn-primary block mt-4 skip-button'>
-              Skip
-              <i className="fas fa-chevron-right ml-2"></i>
-            </button>
-          </Link> */}
         </div>
       </div >
     );

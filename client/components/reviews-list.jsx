@@ -25,10 +25,6 @@ class ReviewsList extends React.Component {
       .catch(error => console.error('Fetch failed error', error));
   }
 
-  componentDidUpdate() {
-
-  }
-
   handleSpecificReviewClick(selectedReviewId) {
     const selectedReview = this.state.reviews.filter(currentVal => currentVal.id === selectedReviewId);
     this.setState({

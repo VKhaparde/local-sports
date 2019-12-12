@@ -93,8 +93,7 @@ class EventDetails extends React.Component {
           <ReviewList
             onReviewsClick={this.handleClickReviews}
             eventId={this.props.events[0]['event-id']}
-            isReviewsClicked={this.state.isReviewsClicked}
-          />
+            isReviewsClicked={this.state.isReviewsClicked}/>
         </div >
       );
     } else if (this.state.isReviewsClicked) {
@@ -111,8 +110,7 @@ class EventDetails extends React.Component {
           <ReviewList
             onReviewsClick={this.handleClickReviews}
             eventId={this.props.events[0]['event-id']}
-            isReviewsClicked={this.state.isReviewsClicked}
-          />
+            isReviewsClicked={this.state.isReviewsClicked}/>
         </div >
       );
     } else {
@@ -129,8 +127,7 @@ class EventDetails extends React.Component {
           <ReviewList
             onReviewsClick={this.handleClickReviews}
             eventId={this.props.events[0]['event-id']}
-            isReviewsClicked={this.state.isReviewsClicked}
-          />
+            isReviewsClicked={this.state.isReviewsClicked}/>
         </div >
       );
     }

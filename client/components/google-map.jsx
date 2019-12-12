@@ -32,14 +32,6 @@ class GoogleMap extends React.Component {
       this.googleMap = this.createGoogleMap();
       this.createMarker();
     }
-
-  }
-
-  getUserLocation() {
-    // navigator.geolocation.getCurrentPosition(position => {
-    //   this.setState({userLat: position.coords.latitude, userLng: position.coords.longitude})
-    // });
-    // console.log(this.state)
   }
 
   createGoogleMap() {
@@ -63,12 +55,6 @@ class GoogleMap extends React.Component {
   }
 
   createMarker() {
-    // const icons = {
-    //   soccer: {
-    //     icon: 'images/IconSoccer.jpeg'
-    //   },
-    // }
-
     if (this.props.events.events.length === 0) return null;
     this.props.events.events.map(event => {
       const marker = new window.google.maps.Marker({
@@ -77,13 +63,12 @@ class GoogleMap extends React.Component {
         map: this.googleMap,
         id: event.id,
         animation: google.maps.Animation.DROP
-        // icon: icons.soccer.icon,
       });
 
       this.markers.push(marker);
 
       marker.addListener('click', () => {
-        this.googleMap.setZoom(17);
+        this.googleMap.setZoom(15);
         this.googleMap.setCenter(marker.getPosition());
         this.props.callback(marker.id);
       });

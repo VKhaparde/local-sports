@@ -242,7 +242,6 @@ height:75px;
   padding-bottom: 3vh;
 }
 
-
 .liked-event-border {
   z-index: 1;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -382,12 +381,4 @@ color:#2a9d8f;
 .heart-div-button {
   border: none;
   background-color: white;
-}
-
-.backButton {
-  border: none;
-}
-
-.markers {
-  animation: none;
 }
