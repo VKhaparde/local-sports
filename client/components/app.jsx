@@ -8,14 +8,20 @@ import Settings from './settings';
 import Welcome from './welcome';
 import LikedEventsList from './liked-events-list';
 import CreateAccount from './create-account';
-// import EventDetails from './event-details';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       liked: [],
-      schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+      schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      Monday: true,
+      Tuesday: true,
+      Wednesday: true,
+      Thursday: true,
+      Friday: true,
+      Saturday: true,
+      Sunday: true
     };
   }
 
@@ -62,10 +68,10 @@ export default class App extends React.Component {
         return { liked: list };
       })
 
-        //   this.setState({
-        //   liked: this.state.liked.filter(events => events.id !== event['event-id'])
-        // })
-        // );
+      //   this.setState({
+      //   liked: this.state.liked.filter(events => events.id !== event['event-id'])
+      // })
+      // );
       );
   }
 
@@ -75,10 +81,12 @@ export default class App extends React.Component {
 
   removeFromSchedule(day) {
     this.setState({
+      [day]: !this.state[day],
       schedule: this.state.schedule.filter(event => {
         return event !== day;
       })
     });
+  // this.setState({days[day]:false});
   }
 
   addToSchedule(day) {
@@ -86,6 +94,7 @@ export default class App extends React.Component {
       const schedule = state.schedule.concat(day);
       return { schedule };
     });
+    this.setState({ [day]: !this.state[day] });
   }
 
   render() {
@@ -99,7 +108,7 @@ export default class App extends React.Component {
               render={() => <Welcome />} />
 
             <Route path='/signIn' exact
-              render={props => <SignIn {...props}/>} />
+              render={props => <SignIn {...props} />} />
 
             <Route path='/createAccount' exact
               render={() => <CreateAccount />} />
@@ -109,7 +118,8 @@ export default class App extends React.Component {
                 <Search
                   likedEvents={this.state.liked}
                   addLiked={id => this.addLikedEvents(id)}
-                  removeLiked={id => this.removeLikedEvent(id)} />} />
+                  removeLiked={id => this.removeLikedEvent(id)}
+                  schedule={this.state.schedule} />} />
 
             {/* <Route path='/eventDetails/:id' render={(props) => (
               <EventDetails eventId={props.match.params.id}></EventDetails>
@@ -126,7 +136,9 @@ export default class App extends React.Component {
               render={() => <Settings
                 removeFromSchedule={day => this.removeFromSchedule(day)}
                 addToSchedule={day => this.addToSchedule(day)}
-                schedule={this.state.schedule} />} />
+                schedule={this.state.schedule}
+                days={this.state}
+              />} />
 
           </Switch>
           <Footer />

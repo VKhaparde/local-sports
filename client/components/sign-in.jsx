@@ -55,7 +55,7 @@ class SignIn extends React.Component {
   }
 
   render() {
-    const message = this.state.loginError && <div className="errorMessage">
+    const message = this.state.loginError && <div className="errorMessage mt-2">
       {this.state.loginError}</div>;
 
     return (
