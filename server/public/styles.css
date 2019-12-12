@@ -193,7 +193,7 @@ height:75px;
 }
 
 .eventList{
-  height:75%;
+  height:60%;
   width:90%;
   border: 4px solid #000000;
   box-sizing: border-box;
@@ -272,7 +272,7 @@ height:75px;
   font-size: 2em;
   text-align: left;
   margin-left: 1rem;
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
 
 .liked-event-location {
@@ -388,5 +388,10 @@ color:#2a9d8f;
 }
 
 .heart-div-button {
+  border: none;
+  background-color: white;
+}
+
+.backButton {
   border: none;
 }
