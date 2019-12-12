@@ -10,15 +10,12 @@ class LikedEvent extends React.Component {
   }
 
   handleEventClick(event) {
-    this.setState(({ favorited }) => {
-      return { favorited: !favorited };
-    });
+    this.setState({ favorited: !this.state.favorited });
     setTimeout(() => { this.props.removeEvent(event); }, 300);
   }
 
   render() {
     const { favorited } = this.state;
-
     return (
       <div className="liked-event-border p-2 m-2"
         // onClick={() => this.props.eventDetail(this.props.event['event-id'])}
