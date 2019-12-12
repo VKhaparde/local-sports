@@ -6,13 +6,6 @@ class Settings extends React.Component {
     super(props);
     this.state = {
       schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-      // Monday: true,
-      // Tuesday: true,
-      // Wednesday: true,
-      // Thursday: true,
-      // Friday: true,
-      // Saturday: true,
-      // Sunday: true
     };
     this.handleEventClick = this.handleEventClick.bind(this);
   }

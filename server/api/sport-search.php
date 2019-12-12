@@ -13,11 +13,9 @@ if ($request['method'] === 'GET') {
           JOIN events
           ON `location-sports`.`location-id`=events.`location-id`
 
-
-
           WHERE `sport-type`=? ";
-  if (!isset($sportType)) {
 
+  if (!isset($sportType)) {
     throw new ApiError('need a correct sport type entered');
   }
 
@@ -30,13 +28,4 @@ if ($request['method'] === 'GET') {
   $result = (mysqli_fetch_all($result, MYSQLI_ASSOC));
   $response['body'] = $result;
   send($response);
-}
-
-function check_connection($link)
-{
-  $sql = 'select 1';
-  $link->query($sql);
-  return [
-    'message' => 'Successfully connected to MySQL!'
-  ];
 }

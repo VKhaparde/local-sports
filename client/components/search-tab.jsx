@@ -6,6 +6,7 @@ class SearchTab extends React.Component {
     this.state = {
       isClicked: false
     };
+
     this.handleClick = this.handleClick.bind(this);
     this.displayMenu = this.displayMenu.bind(this);
   }

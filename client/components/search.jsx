@@ -61,7 +61,6 @@ class Search extends React.Component {
   toggleMap() {
     this.setState({
       view: 'map'
-      // eventInfoDisplay: !this.state.eventInfoDisplay
     });
   }
 
@@ -139,7 +138,6 @@ class Search extends React.Component {
         </div>
       );
     }
-
   }
 }
 

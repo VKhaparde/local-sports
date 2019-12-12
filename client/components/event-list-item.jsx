@@ -10,9 +10,6 @@ function EventListItem(props) {
         <div className="d-flex justify-content-between">
           {props.date}
         </div>
-        {/* <button>
-          <i className="liked-event-heart far fa-heart fa-2x"></i>
-        </button> */}
       </div>
       <div className="liked-event-location text-wrap block-text-font-oswald mt-4">
         <div className="d-flex justify-content-between">
