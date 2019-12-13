@@ -99,7 +99,8 @@ export default class App extends React.Component {
               render={() => <Welcome />} />
 
             <Route path='/signIn' exact
-              render={props => <SignIn {...props} callbackSignIn={() => this.loadUser()}/>} />
+              render={props => <SignIn {...props}
+                callbackSignIn={() => this.loadUser()}/>} />
 
             <Route path='/createAccount' exact
               render={() => <CreateAccount />} />
@@ -126,7 +127,6 @@ export default class App extends React.Component {
                 </div>} />
 
             <Route path='/settings' exact
-
               render={() =>
                 <div>
                   <Settings

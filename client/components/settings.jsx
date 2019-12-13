@@ -48,21 +48,15 @@ class Settings extends React.Component {
             );
           })}
         </div>
-        <div className="eventListTitle headers-font-ubuntu">
-          <h2>Sign Out</h2>
+        <div className="headers-font-ubuntu d-flex justify-content-around ml-5 mr-5">
+          <div className="h3">Sign Out</div >
           <Link to='/signIn'>
-            <button className="heart-div-button"
+            <button className="bg-white heart-div-button"
               onClick={this.handleSignOut}>
-              <i className="fas fa-sign-out-alt" />
+              <i className="fas fa-sign-out-alt fa-2x" />
             </button>
           </Link>
         </div>
-        <Link to='/signIn'>
-          <button className="bg-white m-3 heart-div-button"
-            onClick={this.handleSignOut}>
-            <i className="fas fa-sign-out-alt fa-2x" />
-          </button>
-        </Link>
       </div>
     );
   }

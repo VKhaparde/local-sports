@@ -59,7 +59,6 @@ class GoogleMap extends React.Component {
     this.props.events.events.map(event => {
       const marker = new window.google.maps.Marker({
         position: { lat: event.lat, lng: -event.lng },
-        type: 'soccer',
         map: this.googleMap,
         id: event.id,
         animation: google.maps.Animation.DROP
