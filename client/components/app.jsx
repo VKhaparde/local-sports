@@ -72,17 +72,8 @@ export default class App extends React.Component {
         const list = this.state.liked.filter(events => events['event-id'] !== event['event-id']);
         return { liked: list };
       })
-
-      //   this.setState({
-      //   liked: this.state.liked.filter(events => events.id !== event['event-id'])
-      // })
-      // );
       );
   }
-
-  // searchLikedEvent(id) {
-
-  // }
 
   removeFromSchedule(day) {
     this.setState({
@@ -91,7 +82,7 @@ export default class App extends React.Component {
         return event !== day;
       })
     });
-  // this.setState({days[day]:false});
+    // this.setState({days[day]:false});
   }
 
   addToSchedule(day) {
@@ -126,16 +117,16 @@ export default class App extends React.Component {
                     likedEvents={this.state.liked}
                     addLiked={id => this.addLikedEvents(id)}
                     removeLiked={id => this.removeLikedEvent(id)}
-                    schedule={this.state.schedule}/>
+                    schedule={this.state.schedule} />
                   <Footer />
-                </div>}/>
+                </div>} />
 
             <Route path='/likedEvents' exact
               render={() =>
                 <div>
                   <LikedEventsList
                     likedEvents={this.state.liked}
-                    removeLike={id => this.removeLikedEvent(id)}/>
+                    removeLike={id => this.removeLikedEvent(id)} />
                   <Footer />
                 </div>} />
 
@@ -147,7 +138,7 @@ export default class App extends React.Component {
                     removeFromSchedule={day => this.removeFromSchedule(day)}
                     addToSchedule={day => this.addToSchedule(day)}
                     schedule={this.state.schedule}
-                    days={this.state}/>
+                    days={this.state} />
                   <Footer />
                 </div>} />
 

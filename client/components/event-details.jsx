@@ -86,14 +86,15 @@ class EventDetails extends React.Component {
                 <div>{this.props.events[0].address}</div>
               </div>
               <div className="d-flex justify-content-between mt-3 h4">
-                <p className="font-italic">{this.props.events[0]['event-description']}</p>
+                <p className="font-italic p-0">{this.props.events[0]['event-description']}</p>
               </div>
             </div>
           </div>
           <ReviewList
             onReviewsClick={this.handleClickReviews}
             eventId={this.props.events[0]['event-id']}
-            isReviewsClicked={this.state.isReviewsClicked} />
+            isReviewsClicked={this.state.isReviewsClicked}
+          />
         </div >
       );
     } else if (this.state.isReviewsClicked) {
@@ -110,7 +111,8 @@ class EventDetails extends React.Component {
           <ReviewList
             onReviewsClick={this.handleClickReviews}
             eventId={this.props.events[0]['event-id']}
-            isReviewsClicked={this.state.isReviewsClicked} />
+            isReviewsClicked={this.state.isReviewsClicked}
+          />
         </div >
       );
     } else {
@@ -127,7 +129,8 @@ class EventDetails extends React.Component {
           <ReviewList
             onReviewsClick={this.handleClickReviews}
             eventId={this.props.events[0]['event-id']}
-            isReviewsClicked={this.state.isReviewsClicked} />
+            isReviewsClicked={this.state.isReviewsClicked}
+          />
         </div >
       );
     }
