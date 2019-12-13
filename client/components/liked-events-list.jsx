@@ -39,7 +39,7 @@ class LikedEventsList extends React.Component {
             </div>
             <div className="likedEvents">
 
-              <h3 className='text-center mt-4 block-text-font-oswald p-2'>
+              <div className='h3 text-center mt-4 block-text-font-oswald p-2'>
                 <h4>
                   <i>Your list is empty!</i>
                 </h4>
@@ -47,7 +47,7 @@ class LikedEventsList extends React.Component {
                 Return to the map to
                 <br></br>
                 see events around you.
-              </h3>
+              </div>
             </div >
             <Link to='/search'>
               <div className="text-center m-4">
