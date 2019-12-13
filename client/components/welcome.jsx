@@ -23,12 +23,6 @@ function Welcome() {
           <Link to='/createAccount' >
             <button className='btn block submit-button mt-3'>Create an Account</button>
           </Link>
-          {/* <Link to= '/search' >
-          <button className='btn btn-primary block mt-2 skip-button'>Skip
-            <i className="fas fa-chevron-right ml-2"></i>
-          </button>
-        </Link> */}
-
         </div>
       </div>
     </div>

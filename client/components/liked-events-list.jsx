@@ -9,6 +9,7 @@ class LikedEventsList extends React.Component {
       eventInfo: [],
       eventInfoDisplay: false
     };
+
     this.searchLikedEvent = this.searchLikedEvent.bind(this);
   }
 
@@ -39,9 +40,9 @@ class LikedEventsList extends React.Component {
             <div className="likedEvents">
 
               <h3 className='text-center mt-4 block-text-font-oswald p-2'>
-                <h4><i>
-                  Your list is empty!
-                </i></h4>
+                <h4>
+                  <i>Your list is empty!</i>
+                </h4>
                 <br></br>
                 Return to the map to
                 <br></br>
@@ -49,7 +50,7 @@ class LikedEventsList extends React.Component {
               </h3>
             </div >
             <Link to='/search'>
-              <div className="text-center mt-5">
+              <div className="text-center m-4">
                 <button className="backButton submit-button w-25 block-text-font-oswald text-white">
                   <i className="fas fa-chevron-left mr-2"></i>
                   Back
@@ -75,8 +76,7 @@ class LikedEventsList extends React.Component {
                   <LikedEvent
                     key={event['event-id']}
                     event={event}
-                    removeEvent={id => this.props.removeLike(id)}
-                  />
+                    removeEvent={id => this.props.removeLike(id)} />
                 );
               })
             }

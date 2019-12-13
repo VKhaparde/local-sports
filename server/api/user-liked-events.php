@@ -35,10 +35,7 @@ if ($request['method'] === "DELETE") {
 
 
 function remove_event_from_liked_events($link, $eventId)
-
 {
-
-
   $sql = "DELETE
           FROM `liked-events`
           WHERE `liked-events`.`event-id` = ?
@@ -70,7 +67,3 @@ function retrieve_favorite_sports($link)
   $result = mysqli_query($link, $sql);
   return mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
-
-//http post localhost:9000/api/user-liked-events event-id=5
-//http delete localhost:9000/api/user-liked-events event-id=5
-//http get localhost:9000/api/user-liked-event

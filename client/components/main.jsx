@@ -13,16 +13,10 @@ class Main extends React.Component {
   }
 
   setView(event) {
-    this.setState(
-      {
-        view: {
-          name: 'eventDetails'
-        }
-      });
+    this.setState({ view: { name: 'eventDetails' } });
   }
 
   render() {
-    // console.log('View in render:', this.state.view.name);
     if (this.state.view.name === 'map') {
       return (
         <div className="main col-12 d-flex flex-column align-items-baseline"

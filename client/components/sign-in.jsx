@@ -33,7 +33,6 @@ class SignIn extends React.Component {
         console.error(`/api/login returned status ${response.status}`);
         return response.json();
       })
-      // .then(data => { console.log('data', data); return data })
       .then(data => {
 
         if (data.error) {
@@ -44,6 +43,7 @@ class SignIn extends React.Component {
           });
         } else {
           this.props.history.push('/search');
+          this.props.callbackSignIn();
         }
       });
   }
@@ -93,17 +93,8 @@ class SignIn extends React.Component {
             <button className='btn block headers-font-ubuntu create-account-button'>Create an Account</button>
           </div>
         </Link>
-        {/* <Link to='/search' >
-          <div className='button mt-4 mb-4'>
-            <button className='btn btn-primary block headers-font-ubuntu skip-button'>Skip
-              <i className="fas fa-chevron-right ml-2"></i>
-            </button>
-          </div>
-        </Link> */}
-
       </div>
     );
-
   }
 }
 
