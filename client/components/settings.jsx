@@ -35,8 +35,8 @@ class Settings extends React.Component {
 
   render() {
     return (
-      <div className="eventList mt-3 flex-column text-center">
-        <div className="eventListTitle mt-2 mb-4 headers-font-ubuntu">
+      <div className="settings-page mt-3 flex-column text-center">
+        <div className="eventListTitle mt-4 mb-4 headers-font-ubuntu">
           <h2>Schedule</h2>
         </div>
         <div className="d-flex flex-column ml-5 mr-5 mb-2">
@@ -48,14 +48,15 @@ class Settings extends React.Component {
             );
           })}
         </div>
-        <div className="headers-font-ubuntu d-flex justify-content-around ml-5 mr-5">
-          <div className="h3">Sign Out</div >
-          <Link to='/signIn'>
-            <button className="bg-white m-3 heart-div-button"
-              onClick={this.handleSignOut}>
-              <i className="fas fa-sign-out-alt fa-2x" />
-            </button>
-          </Link>
+        <div className="headers-font-ubuntu d-flex text-center justify-content-around ml-5 mr-5 mt-3">
+          <div className="h3">Sign Out
+            <Link to='/signIn'>
+              <button className="bg-white m-3 heart-div-button"
+                onClick={this.handleSignOut}>
+                <i className="fas fa-sign-out-alt fa-1x" />
+              </button>
+            </Link>
+          </div >
         </div>
       </div>
     );

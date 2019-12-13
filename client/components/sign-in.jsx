@@ -85,7 +85,7 @@ class SignIn extends React.Component {
           </div>
           {message}
           <div className='button mt-5 headers-font-ubuntu'>
-            <button className='btn block submit-button'>Sign In</button>
+            <button className='btn block submit-button text-white'>Sign In</button>
           </div>
         </form >
         <Link to='/createAccount' >
