@@ -1,2 +1,2 @@
-# local-sports-leagues
+# localSports
 A web app for athletes who want to find local sports leagues
