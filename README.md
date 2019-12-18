@@ -1,7 +1,7 @@
-# H1 local-sports
-# H2 A web app for athletes who want to find local sports events.
+#  local-sports
+## A web app for athletes who want to find local sports events.
 ------------------------------------------------------------------------------------------------------------------------------
-# H2 Technologies Used
+## Technologies Used
 * React.js
 * Webpack 4
 * BootStrap 4
