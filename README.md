@@ -35,7 +35,7 @@ NPM 6 or higher
 
     npm run db:import
   
-4. Start the project. Once started you can view the application by opening http://localhost:3000 in your browser.  
+4. Start the project. Once started you can view the application by opening https://localsports.site/ in your browser.  
 
     npm run dev
   
