@@ -16,4 +16,6 @@ Try the application live at https://localsports.site/
 * User can view the details and reviews of the selected event
 * User can like/unlike events based on his choice
 * User can select events based on the his day of choice
+## Preview
+
 
