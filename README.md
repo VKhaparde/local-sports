@@ -22,15 +22,19 @@ https://github.com/VKhaparde/local-sports/blob/master/assets/localSports.png
 NPM 6 or higher
 ## Getting Started
 1. Clone the Repository.
-  git clone https://github.com/VKhaparde/local-sports.git
-  cd local-sports
+
+  ...git clone https://github.com/VKhaparde/local-sports.git
+  ...cd local-sports
   
 2. Install all dependencies with npm.
-  npm install
+
+  ...npm install
   
 3. Import the database.
-  npm run db:import
+
+  ...npm run db:import
   
 4. Start the project. Once started you can view the application by opening http://localhost:3000 in your browser.  
-  npm run dev
+
+  ...npm run dev
   
