@@ -24,6 +24,7 @@ NPM 6 or higher
 1. Clone the Repository.
 
   git clone https://github.com/VKhaparde/local-sports.git
+  
   cd local-sports
   
 2. Install all dependencies with npm.
