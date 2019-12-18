@@ -1,5 +1,5 @@
 #  local-sports
-A web app for athletes who want to find local sports events.
+A mobile/web app for athletes who want to find local sports events.
 ## Technologies Used
 * React.js
 * Webpack 4
