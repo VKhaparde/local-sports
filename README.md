@@ -17,9 +17,20 @@ Try the application live at https://localsports.site/
 * User can like/unlike events based on his choice
 * User can select events based on the his day of choice
 ## Preview
-![alt text] (https://github.com/VKhaparde/local-sports/blob/master/assets/localSports.png)
+https://github.com/VKhaparde/local-sports/blob/master/assets/localSports.png
 ## Development
 NPM 6 or higher
 ## Getting Started
-1. Clone the Repository
-
+1. Clone the Repository.
+  git clone https://github.com/VKhaparde/local-sports.git
+  cd local-sports
+  
+2. Install all dependencies with npm.
+  npm install
+  
+3. Import the database.
+  npm run db:import
+  
+4. Start the project. Once started you can view the application by opening http://localhost:3000 in your browser.  
+  npm run dev
+  
