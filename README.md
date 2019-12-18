@@ -17,7 +17,7 @@ Try the application live at https://localsports.site/
 * User can like/unlike events based on his choice
 * User can select events based on the his day of choice
 ## Preview
-https://github.com/VKhaparde/local-sports/blob/master/assets/localSports.png
+![localSports](https://user-images.githubusercontent.com/54192822/71132058-634ac900-21ee-11ea-95e6-33caac26028c.png)
 ## Development
 NPM 6 or higher
 ## Getting Started
