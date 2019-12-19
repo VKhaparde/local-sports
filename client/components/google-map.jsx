@@ -12,7 +12,7 @@ class GoogleMap extends React.Component {
     };
     this.googleMapRef = React.createRef();
     this.markers = [];
-    this.GOOGLE_MAP_API_KEY = 'AIzaSyAOJECdvPZz9UkXONB7GvgiYfrP_s6RNOw';
+    this.GOOGLE_MAP_API_KEY = 'AIzaSyBNIp5_GkVzi49g7nWSBYvWhOMuPl6ZTMQ';
 
     this.createMarker = this.createMarker.bind(this);
   }
