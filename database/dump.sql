@@ -64,7 +64,7 @@ CREATE TABLE `liked-events` (
 
 LOCK TABLES `liked-events` WRITE;
 /*!40000 ALTER TABLE `liked-events` DISABLE KEYS */;
-INSERT INTO `liked-events` VALUES (1,3),(6,8),(6,14),(7,4),(1,11),(1,9),(1,18),(1,8);
+INSERT INTO `liked-events` VALUES (1,3),(6,8),(6,14),(7,4),(1,11),(1,9),(1,18),(1,8),(1,20),(1,13),(12,7),(12,17),(12,5),(12,15);
 /*!40000 ALTER TABLE `liked-events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -212,7 +212,7 @@ CREATE TABLE `users` (
   `username` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -221,7 +221,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'StumpyArm','$2y$10$qblF9Z5zVFH4YBkJsyeM.eEV360I/MyKrDZXu1etic9YlmMoRUmd2'),(2,'OldManJenkins420','$2y$10$goOiqMFja2/r.rPV0oZvjOuzUPtB9DmbOv0sXqtFDbbS3zoImIVkq'),(3,'GeneHackman','$2y$10$k6EgEtmaO8q7.aCqRXPTd.hEfRU.yq/1uXo.dPU6OYS1CVWVHA8/S'),(7,'Tomas','$2y$10$eyPrltRTB7MuyJO0VHOgNOH97hOhg3Nn5o5kg5wefZJlg.CaDVO6e');
+INSERT INTO `users` VALUES (1,'StumpyArm','$2y$10$qblF9Z5zVFH4YBkJsyeM.eEV360I/MyKrDZXu1etic9YlmMoRUmd2'),(2,'OldManJenkins420','$2y$10$goOiqMFja2/r.rPV0oZvjOuzUPtB9DmbOv0sXqtFDbbS3zoImIVkq'),(3,'GeneHackman','$2y$10$k6EgEtmaO8q7.aCqRXPTd.hEfRU.yq/1uXo.dPU6OYS1CVWVHA8/S'),(12,'VandanaKhaparde','$2y$10$AI47CzEG0xvbZrZb12vleeqOgANrGwljUDRC5ynX7QKsUJk18u8qK');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -234,4 +234,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-12 21:16:30
+-- Dump completed on 2019-12-31 23:06:10
