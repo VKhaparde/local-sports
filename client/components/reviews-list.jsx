@@ -60,7 +60,7 @@ class ReviewsList extends React.Component {
     if (this.props.isReviewsClicked) {
       return (
         <div className="reviews headers-font-ubuntu" onClick={this.props.onReviewsClick}>
-          <h4><u>Reviews</u></h4>
+          <h4>Reviews</h4>
           <div className="reviewList m-2 p-2 block-text-font-oswald ml-2">
             {
               this.state.reviews.map((currentVal, index) => {

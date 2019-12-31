@@ -63,7 +63,7 @@ class EventDetails extends React.Component {
             ratingImage={this.displayRating(rating)} />
           <div className="details headers-font-ubuntu"
             onClick={this.handleClickDetails}>
-            <h4><u>Details</u></h4>
+            <h4>Details</h4>
             <div className="detailsInfo block-text-font-oswald ml-2 mr-2">
               <div className="d-flex justify-content-between">
                 <div>Organizer:</div>
