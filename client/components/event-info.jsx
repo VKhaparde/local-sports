@@ -58,10 +58,10 @@ class EventInfo extends React.Component {
           <div className='rating mr-2 ' style={{ backgroundImage: `url(${this.props.ratingImage})` }}></div>
         </div>
         <div className="d-flex justify-content-between ml-2 block-text-font-oswald">
-          <div className="h4">{this.props.info.events[0].name}</div>
+          <div className="h5">{this.props.info.events[0].name}</div>
           <button
             onClick={() => this.props.toggleView()}>
-            <i className="fas fa-arrow-left fa-2x"></i>
+            <i className="fas fa-arrow-left fa-1.5x"></i>
           </button>
         </div>
       </div>
