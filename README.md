@@ -9,7 +9,7 @@ A mobile/web app for athletes who want to find local sports events.
 * CSS3
 * AWS EC2
 ## Live Demo
-Try the application live at https://localsports.site/
+Try the application live at https://local-sports.vandanakhaparde.com
 ## Features
 * User can search for events for a specific sport
 * User can view the events on the map
@@ -35,7 +35,7 @@ NPM 6 or higher
 
     npm run db:import
   
-4. Start the project. Once started you can view the application by opening https://localsports.site/ in your browser.  
+4. Start the project. Once started you can view the application by opening https://local-sports.vandanakhaparde.com in your browser.  
 
     npm run dev
   
